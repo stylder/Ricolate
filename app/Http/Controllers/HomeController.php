@@ -55,4 +55,8 @@ class HomeController extends Controller {
             ->withSlides($slideshow)
             ->withSales($saleList);
 	}
+    public function index2()
+    {
+        return view('frontend.layouts.main');
+    }
 }
