@@ -14,16 +14,16 @@
                         <h4>{{manufacturer.manufacturer}}</h4>
                     </a>
                     <div class="labelMargin">
-                        <span class="label label-info price-label">Price: ${{price}}</span>
+                        <span class="label label-info price-label">Precio: ${{price}}</span>
                     </div>
                     {{#if sale_price}}
                     <div class="labelMargin">
-                        <span class="label label-danger price-label">Sale: ${{sale_price}}</span>
+                        <span class="label label-danger price-label">Venta: ${{sale_price}}</span>
                     </div>
                     {{/if}}
                     <p class="text-center short-desc">{{short_desc}}</p>
                     <p class="text-center">
-                        <a role="button" class="btn btn-primary btn-success" href="/products/{{product_id}}">View</a>
+                        <a role="button" class="btn btn-primary btn-success" href="/products/{{product_id}}">Ver</a>
                     </p>
                 </div>
             </div>

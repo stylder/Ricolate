@@ -1,7 +1,7 @@
 @extends('public.layouts.main')
 
 @section('title')
-    @parent About fooCart
+    @parent Acerca de Ricolate
 @stop
 
 @section('content')
@@ -36,39 +36,41 @@
                     </ul>
                 </div>
                 <div class="col-sm-6">
-                    <h4 class="col-sm-12">Address</h4>
+                    <h4 class="col-sm-12">Dirección</h4>
                     <div class="form-group col-sm-12">
-                        {!! Form::text('first_name', null, ['class' => 'form-control required', 'id' => 'firstName', 'placeholder' => 'First Name']) !!}
+                        {!! Form::text('first_name', null, ['class' => 'form-control required', 'id' => 'firstName', 'placeholder' => 'Nombre']) !!}
                     </div>
                     <div class="form-group col-sm-12">
-                        {!! Form::text('last_name', null, ['class' => 'form-control required', 'id' => 'lastName', 'placeholder' => 'Last Name']) !!}
+                        {!! Form::text('last_name', null, ['class' => 'form-control required', 'id' => 'lastName', 'placeholder' => 'Apellidos']) !!}
                     </div>
                     <div class="form-group col-sm-12">
-                        {!! Form::text('home_phone', null, ['class' => 'form-control required', 'id' => 'homePhone', 'maxlength' => '12', 'placeholder' => 'Phone']) !!}
+                        {!! Form::text('home_phone', null, ['class' => 'form-control required', 'id' => 'homePhone', 'maxlength' => '12', 'placeholder' => 'Teléfono']) !!}
                     </div>
                     <div class="form-group col-sm-12">
-                        {!! Form::text('addr_street_1', null, ['class' => 'form-control required', 'id' => 'addressOne', 'placeholder' => 'Address Line 1']) !!}
+                        {!! Form::text('addr_street_1', null, ['class' => 'form-control required', 'id' => 'addressOne', 'placeholder' => 'Dirección Linea 1']) !!}
                     </div>
                     <div class="form-group col-sm-12">
-                        {!! Form::text('addr_street_2', null, ['class' => 'form-control', 'id' => 'addressTwo', 'placeholder' => 'Address Line 2']) !!}
+                        {!! Form::text('addr_street_2', null, ['class' => 'form-control', 'id' => 'addressTwo', 'placeholder' => 'Dirección Linea 2']) !!}
                     </div>
                     <div class="form-group col-sm-12">
-                        {!! Form::text('addr_city', null, ['class' => 'form-control required', 'id' => 'city', 'placeholder' => 'City']) !!}
+                        {!! Form::text('addr_city', null, ['class' => 'form-control required', 'id' => 'city', 'placeholder' => 'Ciudad']) !!}
                     </div>
                     <div class="form-group col-sm-6">
                         @include('public.partials.state-list-dropdown')
                     </div>
                     <div class="form-group col-sm-6">
-                        {!! Form::text('addr_zip', null, ['class' => 'form-control required', 'id' => 'zip', 'maxlength' => '5', 'placeholder' => 'Zip']) !!}
+                        {!! Form::text('addr_zip', null, ['class' => 'form-control required', 'id' => 'zip', 'maxlength' => '5', 'placeholder' => 'Código Postal']) !!}
                     </div>
                 </div>
                 <div class="col-sm-6">
-                    <h4 class="col-sm-12">Payment Information</h4>
+                    <h4 class="col-sm-12">Información de Pago
+</h4>
                     <div class="form-group col-sm-9">
-                        <input type="text" id="cardNumber" class="form-control" data-stripe="number" placeholder="Credit Card Number"/>
+                        <input type="text" id="cardNumber" class="form-control" data-stripe="number" placeholder="
+Número de tarjeta de crédito"/>
                     </div>
                     <div class="form-group col-sm-3">
-                        <input type="text" id="cv2" class="form-control" data-stripe="cvc" placeholder="CV Code"/>
+                        <input type="text" id="cv2" class="form-control" data-stripe="cvc" placeholder="Código CV"/>
                     </div>
                     <div class="form-group col-sm-6">
                         {!! Form::selectMonth(null, null, ['id' => 'exp-month', 'class' => 'form-control', 'data-stripe' => 'exp-month']) !!}
@@ -77,7 +79,7 @@
                         {!! Form::selectYear(null, date('Y'), date('Y') + 10, null, ['id' => 'exp-year', 'class' => 'form-control', 'data-stripe' => 'exp-year']) !!}
                     </div>
                     <div class="form-group col-sm-12">
-                        {!! Form::submit('Purchase', ['id' => 'subBtn', 'class' => 'form-control btn-primary']) !!}
+                        {!! Form::submit('Compra', ['id' => 'subBtn', 'class' => 'form-control btn-primary']) !!}
                     </div>
                 </div>
             {!! Form::close() !!}
@@ -193,7 +195,7 @@
                     if(empty)
                     {
                         $('li.validation-error').remove();
-                        $('form#checkout-form').find('#checkout-error').show().find('ul.messages').append('<li class="validation-error">Please fill out all required fields.</li>');
+                        $('form#checkout-form').find('#checkout-error').show().find('ul.messages').append('<li class="validation-error">Por favor llene todos los ampos requeridos.</li>');
                         $(this).addClass('order-form-error');
                         passedValidation = false;
                     }else {

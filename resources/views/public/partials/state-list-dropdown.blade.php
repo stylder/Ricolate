@@ -1,6 +1,6 @@
 {{-- This dropdown was abstracted to a view partial simply to keep the code in the order-form view clean. --}}
 <select name="addr_state" class="form-control required" id="mailingState">
-    <option value="">State</option>
+    <option value="">Estado</option>
     <option value="AL">Alabama</option>
     <option value="AK">Alaska</option>
     <option value="AZ">Arizona</option>

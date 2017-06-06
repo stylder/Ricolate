@@ -1,7 +1,7 @@
 @extends('public.layouts.main')
 
 @section('title')
-    @parent Your Cart
+    @parent Tu Carro
 @stop
 
 @section('content')
@@ -9,16 +9,16 @@
         <div class="row row-top-buffer">
             <div class="panel panel-default">
                 <div class="panel-body">
-                    <h1>Your Cart</h1>
+                    <h1>Tu Carro</h1>
                     <div class="row">
                         <div class="col-sm-12">
                             <table class="table table-striped table-responsive table-hover table-bordered" id="table-cart">
                                 <thead>
                                 <tr>
-                                    <th class="col-sm-1">Remove</th>
-                                    <th class="col-sm-8 text-left">Product</th>
-                                    <th class="col-sm-1">Price</th>
-                                    <th class="col-sm-1">Qty</th>
+                                    <th class="col-sm-1">Remover</th>
+                                    <th class="col-sm-8 text-left">Producto</th>
+                                    <th class="col-sm-1">Precio</th>
+                                    <th class="col-sm-1">Cantidad</th>
                                     <th class="col-sm-1">Total</th>
                                 </tr>
                                 </thead>
@@ -42,7 +42,7 @@
                                                 <div class="form-group">
                                                     {!! Form::open(['method' => 'PUT', 'route' => ['cart.update', $item->product_id]]) !!}
                                                     <input name="newQuantity" type="number" min="0" class="form-control" value="{{ $quantities[$key] }}">
-                                                    {!! Form::button('Update', ['class' => 'btn btn-xs btn-primary', 'type' => 'submit']) !!}
+                                                    {!! Form::button('Actualizar', ['class' => 'btn btn-xs btn-primary', 'type' => 'submit']) !!}
                                                     {!! Form::close() !!}
                                                 </div>
                                             </td>
@@ -54,7 +54,7 @@
                                 @else
                                     <tr>
                                         <td colspan="5">
-                                            <h1 class="text-center">Cart is empty</h1>
+                                            <h1 class="text-center">El carro está vacio</h1>
                                         </td>
                                     </tr>
                                 @endif
@@ -76,7 +76,7 @@
                                     </tr>
                                     <tr>
                                         <td>
-                                            <strong>Shipping</strong>
+                                            <strong>Envío</strong>
                                         </td>
                                         <td>
                                             ${{ number_format($shipping, 2) }}
@@ -84,7 +84,7 @@
                                     </tr>
                                     <tr>
                                         <td>
-                                            <strong>Tax</strong>
+                                            <strong>Impuesto</strong>
                                         </td>
                                         <td>
                                             ${{ number_format($tax, 2) }}

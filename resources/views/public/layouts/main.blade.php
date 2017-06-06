@@ -10,7 +10,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
     <meta name="HandheldFriendly" content="true"/>
     <meta name="MobileOptimized" content="320"/>
-    <title>fooCart - @yield('title', 'Welcome')</title>
+    <title>Ricolate - @yield('title', 'Welcome')</title>
     <meta name="description" content="" />
     <meta name="keywords" content="" />
 
@@ -42,7 +42,7 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="/"><strong><span class="white">foo</span><span class="blue">Cart</span></strong></a>
+                <a class="navbar-brand" href="/"><strong><span class="white">Ricolate</span></strong></a>
             </div>
             <div id="navbar" class="collapse navbar-collapse navbar-main">
                 <ul class="nav navbar-nav">
@@ -50,24 +50,25 @@
                         <a href="/">Home</a>
                     </li>
                     <li class="{{ ( Route::getCurrentRoute()->getPath() === 'shop' ) ? 'active' : NULL }}">
-                        <a href="/shop" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Shop <span class="caret"></span></a>
+                        <a href="/shop" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Tienda <span class="caret"></span></a>
                         <ul class="dropdown-menu" role="menu">
-                            <li><a href="/shop">All Products</a></li>
-                            <li><a href="/shop/on-sale">On Sale</a></li>
+                            <li><a href="/shop">Totos los productos</a></li>
+                            <li><a href="/shop/on-sale">En venta</a></li>
                         </ul>
                     </li>
                     <li class="{{ ( Route::getCurrentRoute()->getPath() === 'shop/on-sale' ) ? 'active' : NULL }}">
-                        <a href="/shop/on-sale">On Sale</a>
+                        <a href="/shop/on-sale">En venta
+</a>
                     </li>
                     <li class="{{ ( Route::getCurrentRoute()->getPath() === 'about' ) ? 'active' : NULL }}">
-                        <a href="/about">About</a>
+                        <a href="/about">Acerca</a>
                     </li>
                 </ul>
                 <div class="col-sm-3 col-md-3 navbar-right">
                     <form class="navbar-form" role="search" action="/search" method="GET">
                         <input type="hidden" name="_token" value="{{ csrf_token() }}">
                         <div class="input-group">
-                            <input type="text" value="{{ $query or null }}" class="form-control" placeholder="Search" name="query" id="srch-term">
+                            <input type="text" value="{{ $query or null }}" class="form-control" placeholder="Buscar" name="query" id="srch-term">
                             <div class="input-group-btn">
                                 <button class="btn btn-default" type="submit"><i class="glyphicon glyphicon-search"></i></button>
                             </div>
@@ -87,8 +88,8 @@
         <div class="container">
             <div class="row">
                 <div class="col-sm-12">
-                    <p class="text-muted text-center"><strong><span class="white">foo</span><span class="blue">Cart</span></strong><br />
-                        Copyright 2015 <a href="http://justinc.me" target="_BLANK">Justin Christenson</a></p>
+                    <p class="text-muted text-center"><strong><span class="white">Ricolate</span></strong><br />
+                        Copyright 2017</p>
                 </div>
             </div>
         </div>

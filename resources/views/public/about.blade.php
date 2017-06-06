@@ -1,7 +1,7 @@
 @extends('public.layouts.main')
 
 @section('title')
-    @parent About fooCart
+    @parent Acerca Ricolate
 @stop
 
 @section('content')
@@ -9,34 +9,20 @@
         <div class="row row-top-buffer">
             <div class="col-sm-8">
                 <div class="jumbotron">
-                    <h1>About fooCart</h1>
-                    <p>fooCart is a PHP 5 based eCommerce application with integrated Stripe payments developed by <a href="http://justinc.me" target="_BLANK">Justin Christenson</a> as a portfolio project.</p>
-                    <h3>fooCart was built with:</h3>
+                    <h1>Acerca Ricolate</h1>
+                    <p>Bla bla, Bla bla Bla bla, Bla bla Bla bla, Bla bla Bla bla, Bla bla</p>
+                    
                     <div class="row">
                         <div class="col-sm-6">
-                            <ul class="list-group">
-                                <li class="list-group-item-heading list-group-item">
-                                    <h4>Server Side</h4>
-                                </li>
-                                <li class="list-group-item list-group-item-text"><a target="_BLANK" href="http://laravel.com/">Laravel 5</a></li>
-                                <li class="list-group-item list-group-item-text"><a target="_BLANK" href="https://www.mysql.com/">MySQL</a></li>
-                                <li class="list-group-item list-group-item-text"><a target="_BLANK" href="https://stripe.com/">Stripe SDK</a></li>
-                            </ul>
+                            
                         </div>
                         <div class="col-sm-6">
-                            <ul class="list-group">
-                                <li class="list-group-item-heading list-group-item">
-                                    <h4>Client Side</h4>
-                                </li>
-                                <li class="list-group-item list-group-item-text"><a target="_BLANK" href="http://getbootstrap.com/">Bootstrap</a></li>
-                                <li class="list-group-item list-group-item-text"><a target="_BLANK" href="https://jquery.com/">jQuery</a></li>
-                                <li class="list-group-item list-group-item-text"><a target="_BLANK" href="http://handlebarsjs.com/">Handlebars JS</a></li>
-                            </ul>
+                            
                         </div>
                     </div>
                     <div class="row">
                         <div class="col-sm-12">
-                            <div class="well well-sm">All product images are courtesy of <a target="_BLANK" href="http://www.FreeDigitalPhotos.net">FreeDigitalPhotos.net</a>.</div>
+                            
                         </div>
                     </div>
                 </div>
@@ -44,7 +30,7 @@
             <div class="col-sm-4">
                 <div class="panel panel-default">
                     <div class="panel-body">
-                        <h1>Contact</h1>
+                        <h1>Contacto</h1>
                         @if($errors->any())
                             <div class="row">
                                 <div class="col-sm-12">
@@ -73,25 +59,26 @@
                         <form id="contact-form" role="form" method="POST" action="/messages">
                             <input type="hidden" name="_token" value="{{ csrf_token() }}">
                             <div class="form-group">
-                                <label for="name">Name:</label>
+                                <label for="name">Nombre:</label>
                                 <input name="sender_name" type="text" class="form-control required" id="name">
                             </div>
                             <div class="form-group">
-                                <label for="email">Email Address:</label>
+                                <label for="email">Email:</label>
                                 <input name="sender_email" type="email" class="form-control required" id="email">
                             </div>
                             <div class="form-group">
-                                <label for="phone">Phone Number:</label>
+                                <label for="phone">Teléfono:</label>
                                 <input name="sender_phone" type="phone" class="form-control required" id="phone" maxlength="12">
                             </div>
                             <div class="form-group">
-                                <label for="message">Message</label>
+                                <label for="message">Mensaje</label>
                                 <textarea name="message" rows="5" class="form-control" id="message"></textarea>
                             </div>
-                            <button type="submit" class="btn btn-primary">Contact</button>
+                            <button type="submit" class="btn btn-primary">Contáctanos</button>
                         </form>
                         @else
-                            <h1>Thank you for your interest!</h1>
+                            <h1>
+¡Gracias por su interés!</h1>
                         @endif
                     </div>
                 </div>
@@ -151,12 +138,12 @@
             var submitBtn = $(this).find('button[type="submit"]');
             if(contactForm.checkRequiredFields())
             {
-                submitBtn.text('Sending...');
+                submitBtn.text('Enviando...');
                 var url = $(this).attr('action');
                 var data = $(this).serialize();
                 $.post(url, data, function(d)
                 {
-                    $('form#contact-form').slideUp().after('<h1>Thank you for your interest!</h1>');
+                    $('form#contact-form').slideUp().after('<h1>¡Gracias por su interés!</h1>');
                 });
             }
             e.preventDefault();

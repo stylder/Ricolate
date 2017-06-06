@@ -30,9 +30,10 @@
                                 <img src="/images/multi-product-image.jpg" alt="Shop All Products">
                             </div>
                             <div class="text-center">
-                                <h3>Shop All Products</h3>
+                                <h3>
+Comprar todos los productos</h3>
                                 <p class="text-center short-desc">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla tristique ipsum ligula.</p>
-                                <p class="text-center"><a href="/shop" class="btn btn-primary" role="button">View</a></p>
+                                <p class="text-center"><a href="/shop" class="btn btn-primary" role="button">Ver</a></p>
                             </div>
                         </a>
                     </div>
@@ -46,9 +47,10 @@
                                 <img src="/images/multi-product-image.jpg" alt="On Sale Now">
                             </div>
                             <div class="text-center">
-                                <h3>Shop Sale Products</h3>
+                                <h3>Tienda Productos
+</h3>
                                 <p class="text-center short-desc">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla tristique ipsum ligula.</p>
-                                <p class="text-center"><a href="/shop/on-sale" class="btn btn-primary" role="button">View</a></p>
+                                <p class="text-center"><a href="/shop/on-sale" class="btn btn-primary" role="button">Ver</a></p>
                             </div>
                         </a>
                     </div>
@@ -65,7 +67,7 @@
                                 <h3>Featured Product</h3>
                                 <h4>Bates 9000</h4>
                                 <p class="text-center short-desc">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla tristique ipsum ligula.</p>
-                                <p class="text-center"><a href="/products/12" class="btn btn-primary" role="button">View</a></p>
+                                <p class="text-center"><a href="/products/12" class="btn btn-primary" role="button">Ver</a></p>
                             </div>
                         </a>
                     </div>
@@ -74,7 +76,8 @@
             <div class="col-sm-3">
                 <ul class="list-group">
                     <li class="list-group-item active">
-                        <h4>Current Specials</h4>
+                        <h4>
+Ofertas actuales</h4>
                     </li>
                     @if(isset($sales))
                         @foreach($sales as $item)

@@ -49,7 +49,7 @@
                     <div class="panel-body">
                         <ul class="list-group">
                             <li class="list-group-item">
-                                <h4>Share This</h4>
+                                <h4>Compártelo</h4>
                             </li>
                             <li class="list-group-item">
                                 <div class="row">
@@ -76,7 +76,7 @@
                         </ul>
                         <ul class="list-group">
                             <li class="list-group-item">
-                                <h4>Related</h4>
+                                <h4>Relacionado</h4>
                             </li>
                             @foreach($related as $product)
                                 <li class="list-group-item">

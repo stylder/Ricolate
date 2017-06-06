@@ -1,7 +1,7 @@
 @extends('admin.layouts.admin-main')
 
 @section('title')
-    @parent Password Reset
+    @parent Restablecer Contraseña
 @stop
 
 @section('content')
@@ -18,7 +18,7 @@
                         @endif
                         @if (count($errors) > 0)
                             <div class="alert alert-danger">
-                                <strong>Whoops!</strong> There were some problems with your input.<br><br>
+                                <strong>Whoops!</strong>Hubo algunos problemas con algunos campos.<br><br>
                                 <ul>
                                     @foreach ($errors->all() as $error)
                                         <li>{{ $error }}</li>
@@ -30,7 +30,7 @@
                             <input type="hidden" name="_token" value="{{ csrf_token() }}">
 
                             <div class="form-group">
-                                <label class="col-md-4 control-label">E-Mail Address</label>
+                                <label class="col-md-4 control-label">E-Mail</label>
                                 <div class="col-md-6">
                                     <input type="email" class="form-control" name="email" value="{{ old('email') }}">
                                 </div>
@@ -38,7 +38,7 @@
                             <div class="form-group">
                                 <div class="col-md-6 col-md-offset-4">
                                     <button type="submit" class="btn btn-primary">
-                                        Send Password Reset Link
+                                        Enviar 
                                     </button>
                                 </div>
                             </div>

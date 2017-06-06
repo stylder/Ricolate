@@ -1,14 +1,14 @@
 @extends('public.layouts.main')
 
 @section('title')
-    @parent {{ $title or 'Products' }}
+    @parent {{ $title or 'Productos' }}
 @stop
 
 @section('content')
     <div class="container">
         <div class="row row-top-buffer">
             <div class="col-sm-12">
-                <h1>Shop Online</h1>
+                <h1></h1>
                 <div class="panel panel-default">
                     <div class="panel-body">
                         <nav>
@@ -16,20 +16,20 @@
                                 <div class="col-sm-4 filter-left">
                                     <div class="dropdown inline">
                                         <button class="btn btn-default dropdown-toggle btn-cat-filter" type="button" id="filter-category" data-toggle="dropdown" aria-expanded="true">
-                                            <span class="filter-category-label">Category (All)</span>
+                                            <span class="filter-category-label">Categoría (Todas)</span>
                                             <span class="caret"></span>
                                         </button>
                                         <ul id="categoryFilter" class="dropdown-menu" role="menu" aria-labelledby="filter-category">
-                                            <li role="presentation"><a role="menuitem" tabindex="-1">Category (All)</a></li>
+                                            <li role="presentation"><a role="menuitem" tabindex="-1">Categoría (Todas)</a></li>
                                         </ul>
                                     </div>
                                     <div class="dropdown inline">
                                         <button class="btn btn-default dropdown-toggle btn-man-filter" type="button" id="filter-manufacturer" data-toggle="dropdown" aria-expanded="true">
-                                            <span class="filter-manufacturer-label">Manufacturer (All)</span>
+                                            <span class="filter-manufacturer-label">Fabricantes (Todos)</span>
                                             <span class="caret"></span>
                                         </button>
                                         <ul id="manufacturerFilter" class="dropdown-menu" role="menu" aria-labelledby="filter-manufacturer">
-                                            <li role="presentation"><a role="menuitem" tabindex="-1">Manufacturer (All)</a></li>
+                                            <li role="presentation"><a role="menuitem" tabindex="-1">Fabricantes (Todos)</a></li>
                                         </ul>
                                     </div>
                                 </div>
@@ -50,7 +50,7 @@
                                 <div class="col-sm-4">
                                     <div class="row">
                                         <div class="col-sm-12">
-                                            <div class="dropdown  filter-right ">Results:
+                                            <div class="dropdown  filter-right ">Resultados:
                                                 <button class="btn btn-default dropdown-toggle btn-prod-count" type="button" id="sort-by" data-toggle="dropdown" aria-expanded="true">
                                                     <span class="results-count-dropdown">10</span>
                                                     <span class="caret"></span>
@@ -318,9 +318,9 @@
         //Create the categories array
         productList.filters.categories = new Array();
         //Default the category filter to all categories
-        productList.filters.catFilter = 'Category (All)';
+        productList.filters.catFilter = 'Categoría (Todas)';
         //Default the manufacturer filter to all manufacturers
-        productList.filters.manFilter = 'Manufacturer (All)';
+        productList.filters.manFilter = 'Fabricantes (Todos)';
 
         /**
          * Check if there are any active filters.
@@ -329,7 +329,7 @@
          */
         productList.filters.checkFilters = function()
         {
-            if(productList.filters.catFilter !== 'Category (All)' || productList.filters.manFilter !== 'Manufacturer (All)')
+            if(productList.filters.catFilter !== 'Categoría (Todas)' || productList.filters.manFilter !== 'Fabricantes (Todos)')
             {
                 return true;
             }
@@ -348,7 +348,7 @@
                 productList.filters.filteredList.push(productList.Json[p]);
             }
             //Filter out categories
-            if(productList.filters.catFilter !== 'Category (All)')
+            if(productList.filters.catFilter !== 'Categoría (Todas)')
             {
                 //for(var f in productList.filters.filteredList)
                 for(var i = productList.filters.filteredList.length; i--;)
@@ -363,7 +363,7 @@
             /**
              * Handle filter by manufacturer.
              */
-            if(productList.filters.manFilter !== 'Manufacturer (All)')
+            if(productList.filters.manFilter !== 'Fabricantes (Todos)')
             {
                 for(var i = productList.filters.filteredList.length; i--;)
                 {

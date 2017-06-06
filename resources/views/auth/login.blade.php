@@ -13,7 +13,7 @@
                     <div class="panel-body">
                         @if (count($errors) > 0)
                         <div class="alert alert-danger">
-                            <strong>Whoops!</strong> There were some problems with your input.<br><br>
+                            <strong>Whoops!</strong> Hubo algunos problemas con algunos campos.<br><br>
                             <ul>
                                 @foreach ($errors->all() as $error)
                                     <li>{{ $error }}</li>
@@ -28,7 +28,7 @@
                                     <span><strong>Password:</strong> demo123</span>
                                     <hr />
                                     <p class="small">
-                                        * The application resets periodically.
+                                        * La aplicación se restablece periódicamente.
                                     </p>
                                 </div>
                             </div>
@@ -36,17 +36,17 @@
                                 <form class="form-horizontal" role="form" method="POST" action="/admin/login">
                                     <input type="hidden" name="_token" value="{{ csrf_token() }}">
                                     <div class="form-group col-md-12">
-                                        <label class="control-label">E-Mail Address</label>
+                                        <label class="control-label">E-Mail</label>
                                         <input type="email" class="form-control" name="email" value="{{ old('email') }}">
                                     </div>
                                     <div class="form-group col-md-12">
-                                        <label class="control-label">Password</label>
+                                        <label class="control-label">Contraseña</label>
                                         <input type="password" class="form-control" name="password">
                                     </div>
                                     <div class="form-group col-sm-4 col-sm-offset-4">
                                         <div class="checkbox">
                                             <label class="control-label">
-                                                <input type="checkbox" name="remember"> Remember Me
+                                                <input type="checkbox" name="remember"> Recordarme
                                             </label>
                                         </div>
                                     </div>
