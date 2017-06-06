@@ -1,14 +1,14 @@
 @extends('admin.layouts.admin-main')
 
 @section('title')
-    @parent Add Slide
+    @parent Agregar Slide
 @stop
 
 @section('content')
 <div class="container" id="slide-edit-main">
     <div class="row">
         <div class="col-sm-12">
-            <h1 class="inline">Add Slide</h1>
+            <h1 class="inline">Agregar Slide</h1>
         </div>
     </div>
     <div class="row row-top-buffer" id="new-slide">
@@ -20,7 +20,7 @@
                             <div class="panel panel-default">
                                 <div class="panel-body slide" id="new-slide-upload">
                                     <button type="button" class="btn btn-primary col-xs-2 col-xs-offset-5 col-sm-4 col-sm-offset-4 col-md-2 col-md-offset-5" aria-label="Upload Image" id="upload">
-                                        <h3 class="inline">Browse</h3>
+                                        <h3 class="inline">Buscar</h3>
                                         <span class="glyphicon glyphicon-search" aria-hidden="true"></span>
                                     </button>
                                 </div>
@@ -32,12 +32,12 @@
                                     <div class="row">
                                         <div class="col-sm-12">
                                             <div class="alert alert-info">
-                                                <h3 class="text-center">Instructions</h3>
+                                                <h3 class="text-center">Instrucciones</h3>
                                                 <hr />
                                                 <ol class="slide-instructions">
-                                                    <li>Click the browse button and select an image (PNG, GIF or JPG) to upload.</li>
-                                                    <li>Click and drag the image within the box to select the appropriate visible area.</li>
-                                                    <li>Click the crop icon.</li>
+                                                    <li>Haga clic en el botón Examinar y seleccione una imagen (PNG, GIF o JPG) para cargar.</li>
+                                                    <li>Haga clic y arrastre la imagen dentro del cuadro para seleccionar el área visible adecuada.</li>
+                                                    <li>Haga clic en el icono de recorte.</li>
                                                 </ol>
                                             </div>
                                         </div>
@@ -54,12 +54,12 @@
                 <div class="modal-content">
                     <div class="modal-header">
                         <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                        <h4 class="modal-title">Success!</h4>
+                        <h4 class="modal-title">Éxito!</h4>
                     </div>
                     <div class="modal-body">
                         <div class="row">
                             <div class="col-sm-12">
-                                <p>The slide has been saved!</p>
+                                <p>El slide ha sido guardado!</p>
                             </div>
                         </div>
                     </div>

@@ -1,15 +1,15 @@
 @extends('admin.layouts.admin-main')
 
 @section('title')
-    @parent Slideshow Editor
+    @parent Editar Slideshow 
 @stop
 
 @section('content')
     <div class="container" id="slide-edit-main">
         <div class="row">
             <div class="col-sm-12">
-                <h1 class="inline">Edit Slideshow</h1>
-                <a href="/admin/slideshow/create" class="btn btn-primary pull-right" id="add-slide"><span class="glyphicon glyphicon-plus"></span> <h4 class="inline">Add Slide</h4></a>
+                <h1 class="inline">Editar Slideshow</h1>
+                <a href="/admin/slideshow/create" class="btn btn-primary pull-right" id="add-slide"><span class="glyphicon glyphicon-plus"></span> <h4 class="inline">Agregar Slide</h4></a>
             </div>
         </div>
 
@@ -34,12 +34,12 @@
                                             <div class="row">
                                                 <div class="col-sm-12">
                                                     {!! Form::label('href', 'Link') !!}
-                                                    {!! Form::text('href', $slide->href, ['class' => 'form-control', 'id' => 'slide-link-' . $slide->slide_id ,'placeholder' => 'http://www.example.com']) !!}
+                                                    {!! Form::text('href', $slide->href, ['class' => 'form-control', 'id' => 'slide-link-' . $slide->slide_id ,'placeholder' => 'http://www.ricolate.com']) !!}
                                                 </div>
                                             </div>
                                             <div class="row">
                                                 <div class="col-sm-12">
-                                                    {!! Form::label('slide-order-' . $slide->slide_id, 'Slide Order') !!}
+                                                    {!! Form::label('slide-order-' . $slide->slide_id, 'Slide Orden') !!}
                                                     <select class="form-control" id="slide-order-{{ $slide->slide_id }}" name="sequence">
                                                         @for($i = 0; $i < $count; $i++)
                                                             @if($i+1 == $slide->sequence)
@@ -53,8 +53,8 @@
                                             </div>
                                             <div class="row">
                                                 <div class="col-sm-12">
-                                                    {!! Form::label('slide-active-' . $slide->slide_id, 'Active') !!}
-                                                    {!! Form::select('active', ['0' => 'No', '1' => 'Yes'], $slide->active, ['class' => 'form-control']) !!}
+                                                    {!! Form::label('slide-active-' . $slide->slide_id, 'Activo') !!}
+                                                    {!! Form::select('active', ['0' => 'No', '1' => 'Si'], $slide->active, ['class' => 'form-control']) !!}
                                                 </div>
                                             </div>
                                         </div>
@@ -62,12 +62,12 @@
                                             <div class="row">
                                                 <div class="col-sm-6 text-center">
                                                     <button type="button" class="btn btn-success slide-save slide-{{ $slide->slide_id }}" aria-label="Save Changes">
-                                                        <span class="glyphicon glyphicon-floppy-disk" aria-hidden="true"></span> Save
+                                                        <span class="glyphicon glyphicon-floppy-disk" aria-hidden="true"></span> Guardar
                                                     </button>
                                                 </div>
                                                 <div class="col-sm-6 text-center">
                                                     <a class="btn btn-danger" data-toggle="modal" data-href="/admin/slideshow/{{ $slide->slide_id }}" data-target="#slide-delete-confirm">
-                                                        <span class="glyphicon  glyphicon glyphicon-remove"></span> Delete
+                                                        <span class="glyphicon  glyphicon glyphicon-remove"></span> Borrar
                                                     </a>
                                                 </div>
                                             </div>
@@ -85,20 +85,21 @@
                 <div class="modal-content">
                     <div class="modal-header">
                         <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                        <h4 class="modal-title">Confirm Delete</h4>
+                        <h4 class="modal-title">Desea Eliminar</h4>
                     </div>
                     <div class="modal-body">
                         <div class="row">
                             <div class="col-sm-12">
-                                <p>Are you sure that you want to delete this slide?</p>
+                                <p>
+                                ¿Está seguro de que desea eliminar esta slide?</p>
                             </div>
                         </div>
                     </div>
                     <div class="modal-footer">
                         {!! Form::open(['method' => 'DELETE']) !!}
 
-                        <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
-                        {!! Form::submit('Delete', ['class' => 'btn btn-danger btn-ok']) !!}
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Cancelar</button>
+                        {!! Form::submit('Borrar', ['class' => 'btn btn-danger btn-ok']) !!}
                         {!! Form::close() !!}
                     </div>
                 </div>
@@ -109,12 +110,12 @@
                 <div class="modal-content">
                     <div class="modal-header">
                         <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                        <h4 class="modal-title">Success!</h4>
+                        <h4 class="modal-title">Éxito!</h4>
                     </div>
                     <div class="modal-body">
                         <div class="row">
                             <div class="col-sm-12">
-                                <p>The slide has been saved!</p>
+                                <p>La slide ha sido guardada!</p>
                             </div>
                         </div>
                     </div>
