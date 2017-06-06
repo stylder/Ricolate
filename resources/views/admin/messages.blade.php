@@ -1,14 +1,14 @@
 @extends('admin.layouts.admin-main')
 
 @section('title')
-    @parent Messages
+    @parent Mensajes
 @stop
 
 @section('content')
     <div class="container">
         <div class="row">
             <div class="col-sm-12">
-                <h1>Messages</h1>
+                <h1>Mensajes</h1>
             </div>
         </div>
         <div class="row row-top-buffer">
@@ -18,13 +18,13 @@
                         <table id="admin_products_list" class="table table-striped table-responsive table-hover table-bordered text-center">
                             <thead>
                             <tr>
-                                <th class="col-sm-1">Sent</th>
-                                <th class="col-sm-2">Name</th>
+                                <th class="col-sm-1">Expedido</th>
+                                <th class="col-sm-2">Nombre</th>
                                 <th class="col-sm-2">Email</th>
-                                <th class="col-sm-2">Phone</th>
-                                <th class="col-sm-3">Message</th>
-                                <th class="col-sm-1">Read</th>
-                                <th class="col-sm-1">Delete</th>
+                                <th class="col-sm-2">Teléfono</th>
+                                <th class="col-sm-3">Mensaje</th>
+                                <th class="col-sm-1">Leído</th>
+                                <th class="col-sm-1">Borrar</th>
                             </tr>
                             </thead>
                             <tbody>
@@ -71,7 +71,7 @@
                                 @empty
                                     <tr>
                                         <td colspan="7">
-                                            <h1 class="text-center">No Messages</h1>
+                                            <h1 class="text-center">No tienes mensajes</h1>
                                         </td>
                                     </tr>
                                 @endforelse
@@ -87,16 +87,16 @@
             <div class="modal-content">
                 <div class="modal-header">
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                    <h4 class="confirmHead">Confirm Delete Image?</h4>
+                    <h4 class="confirmHead">Eliminar Mensaje</h4>
                 </div>
                 <div class="modal-body">
-                    <p>Are you sure that you want to delete this message?</p>
+                    <p>¿Estás seguro de eliminar el mensaje?</p>
                 </div>
                 <div class="modal-footer">
                     {!! Form::open(['method' => 'DELETE', 'id' => 'delete-message-form']) !!}
 
-                    <button type="button" id="cancel-btn" class="btn btn-default" data-dismiss="modal">Cancel</button>
-                    {!! Form::submit('Delete', ['class' => 'btn btn-danger btn-ok', 'id' => 'delete-submit']) !!}
+                    <button type="button" id="cancel-btn" class="btn btn-default" data-dismiss="modal">Cancelar</button>
+                    {!! Form::submit('Eliminar', ['class' => 'btn btn-danger btn-ok', 'id' => 'delete-submit']) !!}
                     {!! Form::close() !!}
                 </div>
             </div>
