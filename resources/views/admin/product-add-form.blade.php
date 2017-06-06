@@ -1,7 +1,7 @@
 @extends('admin.layouts.admin-main')
 
 @section('title')
-    @parent Add Product
+    @parent Agregar Producto
 @stop
 
 @section('content')

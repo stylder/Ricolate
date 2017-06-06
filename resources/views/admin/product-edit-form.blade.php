@@ -1,14 +1,14 @@
 @extends('admin.layouts.admin-main')
 
 @section('title')
-    @parent Edit Product {{ $product->sku }}
+    @parent Editar Producto {{ $product->sku }}
 @stop
 
 @section('content')
     <div class="container">
         <div class="row row-top-buffer">
             <div class="col-sm-12">
-                <h1>Edit Product</h1>
+                <h1>Editar Producto</h1>
             </div>
         </div>
         <div class="row row-top-buffer">
@@ -17,7 +17,7 @@
                     <div class="panel panel-body main-container">
                         <div class="row alert alert-info info-bar">
                             <div class="col-sm-12 filter-right">
-                                <label id="lastModLabel">Last Modified</label>
+                                <label id="lastModLabel">Última modificación</label>
                                 <span aria-labelledby="#lastModLabel">{{ $product->getHumanUpdatedAt() }}</span>
                             </div>
                         </div>
@@ -42,8 +42,8 @@
                                                 <div class="row">
                                                     <div class="form-group col-sm-6">
                                                         {!! Form::open(['method' => 'PUT', 'route' => ['admin.products.update', $product->product_id],  'class' => 'primary-form']) !!}
-                                                        {!! Form::label('name', 'Name') !!}
-                                                        {!! Form::text('name', $product->name, ['class' => 'form-control', 'placeholder' => 'Name']) !!}
+                                                        {!! Form::label('name', 'Nombre') !!}
+                                                        {!! Form::text('name', $product->name, ['class' => 'form-control', 'placeholder' => 'Nombre']) !!}
                                                     </div>
                                                     <div class="form-group col-sm-6">
                                                         {!! Form::label('sku', 'SKU') !!}
@@ -52,41 +52,41 @@
                                                 </div>
                                                 <div class="row">
                                                     <div class="form-group col-sm-6">
-                                                        {!! Form::label('category_id', 'Category') !!}
+                                                        {!! Form::label('category_id', 'Categoría') !!}
                                                         <a data-toggle="modal" data-target="#new-category-modal" href="#" id="new_category" class="pull-right">
-                                                            <span class="glyphicon glyphicon-plus"></span> Add Category
+                                                            <span class="glyphicon glyphicon-plus"></span> Agregar Categoría
                                                         </a>
                                                         {!! Form::select('category_id', $categories, $product->category_id, ['class' => 'form-control']) !!}
                                                     </div>
                                                     <div class="form-group col-sm-6">
-                                                        {!! Form::label('manufacturer_id', 'Manufacturer') !!}
+                                                        {!! Form::label('manufacturer_id', 'Fabricante') !!}
                                                         <a data-toggle="modal" data-target="#new-manufacturer-modal" href="#" id="new_manufacturer" class="pull-right">
-                                                            <span class="glyphicon glyphicon-plus"></span> Add Manufacturer
+                                                            <span class="glyphicon glyphicon-plus"></span> Agregar Fabricante
                                                         </a>
                                                         {!! Form::select('manufacturer_id', $manufacturers, $product->manufacturer->manufacturer_id, ['class' => 'form-control']) !!}
                                                     </div>
                                                 </div>
                                                 <div class="row">
                                                     <div class="form-group col-sm-6">
-                                                        {!! Form::label('price', 'Price') !!}
-                                                        {!! Form::text('price', $product->price, ['class' => 'form-control', 'placeholder' => 'Price']) !!}
+                                                        {!! Form::label('price', 'Precio') !!}
+                                                        {!! Form::text('price', $product->price, ['class' => 'form-control', 'placeholder' => 'Precio']) !!}
                                                     </div>
                                                     <div class="form-group col-sm-6">
-                                                        {!! Form::label('sale_price', 'Sale Price') !!}
-                                                        {!! Form::text('sale_price', $product->sale_price, ['class' => 'form-control', 'placeholder' => 'No Sale']) !!}
+                                                        {!! Form::label('sale_price', 'Precio de Venta') !!}
+                                                        {!! Form::text('sale_price', $product->sale_price, ['class' => 'form-control', 'placeholder' => 'Precio de Venta']) !!}
                                                     </div>
                                                 </div>
                                                 <div class="row">
                                                     <div class="form-group col-sm-6">
-                                                        {!! Form::label('shipping_cost', 'Shipping Cost') !!}
-                                                        {!! Form::text('shipping_cost', $product->shipping_cost, ['class' => 'form-control', 'placeholder' => 'Shipping Cost']) !!}
+                                                        {!! Form::label('shipping_cost', 'Costo de Envío') !!}
+                                                        {!! Form::text('shipping_cost', $product->shipping_cost, ['class' => 'form-control', 'placeholder' => 'Costo de Envío']) !!}
                                                     </div>
                                                     <div class="form-group col-sm-6">
-                                                        {!! Form::label('tax_id', 'Tax Rate') !!}
+                                                        {!! Form::label('tax_id', 'Tasa de impuesto') !!}
                                                         <a data-toggle="modal" data-target="#new-tax-modal" href="#" id="new_tax_rate" class="pull-right">
-                                                            <span class="glyphicon glyphicon-plus"></span> Add Tax Rate
+                                                            <span class="glyphicon glyphicon-plus"></span> Agregar Tasa
                                                         </a>
-                                                        {!! Form::select('tax_id', $tax, $product->tax, ['class' => 'form-control', 'placeholder' => 'Tax Rate']) !!}
+                                                        {!! Form::select('tax_id', $tax, $product->tax, ['class' => 'form-control', 'placeholder' => 'Tasa de impuesto']) !!}
                                                     </div>
                                                 </div>
                                             </div>
@@ -102,7 +102,7 @@
                                         <div class="col-sm-12">
                                             <div class="row">
                                                 <div class="col-sm-12">
-                                                    <label id="imgUploadLabel">Images</label>
+                                                    <label id="imgUploadLabel">Imagenes</label>
                                                     <div aria-labelledby="#imgUploadLabel" id="productImgUpload"></div>
                                                 </div>
                                             </div>
@@ -113,11 +113,11 @@
                                                         <a class="thumbnail">
                                                             <img src="{{ $image->image_path }}" />
                                                         </a>
-                                                        <a class="btn btn-danger pull-right" data-toggle="modal" data-href="/admin/products/images/{{ $image->image_id }}" data-target="#delete-image-confirm"><span class="glyphicon  glyphicon glyphicon-remove"></span> Delete</a>
+                                                        <a class="btn btn-danger pull-right" data-toggle="modal" data-href="/admin/products/images/{{ $image->image_id }}" data-target="#delete-image-confirm"><span class="glyphicon  glyphicon glyphicon-remove"></span> Borrar</a>
                                                     </div>
                                                 @empty
                                                     <div class="col-sm-12">
-                                                        <h4 class="text-center">No Images Found</h4>
+                                                        <h4 class="text-center">No se encontraron imagenes</h4>
                                                     </div>
                                                 @endforelse
                                             </div>
@@ -130,14 +130,14 @@
                                     <div class="panel-body">
                                         <div class="row">
                                             <div class="form-group col-sm-12">
-                                                {!! Form::label('short_desc', 'Short Description') !!}
-                                                {!! Form::textarea('short_desc', $product->short_desc, ['class' => 'form-control', 'placeholder' => 'Short Description']) !!}
+                                                {!! Form::label('short_desc', 'Descripción Corta') !!}
+                                                {!! Form::textarea('short_desc', $product->short_desc, ['class' => 'form-control', 'placeholder' => 'Descripción Corta']) !!}
                                             </div>
                                         </div>
                                         <div class="row">
                                             <div class="form-group col-sm-12">
-                                                {!! Form::label('long_desc', 'Long Description') !!}
-                                                {!! Form::textarea('long_desc', $product->long_desc, ['class' => 'form-control', 'placeholder' => 'Long Description']) !!}
+                                                {!! Form::label('long_desc', 'Descripción Larga') !!}
+                                                {!! Form::textarea('long_desc', $product->long_desc, ['class' => 'form-control', 'placeholder' => 'Descripción Larga']) !!}
                                             </div>
                                         </div>
                                     </div>
@@ -150,16 +150,16 @@
                                     <div class="panel-body">
                                         <div class="row">
                                             <div class="form-group col-sm-4">
-                                                {!! Form::label('units_sold', 'Units Sold') !!}
-                                                {!! Form::input('number', 'units_sold', $product->units_sold, ['class' => 'form-control', 'placeholder' => 'Units Sold']) !!}
+                                                {!! Form::label('units_sold', 'Unidades Vendidas') !!}
+                                                {!! Form::input('number', 'units_sold', $product->units_sold, ['class' => 'form-control', 'placeholder' => 'Unidades Vendidas']) !!}
                                             </div>
                                             <div class="form-group col-sm-4">
-                                                {!! Form::label('number_available', 'In Stock') !!}
-                                                {!! Form::input('number', 'number_available', $product->number_available, ['class' => 'form-control', 'placeholder' => 'In Stock']) !!}
+                                                {!! Form::label('number_available', 'En Stock') !!}
+                                                {!! Form::input('number', 'number_available', $product->number_available, ['class' => 'form-control', 'placeholder' => 'En Stock']) !!}
                                             </div>
                                             <div class="form-group col-sm-4">
-                                                {!! Form::label('active', 'Active') !!}
-                                                {!! Form::select('active', ['0' => 'No', '1' => 'Yes'], $product->active, ['class' => 'form-control']) !!}
+                                                {!! Form::label('active', 'Activo') !!}
+                                                {!! Form::select('active', ['0' => 'No', '1' => 'Si'], $product->active, ['class' => 'form-control']) !!}
                                             </div>
                                         </div>
                                     </div>
@@ -169,7 +169,7 @@
                         <div class="row">
                             <div class="col-sm-12">
                                 <div>
-                                    {!! Form::submit('Save Product', ['class' => 'btn btn-primary btn-block']) !!}
+                                    {!! Form::submit('Guardar Producto', ['class' => 'btn btn-primary btn-block']) !!}
                                 </div>
                             </div>
                             {!! Form::close() !!}

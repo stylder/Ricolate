@@ -1,16 +1,16 @@
 @extends('admin.layouts.admin-main')
 
 @section('title')
-    @parent Products
+    @parent Productos
 @stop
 
 @section('content')
     <div class="container">
         <div class="row">
             <div class="col-sm-12">
-                <h1 class="inline">Products</h1>
+                <h1 class="inline">Productos</h1>
                 <a href="/admin/products/create" class="btn btn-primary pull-right">
-                    <span class="glyphicon glyphicon-plus"></span> <h6 class="inline">Add Product</h6>
+                    <span class="glyphicon glyphicon-plus"></span> <h6 class="inline">Agregar Producto</h6>
                 </a>
             </div>
         </div>
@@ -22,12 +22,12 @@
                             <thead>
                             <tr>
                                 <th class="col-sm-2">SKU</th>
-                                <th class="col-sm-2">Name</th>
-                                <th class="col-sm-2">Manufacturer</th>
-                                <th class="col-sm-2">Category</th>
-                                <th class="col-sm-1">Price</th>
+                                <th class="col-sm-2">Nombre</th>
+                                <th class="col-sm-2">Fabricante</th>
+                                <th class="col-sm-2">Categoría</th>
+                                <th class="col-sm-1">Precio</th>
                                 <th class="col-sm-1">#</th>
-                                <th class="col-sm-2">Actions</th>
+                                <th class="col-sm-2">Acciones</th>
                             </tr>
                             </thead>
                             <tbody>
@@ -52,16 +52,16 @@
                                         {{ $product->number_available }}
                                     </td>
                                     <td class="order-action-icons">
-                                        <a class="btn btn-danger" data-toggle="modal" data-href="/admin/products/{{ $product->product_id }}" data-target="#delete-confirm"><span class="glyphicon  glyphicon glyphicon-remove"></span> Delete</a>
+                                        <a class="btn btn-danger" data-toggle="modal" data-href="/admin/products/{{ $product->product_id }}" data-target="#delete-confirm"><span class="glyphicon  glyphicon glyphicon-remove"></span> Eliminar</a>
                                         <a href="/admin/products/{{ $product->product_id }}/edit" class="order-edit btn btn-info">
-                                            <span class="glyphicon  glyphicon glyphicon-pencil"></span> Edit
+                                            <span class="glyphicon  glyphicon glyphicon-pencil"></span> Editar
                                         </a>
                                     </td>
                                 </tr>
                             @empty
                                 <tr>
                                     <td colspan="7">
-                                        <h1 class="text-center">There are no products!</h1>
+                                        <h1 class="text-center">No hay productos!</h1>
                                     </td>
                                 </tr>
                             @endforelse
@@ -72,10 +72,11 @@
                                 <div class="modal-content">
                                     <div class="modal-header">
                                         <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                                        <h4 class="confirmHead">Confirm Delete?</h4>
+                                        <h4 class="confirmHead">
+¿Confirmar eliminación??</h4>
                                     </div>
                                     <div class="modal-body">
-                                        <p>Are you sure that you want to delete this product?</p>
+                                        <p>¿Estás seguro de que quieres eliminar este producto?</p>
                                     </div>
                                     <div class="modal-footer">
                                         {!! Form::open(['method' => 'DELETE']) !!}
