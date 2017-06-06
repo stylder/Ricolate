@@ -57,6 +57,31 @@ class HomeController extends Controller {
 	}
     public function index2()
     {
-        return view('frontend.layouts.main');
+        //Get the slideshow
+        try {
+            $slideshow = Cache::rememberForever('slides', function()
+            {
+                return $this->_slideshow->getSlideshow(1);
+            });
+        } catch(Exception $e)
+        {
+            $slideshow = null;
+        }
+
+        //Get the list of sale products
+        try {
+            $saleList = Cache::rememberForever('sale-products-home', function()
+            {
+                return $this->_product->getHomePageSaleList();
+            });
+        }catch(Exception $e)
+        {
+            $saleList = null;
+        }
+
+        return view('frontend.home')
+            ->withSlides($slideshow)
+            ->withSales($saleList);
+        
     }
 }
