@@ -10,7 +10,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
     <meta name="HandheldFriendly" content="true"/>
     <meta name="MobileOptimized" content="320"/>
-    <title>fooCart - @yield('title', 'Welcome')</title>
+    <title>Ricolate - @yield('title', 'Welcome')</title>
     <meta name="description" content="" />
     <meta name="keywords" content="" />
     <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css" rel="stylesheet">
