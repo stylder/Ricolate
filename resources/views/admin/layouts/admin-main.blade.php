@@ -76,7 +76,7 @@
                         </ul>
                     </li>
                     <li class="{{ ( Route::getCurrentRoute()->getPath() === 'admin/messages' ) ? 'active' : NULL }}">
-                        <a href="/admin/messages">Messages</a>
+                        <a href="/admin/messages">Mensajes</a>
                     </li>
                 </ul>
                 @endif

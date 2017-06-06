@@ -1,14 +1,14 @@
 @extends('admin.layouts.admin-main')
 
 @section('title')
-    @parent Order Detail
+    @parent Detalle de Orden
 @stop
 
 @section('content')
     <div class="container">
         <div class="row">
             <div class="col-sm-12">
-                <h1>Order Detail</h1>
+                <h1>Detalle de Orden</h1>
             </div>
         </div>
         <div class="row">
@@ -21,7 +21,7 @@
                                     <div class="col-sm-4">
                                         <div class="panel panel-default">
                                             <div class="panel-body">
-                                                <h4>Address</h4>
+                                                <h4>Dirección</h4>
                                                 <p>{{ $order->customer->first_name }} {{ $order->customer->last_name }} <br />
                                                     {{ $order->customer->addr_street_1 }} <br />
                                                     @if(!empty($order->customer->addr_street_2))
@@ -35,7 +35,7 @@
                                     <div class="col-sm-4">
                                         <div class="panel panel-default">
                                             <div class="panel-body">
-                                                <h4>Order Date</h4>
+                                                <h4>Fecha de Orden</h4>
                                                 <p>
                                                     {{ $order->getFormattedCreatedAt() }}
                                                 </p>
@@ -45,9 +45,9 @@
                                     <div class="col-sm-4">
                                         <div class="panel panel-default">
                                             <div class="panel-body">
-                                                <h4 id="order_status">Order Status</h4>
+                                                <h4 id="order_status">Estado de Orden</h4>
                                                 {!! Form::open(['method' => 'PUT', 'route' => ['admin.orders.update', $order->order_id],  'id' => 'status-form']) !!}
-                                                {!! Form::select('status', ['Shipped' => 'Shipped', 'Paid' => 'Paid', 'Cancelled' => 'Cancelled'], $order->status, ['class' => 'form-control']) !!}
+                                                {!! Form::select('status', ['Shipped' => 'Enviado', 'Paid' => 'Pagado', 'Cancelled' => 'Cancelado'], $order->status, ['class' => 'form-control']) !!}
                                                 <br />
                                                 <button type="submit" class="btn btn-primary pull-right" aria-label="Save Changes">
                                                     <span class="glyphicon glyphicon-floppy-disk" aria-hidden="true"></span> Save
@@ -65,9 +65,9 @@
                                     <thead>
                                     <tr>
                                         <th class="col-sm-3">SKU</th>
-                                        <th class="col-sm-4">Product</th>
-                                        <th class="col-sm-2">Price</th>
-                                        <th class="col-sm-1">Qty</th>
+                                        <th class="col-sm-4">Producto</th>
+                                        <th class="col-sm-2">Precio</th>
+                                        <th class="col-sm-1">Cantidad</th>
                                         <th class="col-sm-2">Total</th>
                                     </tr>
                                     </thead>
@@ -109,7 +109,7 @@
                                     </tr>
                                     <tr>
                                         <td>
-                                            <strong>Shipping</strong>
+                                            <strong>Envío</strong>
                                         </td>
                                         <td>
                                             ${{ number_format($order->shipping_total, 2) }}
@@ -117,7 +117,7 @@
                                     </tr>
                                     <tr>
                                         <td>
-                                            <strong>Tax</strong>
+                                            <strong>Impuesto</strong>
                                         </td>
                                         <td>
                                             ${{ number_format($order->tax_total, 2) }}
