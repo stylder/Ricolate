@@ -56,7 +56,7 @@
         for(var e in editProduct.errors)
         {
             error += '<li>';
-            error += 'The ' + editProduct.errors[e] + ' field is required.';
+            error += 'The ' + editProduct.errors[e] + ' campo requerido.';
             error += '</li>';
         }
 

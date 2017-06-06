@@ -3,22 +3,22 @@
         <div class="modal-content">
             {!! Form::open(['route' => 'admin.products.categories.store', 'id' => 'category-form', 'class' => 'modal-form']) !!}
             <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                <h4 class="modal-title">Add Category</h4>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Cerrar"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title">Agregar Categoría</h4>
             </div>
             <div class="modal-body">
                 <div class="row">
                     <div class="col-sm-12">
                         <div class="form-group">
-                            {!! Form::label('category', 'Category') !!}
-                            {!! Form::text('category', null, ['class' => 'form-control add', 'placeholder' => 'Category', 'id' => 'category']) !!}
+                            {!! Form::label('category', 'Categoría') !!}
+                            {!! Form::text('category', null, ['class' => 'form-control add', 'placeholder' => 'Categoría', 'id' => 'category']) !!}
                         </div>
                     </div>
                 </div>
                 <div class="row">
                     <div class="col-sm-12">
                         <div class="form-group">
-                            {!! Form::submit('Add', ['class' => 'btn btn-primary btn-block submit-modal', 'id' => 'category-submit']) !!}
+                            {!! Form::submit('Agregar', ['class' => 'btn btn-primary btn-block submit-modal', 'id' => 'category-submit']) !!}
                         </div>
                     </div>
                 </div>

@@ -8,7 +8,7 @@
             <div class="modal-body">
                 <div class="row">
                     <div class="col-sm-12 alert alert-danger">
-                        <p>An error has occurred!</p>
+                        <p>¡Se ha producido un error!</p>
                     </div>
                 </div>
             </div>

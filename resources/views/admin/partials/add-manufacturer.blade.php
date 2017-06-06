@@ -3,22 +3,22 @@
         <div class="modal-content">
             {!! Form::open(['route' => 'admin.products.manufacturers.store', 'id' => 'new-manufacturer-form', 'class' => 'modal-form']) !!}
             <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                <h4 class="modal-title">Add Manufacturer</h4>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Cerrar"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title">Agregar Fabricante</h4>
             </div>
             <div class="modal-body">
                 <div class="row">
                     <div class="col-sm-12">
                         <div class="form-group">
-                            {!! Form::label('manufacturer', 'Manufacturer') !!}
-                            {!! Form::text('manufacturer', null, ['class' => 'form-control add', 'placeholder' => 'Manufacturer Name', 'id' => 'manufacturer-name']) !!}
+                            {!! Form::label('manufacturer', 'Fabricante') !!}
+                            {!! Form::text('manufacturer', null, ['class' => 'form-control add', 'placeholder' => 'Nombre de Fabricante', 'id' => 'manufacturer-name']) !!}
                         </div>
                     </div>
                 </div>
                 <div class="row">
                     <div class="col-sm-12">
                         <div class="form-group">
-                            {!! Form::submit('Add', ['class' => 'btn btn-primary btn-block submit-modal', 'id' => 'new-manufacturer-submit']) !!}
+                            {!! Form::submit('Agregar', ['class' => 'btn btn-primary btn-block submit-modal', 'id' => 'new-manufacturer-submit']) !!}
                         </div>
                     </div>
                 </div>

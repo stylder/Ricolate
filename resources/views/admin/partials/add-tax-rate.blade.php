@@ -3,14 +3,14 @@
         <div class="modal-content">
             {!! Form::open(['route' => 'admin.products.tax.store', 'id' => 'tax-rate-form', 'class' => 'modal-form']) !!}
             <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                <h4 class="modal-title">Add Tax Rate</h4>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Cerrar"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title">Agregar Tasa de Impuesto</h4>
             </div>
             <div class="modal-body">
                 <div class="row">
                     <div class="col-sm-12">
                         <div class="form-group">
-                            {!! Form::label('tax', 'Tax Rate') !!}
+                            {!! Form::label('tax', 'Tasa de impuesto') !!}
                             {!! Form::text('tax', null, ['class' => 'form-control add', 'placeholder' => '0.123', 'id' => 'tax-rate']) !!}
                         </div>
                     </div>
@@ -18,7 +18,7 @@
                 <div class="row">
                     <div class="col-sm-12">
                         <div class="form-group">
-                            {!! Form::submit('Add', ['class' => 'btn btn-primary btn-block submit-modal', 'id' => 'tax-rate-submit']) !!}
+                            {!! Form::submit('Agregar', ['class' => 'btn btn-primary btn-block submit-modal', 'id' => 'tax-rate-submit']) !!}
                         </div>
                     </div>
                 </div>
