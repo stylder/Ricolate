@@ -203,13 +203,12 @@ class SlideshowController extends Controller {
         $filePath = public_path() . $slide->image_path;
 
         try {
-            DB::beginTransaction();
+
             unlink($filePath);
             $slide->delete();
-            DB::commit();
+
         } catch(Exception $e)
         {
-            DB::rollback();
             return redirect('admin/slideshow');
         }
 
