@@ -11,7 +11,7 @@
                     <ul class="list-inline overflow-h">
                         <li><h4 class="title-price"><a href="shop-ui-inner.html">{{name}}</a></h4></li>
                         <li><span class="gender text-uppercase">{{manufacturer.manufacturer}}</span></li>
-                       
+
                     </ul>
                     <div class="margin-bottom-10">
                         <span class="title-price margin-right-10">${{price}}</span>

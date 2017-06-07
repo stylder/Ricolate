@@ -134,8 +134,8 @@
             <div class="col-md-9">
                 <div class="row margin-bottom-5">
                     <div class="col-sm-4 result-category">
-                        <h2>Men</h2>
-                        <small class="shop-bg-red badge-results">45 Results</small>
+                        <h2>{{count($products)}}</h2>
+                        <small class="shop-bg-red badge-results"> Resultados</small>
                     </div>
                     <div class="col-sm-8">
                         <ul class="list-inline clear-both">
@@ -143,33 +143,17 @@
                                 <a href="shop-ui-filter-list.html"><i class="fa fa-th-list"></i></a>
                                 <a href="shop-ui-filter-grid.html"><i class="fa fa-th"></i></a>
                             </li>
+
                             <li class="sort-list-btn">
-                                <h3>Sort By :</h3>
-                                <div class="btn-group">
-                                    <button type="button" class="btn btn-default dropdown-toggle"
-                                            data-toggle="dropdown">
-                                        Popularity <span class="caret"></span>
+                                <div class="dropdown  filter-right "><h3>Mostrar :</h3>
+                                    <button class="btn btn-default dropdown-toggle btn-prod-count" type="button" id="sort-by" data-toggle="dropdown" aria-expanded="true">
+                                        <span class="results-count-dropdown">10</span>
+                                        <span class="caret"></span>
                                     </button>
-                                    <ul class="dropdown-menu" role="menu">
-                                        <li><a href="#">All</a></li>
-                                        <li><a href="#">Best Sales</a></li>
-                                        <li><a href="#">Top Last Week Sales</a></li>
-                                        <li><a href="#">New Arrived</a></li>
-                                    </ul>
-                                </div>
-                            </li>
-                            <li class="sort-list-btn">
-                                <h3>Show :</h3>
-                                <div class="btn-group">
-                                    <button type="button" class="btn btn-default dropdown-toggle"
-                                            data-toggle="dropdown">
-                                        20 <span class="caret"></span>
-                                    </button>
-                                    <ul class="dropdown-menu" role="menu">
-                                        <li><a href="#">All</a></li>
-                                        <li><a href="#">10</a></li>
-                                        <li><a href="#">5</a></li>
-                                        <li><a href="#">3</a></li>
+                                    <ul class="dropdown-menu filter-menu-right ul-prod-count" role="menu" aria-labelledby="sort-by">
+                                        <li role="presentation"><a role="menuitem" tabindex="-1" href="#">10</a></li>
+                                        <li role="presentation"><a role="menuitem" tabindex="-1" href="#">25</a></li>
+                                        <li role="presentation"><a role="menuitem" tabindex="-1" href="#">50</a></li>
                                     </ul>
                                 </div>
                             </li>
@@ -227,12 +211,17 @@
                     </div><!--/end filter resilts-->
 
                     <div class="text-center">
-                        <ul class="pagination pagination-v2">
-                            <li><a href="#"><i class="fa fa-angle-left"></i></a></li>
-                            <li><a href="#">1</a></li>
-                            <li class="active"><a href="#">2</a></li>
-                            <li><a href="#">3</a></li>
-                            <li><a href="#"><i class="fa fa-angle-right"></i></a></li>
+                        <ul class="shop-pagination pagination  pagination-v2 pagination-md">
+                            <li>
+                                <a class="prev" aria-label="Previous" href="#">
+                                    <span aria-hidden="true">«</span>
+                                </a>
+                            </li>
+                            <li class="pag-last">
+                                <a class="next" aria-label="Next" href="#">
+                                    <span aria-hidden="true">»</span>
+                                </a>
+                            </li>
                         </ul>
                     </div><!--/end pagination-->
                 </div>
