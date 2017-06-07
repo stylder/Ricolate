@@ -33,6 +33,20 @@
                                         <div class="panel-body">
                                             <div class="row">
                                                 <div class="col-sm-12">
+                                                    {!! Form::label('href', 'Titulo') !!}
+                                                    {!! Form::text('titulo', $slide->titulo, ['class' => 'form-control', 'id' => 'slide-link-' . $slide->slide_id ,'placeholder' => 'Titulo']) !!}
+                                                </div>
+                                            </div>
+
+                                            <div class="row">
+                                                <div class="col-sm-12">
+                                                    {!! Form::label('href', 'Descripcion') !!}
+                                                    {!! Form::textarea('descripcion', $slide->descripcion, ['class' => 'form-control', 'id' => 'slide-link-' . $slide->slide_id ,'placeholder' => 'Descripción']) !!}
+                                                </div>
+                                            </div>
+
+                                            <div class="row">
+                                                <div class="col-sm-12">
                                                     {!! Form::label('href', 'Link') !!}
                                                     {!! Form::text('href', $slide->href, ['class' => 'form-control', 'id' => 'slide-link-' . $slide->slide_id ,'placeholder' => 'http://www.ricolate.com']) !!}
                                                 </div>

@@ -160,6 +160,9 @@ class SlideshowController extends Controller {
                 $slide->href = "http://" . $slide->href;
             }
 
+            $slide->titulo = $this->_request->input('titulo');
+            $slide->descripcion = $this->_request->input('descripcion');
+
             $slide->sequence = $this->_request->input('sequence');
             $slide->active = $this->_request->input('active');
             $slide->save();
@@ -207,10 +210,7 @@ class SlideshowController extends Controller {
         } catch(Exception $e)
         {
             DB::rollback();
-            return response()->json([
-                'status' => 'error',
-                'message' => $this->_errorMessage
-            ]);
+            return redirect('admin/slideshow');
         }
 
         //Reset the cache

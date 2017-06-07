@@ -18,6 +18,8 @@ class CreateSlidesTable extends Migration {
             $table->integer('slideshow_id')->unsigned()->index();
             $table->foreign('slideshow_id')->references('slideshow_id')->on('slideshows')->onDelete('cascade');
             $table->string('href')->nullable();
+            $table->string('titulo')->nullable();
+            $table->string('descripcion')->nullable();
             $table->integer('sequence')->nullable();
             $table->string('image_path');
             $table->boolean('active');

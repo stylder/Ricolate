@@ -22,17 +22,7 @@
                         </div>
                         @endif
                         <div class="row">
-                            <div class="col-sm-4">
-                                <div class="alert alert-info">
-                                    <span><strong>Username:</strong> demo.user@justinc.me</span> <br />
-                                    <span><strong>Password:</strong> demo123</span>
-                                    <hr />
-                                    <p class="small">
-                                        * La aplicación se restablece periódicamente.
-                                    </p>
-                                </div>
-                            </div>
-                            <div class="col-sm-8">
+                            <div class="col-sm-12">
                                 <form class="form-horizontal" role="form" method="POST" action="/admin/login">
                                     <input type="hidden" name="_token" value="{{ csrf_token() }}">
                                     <div class="form-group col-md-12">
