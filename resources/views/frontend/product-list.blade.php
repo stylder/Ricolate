@@ -1,104 +1,249 @@
-@extends('public.layouts.main')
+@extends('frontend.layouts.main')
 
 @section('title')
     @parent {{ $title or 'Productos' }}
 @stop
 
 @section('content')
-    <div class="container">
-        <div class="row row-top-buffer">
-            <div class="col-sm-12">
-                <h1></h1>
-                <div class="panel panel-default">
-                    <div class="panel-body">
-                        <nav>
-                            <div class="row">
-                                <div class="col-sm-4 filter-left">
-                                    <div class="dropdown inline">
-                                        <button class="btn btn-default dropdown-toggle btn-cat-filter" type="button" id="filter-category" data-toggle="dropdown" aria-expanded="true">
-                                            <span class="filter-category-label">Categoría (Todas)</span>
-                                            <span class="caret"></span>
-                                        </button>
-                                        <ul id="categoryFilter" class="dropdown-menu" role="menu" aria-labelledby="filter-category">
-                                            <li role="presentation"><a role="menuitem" tabindex="-1">Categoría (Todas)</a></li>
-                                        </ul>
-                                    </div>
-                                    <div class="dropdown inline">
-                                        <button class="btn btn-default dropdown-toggle btn-man-filter" type="button" id="filter-manufacturer" data-toggle="dropdown" aria-expanded="true">
-                                            <span class="filter-manufacturer-label">Fabricantes (Todos)</span>
-                                            <span class="caret"></span>
-                                        </button>
-                                        <ul id="manufacturerFilter" class="dropdown-menu" role="menu" aria-labelledby="filter-manufacturer">
-                                            <li role="presentation"><a role="menuitem" tabindex="-1">Fabricantes (Todos)</a></li>
-                                        </ul>
-                                    </div>
-                                </div>
-                                <div class="col-sm-4 filter-center">
-                                    <ul class="shop-pagination pagination pagination-md">
-                                        <li>
-                                            <a class="prev" aria-label="Previous" href="#">
-                                                <span aria-hidden="true">«</span>
-                                            </a>
-                                        </li>
-                                        <li class="pag-last">
-                                            <a class="next" aria-label="Next" href="#">
-                                                <span aria-hidden="true">»</span>
-                                            </a>
-                                        </li>
+
+    <!--=== Breadcrumbs v4 ===-->
+    <div class="breadcrumbs-v4">
+        <div class="container">
+            <span class="page-name">Productos</span>
+            <h1>Maecenas <span class="shop-green">enim</span> sapien</h1>
+            <ul class="breadcrumb-v4-in">
+                <li><a href="/">Home</a></li>
+                <li class="active">Productos</li>
+            </ul>
+        </div><!--/end container-->
+    </div>
+    <!--=== End Breadcrumbs v4 ===-->
+
+    <!--=== Content Part ===-->
+    <div class="content container">
+        <div class="row">
+            <div class="col-md-3 filter-by-block md-margin-bottom-60">
+                <h1>Filtrar por</h1>
+                <div class="panel-group" id="accordion">
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            <h2 class="panel-title">
+                                <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne">
+                                    Categoría
+                                    <i class="fa fa-angle-down"></i>
+                                </a>
+                            </h2>
+                        </div>
+                        <div id="collapseOne" class="panel-collapse collapse in">
+                            <div class="panel-body">
+                                <ul class="list-unstyled checkbox-list">
+                                    <li>
+                                        <label class="checkbox">
+                                            <input type="checkbox" name="checkbox" checked/>
+                                            <i></i>
+                                            Calvin Klein
+                                            <small><a href="#">(23)</a></small>
+                                        </label>
+                                    </li>
+                                    <li>
+                                        <label class="checkbox">
+                                            <input type="checkbox" name="checkbox" checked/>
+                                            <i></i>
+                                            Gucci
+                                            <small><a href="#">(4)</a></small>
+                                        </label>
+                                    </li>
+                                    <li>
+                                        <label class="checkbox">
+                                            <input type="checkbox" name="checkbox"/>
+                                            <i></i>
+                                            Adidas
+                                            <small><a href="#">(11)</a></small>
+                                        </label>
+                                    </li>
+                                    <li>
+                                        <label class="checkbox">
+                                            <input type="checkbox" name="checkbox"/>
+                                            <i></i>
+                                            Puma
+                                            <small><a href="#">(3)</a></small>
+                                        </label>
+                                    </li>
+                                    <li>
+                                        <label class="checkbox">
+                                            <input type="checkbox" name="checkbox"/>
+                                            <i></i>
+                                            Zara
+                                            <small><a href="#">(87)</a></small>
+                                        </label>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div><!--/end panel group-->
+
+                <div class="panel-group" id="accordion-v2">
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            <h2 class="panel-title">
+                                <a data-toggle="collapse" data-parent="#accordion-v2" href="#collapseTwo">
+                                    Fabricante
+                                    <i class="fa fa-angle-down"></i>
+                                </a>
+                            </h2>
+                        </div>
+                        <div id="collapseTwo" class="panel-collapse collapse in">
+                            <div class="panel-body">
+                                <ul class="list-unstyled checkbox-list">
+                                    <li>
+                                        <label class="checkbox">
+                                            <input type="checkbox" name="checkbox" checked/>
+                                            <i></i>
+                                            Clothes
+                                            <small><a href="#">(23)</a></small>
+                                        </label>
+                                    </li>
+                                    <li>
+                                        <label class="checkbox">
+                                            <input type="checkbox" name="checkbox" checked/>
+                                            <i></i>
+                                            Glasses
+                                            <small><a href="#">(4)</a></small>
+                                        </label>
+                                    </li>
+                                    <li>
+                                        <label class="checkbox">
+                                            <input type="checkbox" name="checkbox"/>
+                                            <i></i>
+                                            Shoes
+                                            <small><a href="#">(11)</a></small>
+                                        </label>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div><!--/end panel group-->
+
+
+                <button type="button" class="btn-u btn-brd btn-brd-hover btn-u-lg btn-u-sea-shop btn-block">Reset
+                </button>
+            </div>
+
+            <div class="col-md-9">
+                <div class="row margin-bottom-5">
+                    <div class="col-sm-4 result-category">
+                        <h2>Men</h2>
+                        <small class="shop-bg-red badge-results">45 Results</small>
+                    </div>
+                    <div class="col-sm-8">
+                        <ul class="list-inline clear-both">
+                            <li class="grid-list-icons">
+                                <a href="shop-ui-filter-list.html"><i class="fa fa-th-list"></i></a>
+                                <a href="shop-ui-filter-grid.html"><i class="fa fa-th"></i></a>
+                            </li>
+                            <li class="sort-list-btn">
+                                <h3>Sort By :</h3>
+                                <div class="btn-group">
+                                    <button type="button" class="btn btn-default dropdown-toggle"
+                                            data-toggle="dropdown">
+                                        Popularity <span class="caret"></span>
+                                    </button>
+                                    <ul class="dropdown-menu" role="menu">
+                                        <li><a href="#">All</a></li>
+                                        <li><a href="#">Best Sales</a></li>
+                                        <li><a href="#">Top Last Week Sales</a></li>
+                                        <li><a href="#">New Arrived</a></li>
                                     </ul>
                                 </div>
+                            </li>
+                            <li class="sort-list-btn">
+                                <h3>Show :</h3>
+                                <div class="btn-group">
+                                    <button type="button" class="btn btn-default dropdown-toggle"
+                                            data-toggle="dropdown">
+                                        20 <span class="caret"></span>
+                                    </button>
+                                    <ul class="dropdown-menu" role="menu">
+                                        <li><a href="#">All</a></li>
+                                        <li><a href="#">10</a></li>
+                                        <li><a href="#">5</a></li>
+                                        <li><a href="#">3</a></li>
+                                    </ul>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div><!--/end result category-->
+
+                <div class="filter-results">
+                    <div id="product-content">
+
+                        {{--<div class="list-product-description product-description-brd margin-bottom-30">
+                            <div class="row">
                                 <div class="col-sm-4">
-                                    <div class="row">
-                                        <div class="col-sm-12">
-                                            <div class="dropdown  filter-right ">Resultados:
-                                                <button class="btn btn-default dropdown-toggle btn-prod-count" type="button" id="sort-by" data-toggle="dropdown" aria-expanded="true">
-                                                    <span class="results-count-dropdown">10</span>
-                                                    <span class="caret"></span>
-                                                </button>
-                                                <ul class="dropdown-menu filter-menu-right ul-prod-count" role="menu" aria-labelledby="sort-by">
-                                                    <li role="presentation"><a role="menuitem" tabindex="-1" href="#">10</a></li>
-                                                    <li role="presentation"><a role="menuitem" tabindex="-1" href="#">25</a></li>
-                                                    <li role="presentation"><a role="menuitem" tabindex="-1" href="#">50</a></li>
+                                    <a href="shop-ui-inner.html"><img class="img-responsive sm-margin-bottom-20"
+                                                                      src="assets/img/blog/17.jpg" alt=""></a>
+                                </div>
+                                <div class="col-sm-8 product-description">
+                                    <div class="overflow-h margin-bottom-5">
+                                        <ul class="list-inline overflow-h">
+                                            <li><h4 class="title-price"><a href="shop-ui-inner.html">Double-breasted</a>
+                                                </h4></li>
+                                            <li><span class="gender text-uppercase">Men</span></li>
+                                            <li class="pull-right">
+                                                <ul class="list-inline product-ratings">
+                                                    <li><i class="rating-selected fa fa-star"></i></li>
+                                                    <li><i class="rating-selected fa fa-star"></i></li>
+                                                    <li><i class="rating-selected fa fa-star"></i></li>
+                                                    <li><i class="rating fa fa-star"></i></li>
+                                                    <li><i class="rating fa fa-star"></i></li>
                                                 </ul>
-                                            </div>
+                                            </li>
+                                        </ul>
+                                        <div class="margin-bottom-10">
+                                            <span class="title-price margin-right-10">$60.00</span>
+                                            <span class="title-price line-through">$95.00</span>
                                         </div>
+                                        <p class="margin-bottom-20">Lorem ipsum dolor sit amet, consectetur adipiscing
+                                            elit. Maecenas sollicitudin erat nec ornarevolu tpat. Etiam ut felis nec
+                                            nisl eleifend lobortis. Aenean nibh est, hendrerit non conva.</p>
+                                        <ul class="list-inline add-to-wishlist margin-bottom-20">
+                                            <li class="wishlist-in">
+                                                <i class="fa fa-heart"></i>
+                                                <a href="#">Add to Wishlist</a>
+                                            </li>
+                                            <li class="compare-in">
+                                                <i class="fa fa-exchange"></i>
+                                                <a href="#">Add to Compare</a>
+                                            </li>
+                                        </ul>
+                                        <button type="button" class="btn-u btn-u-sea-shop">Add to Cart</button>
                                     </div>
                                 </div>
                             </div>
-                        </nav>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="row" id="product-content">
+                        </div>--}}
+                    </div><!--/end filter resilts-->
 
-        </div>
-        <div class="row">
-            <div class="col-sm-12 text-center">
-                <div class="panel panel-default">
-                    <div class="panel-body">
-                        <nav>
-                            <ul class="shop-pagination pagination pagination-md">
-                                <li>
-                                    <a class="prev" aria-label="Previous" href="#">
-                                        <span aria-hidden="true">«</span>
-                                    </a>
-                                </li>
-                                <li class="pag-last">
-                                    <a class="next" aria-label="Next" href="#">
-                                        <span aria-hidden="true">»</span>
-                                    </a>
-                                </li>
-                            </ul>
-                        </nav>
-                    </div>
+                    <div class="text-center">
+                        <ul class="pagination pagination-v2">
+                            <li><a href="#"><i class="fa fa-angle-left"></i></a></li>
+                            <li><a href="#">1</a></li>
+                            <li class="active"><a href="#">2</a></li>
+                            <li><a href="#">3</a></li>
+                            <li><a href="#"><i class="fa fa-angle-right"></i></a></li>
+                        </ul>
+                    </div><!--/end pagination-->
                 </div>
-            </div>
-        </div>
+            </div><!--/end row-->
+        </div><!--/end container-->
+        <!--=== End Content Part ===-->
     </div>
+
 @stop
-@section('footer')
-    @include('public.partials.product-template')
+@section('scripts')
+    @include('frontend.partials.product-template')
     <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/3.0.1/handlebars.min.js"></script>
     <script>
         var productList = window.productList || {};
@@ -116,13 +261,10 @@
          * Apply the product-per page filter.
          * Re-render the page.
          */
-        productList.pagination.setProdPerPage = function()
-        {
-            $('ul.ul-prod-count li a').click(function()
-            {
+        productList.pagination.setProdPerPage = function () {
+            $('ul.ul-prod-count li a').click(function () {
                 var count = $(this).text();
-                if(count != productList.pagination.prodPerPage)
-                {
+                if (count != productList.pagination.prodPerPage) {
                     productList.pagination.currentPage = 1;
                     productList.pagination.prodPerPage = count;
                     productList.pagination.setPages();
@@ -138,16 +280,12 @@
         /**
          * Handle pagination.
          */
-        productList.pagination.pageByNumber = function()
-        {
-            $('ul.shop-pagination li').each(function()
-            {
-                $(this).on('click', 'a', function()
-                {
+        productList.pagination.pageByNumber = function () {
+            $('ul.shop-pagination li').each(function () {
+                $(this).on('click', 'a', function () {
                     var page = $(this).text();
                     var parent = $(this).parent('li');
-                    if(!parent.hasClass("active") && !isNaN(page))
-                    {
+                    if (!parent.hasClass("active") && !isNaN(page)) {
                         productList.pagination.currentPage = page;
                         productList.renderPage();
                         productList.pagination.setActivePage();
@@ -159,14 +297,11 @@
         /**
          * Highlight the page link for the active page
          */
-        productList.pagination.setActivePage = function()
-        {
-            $('ul.shop-pagination li').each(function()
-            {
-                if($(this).find('a').text() == productList.pagination.currentPage)
-                {
+        productList.pagination.setActivePage = function () {
+            $('ul.shop-pagination li').each(function () {
+                if ($(this).find('a').text() == productList.pagination.currentPage) {
                     $(this).addClass("active");
-                }else{
+                } else {
                     $(this).removeClass("active");
                 }
             });
@@ -175,10 +310,8 @@
         /**
          * Handle forward (next) pagination navigation
          */
-        productList.pagination.pageForward = function()
-        {
-            if(productList.pagination.pageCount > productList.pagination.currentPage)
-            {
+        productList.pagination.pageForward = function () {
+            if (productList.pagination.pageCount > productList.pagination.currentPage) {
                 productList.pagination.currentPage++;
                 productList.renderPage();
                 productList.pagination.setActivePage();
@@ -188,10 +321,8 @@
         /**
          * Handle backward (previous) pagination navigation
          */
-        productList.pagination.pageBack = function()
-        {
-            if(productList.pagination.currentPage > 1)
-            {
+        productList.pagination.pageBack = function () {
+            if (productList.pagination.currentPage > 1) {
                 productList.pagination.currentPage--;
                 productList.renderPage();
                 productList.pagination.setActivePage();
@@ -201,34 +332,29 @@
         /**
          * Handle click event for next page button
          */
-        $('ul.shop-pagination').on('click', 'a.next', function()
-        {
+        $('ul.shop-pagination').on('click', 'a.next', function () {
             productList.pagination.pageForward();
         });
 
         /**
          * Handle click event for previous page button
          */
-        $('ul.shop-pagination').on('click', 'a.prev', function()
-        {
+        $('ul.shop-pagination').on('click', 'a.prev', function () {
             productList.pagination.pageBack();
         });
 
         /**
          * Set the pagination links when the page is rendered/re-rendered.
          */
-        productList.pagination.setPageLinks = function()
-        {
+        productList.pagination.setPageLinks = function () {
             $('li.pagiNav').remove();
             var navEnd = $('li.pag-last');
-            for(var p = 0; p < productList.pagination.pageCount; p++)
-            {
+            for (var p = 0; p < productList.pagination.pageCount; p++) {
                 var pagiNavClass = 'pagiNav';
-                if(productList.pagination.currentPage == (p+1))
-                {
+                if (productList.pagination.currentPage == (p + 1)) {
                     pagiNavClass += ' active';
                 }
-                var pagiHtml = '<li class="' + pagiNavClass + '"><a href="#">' + (p+1) + '</a></li>';
+                var pagiHtml = '<li class="' + pagiNavClass + '"><a href="#">' + (p + 1) + '</a></li>';
                 navEnd.before(pagiHtml);
             }
         };
@@ -236,8 +362,7 @@
         /**
          * Get the page count based on total products / products per page.
          */
-        productList.pagination.getPageCount = function()
-        {
+        productList.pagination.getPageCount = function () {
             var totModPages = (productList.getProductCount() % productList.pagination.prodPerPage);
             productList.pagination.pageCount = (totModPages > 0) ? (Math.floor(productList.getProductCount() / productList.pagination.prodPerPage) + 1) : Math.floor(productList.getProductCount() / productList.pagination.prodPerPage);
         };
@@ -245,8 +370,7 @@
         /**
          * Create the individual "pages" (assuming product count > product per page).
          */
-        productList.pagination.setPages = function()
-        {
+        productList.pagination.setPages = function () {
             //Determine which list to use (full or filtered)
             var f = productList.filters.checkFilters();
             var d = f ? productList.filters.filteredList : productList.Json;
@@ -254,20 +378,16 @@
             var page = 0;
             productList.pagination.getPageCount();
             //Create new pages
-            for(var i = 0; i <= productList.pagination.pageCount; i++)
-            {
+            for (var i = 0; i <= productList.pagination.pageCount; i++) {
                 productList.pagination.pages[i] = new Array();
             }
 
             //Add products to pages
-            for(var i = 0; i < productList.getProductCount(); i++)
-            {
-                if(counter < productList.pagination.prodPerPage)
-                {
+            for (var i = 0; i < productList.getProductCount(); i++) {
+                if (counter < productList.pagination.prodPerPage) {
                     productList.pagination.pages[page].push(d[i]);
                     counter++;
-                } else if(counter >= productList.pagination.prodPerPage)
-                {
+                } else if (counter >= productList.pagination.prodPerPage) {
                     counter = 0;
                     page++;
                     productList.pagination.pages[page].push(d[i]);
@@ -277,25 +397,24 @@
         };
 
         //Define the product container element
-        productList.container = $('div#product-content');
+        productList.container = $('#product-content');
         //Create product list object
         productList.Json = {!! $products !!};
+        console.log(">>>",productList.Json );
 
         /**
          * Handle the rendering of the page.
          */
-        productList.renderPage = function()
-        {
+        productList.renderPage = function () {
             //Set the page to 0 since it is currently set to the human readable integer 1.
             var page = productList.pagination.currentPage - 1;
             //Assign the first image in the array as the product image.
             //If no images exist for product, then assign placeholder image as primary image.
-            for(var p in productList.pagination.pages[page])
-            {
+            for (var p in productList.pagination.pages[page]) {
                 var img = productList.pagination.pages[page][p].images;
-                if(img[0] !== undefined) {
+                if (img[0] !== undefined) {
                     productList.pagination.pages[page][p].cover_photo = img[0]['image_path'];
-                }else {
+                } else {
                     productList.pagination.pages[page][p].cover_photo = 'http://placehold.it/221x221';
                 }
             }
@@ -327,10 +446,8 @@
          *
          * @returns {boolean}
          */
-        productList.filters.checkFilters = function()
-        {
-            if(productList.filters.catFilter !== 'Categoría (Todas)' || productList.filters.manFilter !== 'Fabricantes (Todos)')
-            {
+        productList.filters.checkFilters = function () {
+            if (productList.filters.catFilter !== 'Categoría (Todas)' || productList.filters.manFilter !== 'Fabricantes (Todos)') {
                 return true;
             }
             return false;
@@ -339,22 +456,17 @@
         /**
          * Apply the selected filter(s).
          */
-        productList.filters.applyFilters = function()
-        {
+        productList.filters.applyFilters = function () {
             //Create the filterdProducts array
             productList.filters.filteredList = new Array();
-            for(var p in productList.Json)
-            {
+            for (var p in productList.Json) {
                 productList.filters.filteredList.push(productList.Json[p]);
             }
             //Filter out categories
-            if(productList.filters.catFilter !== 'Categoría (Todas)')
-            {
+            if (productList.filters.catFilter !== 'Categoría (Todas)') {
                 //for(var f in productList.filters.filteredList)
-                for(var i = productList.filters.filteredList.length; i--;)
-                {
-                    if(productList.filters.filteredList[i].category.category != productList.filters.catFilter)
-                    {
+                for (var i = productList.filters.filteredList.length; i--;) {
+                    if (productList.filters.filteredList[i].category.category != productList.filters.catFilter) {
                         productList.filters.filteredList.splice(i, 1);
                     }
                 }
@@ -363,12 +475,9 @@
             /**
              * Handle filter by manufacturer.
              */
-            if(productList.filters.manFilter !== 'Fabricantes (Todos)')
-            {
-                for(var i = productList.filters.filteredList.length; i--;)
-                {
-                    if(productList.filters.filteredList[i].manufacturer.manufacturer != productList.filters.manFilter)
-                    {
+            if (productList.filters.manFilter !== 'Fabricantes (Todos)') {
+                for (var i = productList.filters.filteredList.length; i--;) {
+                    if (productList.filters.filteredList[i].manufacturer.manufacturer != productList.filters.manFilter) {
                         productList.filters.filteredList.splice(i, 1);
                     }
                 }
@@ -386,8 +495,7 @@
         /**
          * Handle category filter changes.
          */
-        $('ul#categoryFilter').on('click', 'a', function()
-        {
+        $('ul#categoryFilter').on('click', 'a', function () {
             var cat = $(this).text();
             $('span.filter-category-label').text(cat);
             productList.filters.catFilter = cat;
@@ -397,8 +505,7 @@
         /**
          * Handle manufacturer filter changes.
          */
-        $('ul#manufacturerFilter').on('click', 'a', function()
-        {
+        $('ul#manufacturerFilter').on('click', 'a', function () {
             var man = $(this).text();
             $('span.filter-manufacturer-label').text(man);
             productList.filters.manFilter = man;
@@ -408,14 +515,12 @@
         /**
          * Create a list of all manufacturers.
          */
-        productList.filters.getManufacturers = function()
-        {
+        productList.filters.getManufacturers = function () {
             var f = productList.filters.checkFilters();
             var d = f ? productList.filters.filteredList : productList.Json;
-            for(var p in d)
-            {
+            for (var p in d) {
                 var m = d[p].manufacturer.manufacturer;
-                if(productList.filters.manufacturers.indexOf(m) === -1) {
+                if (productList.filters.manufacturers.indexOf(m) === -1) {
                     productList.filters.manufacturers.push(m);
                 }
             }
@@ -424,10 +529,8 @@
         /**
          * Populate the manufacturer filter dropdown.
          */
-        productList.filters.genManufacturerFilter = function()
-        {
-            for(var m in productList.filters.manufacturers)
-            {
+        productList.filters.genManufacturerFilter = function () {
+            for (var m in productList.filters.manufacturers) {
                 var li = '<li role="presentation"><a role="menuitem" tabindex="-1">' + productList.filters.manufacturers[m] + '</a></li>';
                 $('ul#manufacturerFilter').append(li);
             }
@@ -436,16 +539,13 @@
         /**
          * Create a list of all categories.
          */
-        productList.filters.getCategories = function()
-        {
+        productList.filters.getCategories = function () {
             var f = productList.filters.checkFilters();
             var d = f ? productList.filters.filteredList : productList.Json;
-            for(var c in d)
-            {
+            for (var c in d) {
 
                 var c = d[c].category.category;
-                if(productList.filters.categories.indexOf(c) === -1)
-                {
+                if (productList.filters.categories.indexOf(c) === -1) {
                     productList.filters.categories.push(c);
                 }
             }
@@ -454,10 +554,8 @@
         /**
          * Populate the category list dropdown.
          */
-        productList.filters.genCategoryFilter = function()
-        {
-            for(var c in productList.filters.categories)
-            {
+        productList.filters.genCategoryFilter = function () {
+            for (var c in productList.filters.categories) {
                 var li = '<li role="presentation"><a role="menuitem" tabindex="-1"">' + productList.filters.categories[c] + '</a></li>';
                 $('ul#categoryFilter').append(li);
             }
@@ -468,22 +566,18 @@
          *
          * @returns {number}
          */
-        productList.getProductCount = function()
-        {
+        productList.getProductCount = function () {
             var d = productList.filters.checkFilters() ? productList.filters.filteredList : productList.Json;
             var i = 0;
-            for(var p in d)
-            {
-                if(d.hasOwnProperty(p))
-                {
+            for (var p in d) {
+                if (d.hasOwnProperty(p)) {
                     i++;
                 }
             }
             return i;
         };
 
-        productList.init = function()
-        {
+        productList.init = function () {
             //INITIALIZATION METHOD CALLS
             productList.pagination.setPages();
             productList.filters.getManufacturers();

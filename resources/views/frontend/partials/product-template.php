@@ -1,30 +1,25 @@
 <script id="product-list-template" type="text/x-handlebars-template">
     {{#products}}
-    <div class="col-sm-3 product">
-        <div class="panel panel-default">
-            <div class="panel-body">
-                <a class="thumbnail" href="/products/{{product_id}}">
-                    <img src="{{cover_photo}}">
-                </a>
-                <div class="text-center">
-                    <a href="/products/{{product_id}}">
-                        <h3>{{name}}</h3>
-                    </a>
-                    <a href="/products/{{product_id}}">
-                        <h4>{{manufacturer.manufacturer}}</h4>
-                    </a>
-                    <div class="labelMargin">
-                        <span class="label label-info price-label">Precio: ${{price}}</span>
+
+    <div class="list-product-description product-description-brd margin-bottom-30">
+        <div class="row">
+            <div class="col-sm-4">
+                <a href="shop-ui-inner.html"><img class="img-responsive sm-margin-bottom-20"  src="{{cover_photo}}" alt=""></a>
+            </div>
+            <div class="col-sm-8 product-description">
+                <div class="overflow-h margin-bottom-5">
+                    <ul class="list-inline overflow-h">
+                        <li><h4 class="title-price"><a href="shop-ui-inner.html">{{name}}</a></h4></li>
+                        <li><span class="gender text-uppercase">{{manufacturer.manufacturer}}</span></li>
+                       
+                    </ul>
+                    <div class="margin-bottom-10">
+                        <span class="title-price margin-right-10">${{price}}</span>
+                        <span class="title-price line-through">${{sale_price}}</span>
                     </div>
-                    {{#if sale_price}}
-                    <div class="labelMargin">
-                        <span class="label label-danger price-label">Venta: ${{sale_price}}</span>
-                    </div>
-                    {{/if}}
-                    <p class="text-center short-desc">{{short_desc}}</p>
-                    <p class="text-center">
-                        <a role="button" class="btn btn-primary btn-success" href="/products/{{product_id}}">Ver</a>
-                    </p>
+                    <p class="margin-bottom-20">{{short_desc}}</p>
+
+                    <button type="button" class="btn-u btn-u-sea-shop">Agregar al carro</button>
                 </div>
             </div>
         </div>

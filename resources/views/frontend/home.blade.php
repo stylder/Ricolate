@@ -1,7 +1,7 @@
 @extends('frontend.layouts.main')
 
 @section('title')
-    @parent Welcome
+    @parent Bienvenido
 @stop
 
 @section('content')

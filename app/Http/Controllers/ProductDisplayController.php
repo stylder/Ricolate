@@ -41,6 +41,26 @@ class ProductDisplayController extends Controller {
             ->withProducts($products);
 	}
 
+
+    public function index2()
+    {
+        //Set the page title
+        $title = 'Todos los propuctos';
+        try {
+            $products = Cache::rememberForever('all-products', function()
+            {
+                return $this->_product->getProductList();
+            });
+        } catch(Exception $e)
+        {
+            $products = null;
+        }
+
+        return view('frontend.product-list')
+            ->withTitle($title)
+            ->withProducts($products);
+    }
+
     /**
      * Display the product detail page.
      * Send list of related products to page.

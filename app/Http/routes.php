@@ -54,6 +54,7 @@ Route::post('/messages', 'MessageController@store');
 //Product Controllers
 Route::get('/products/{product}', 'ProductDisplayController@show');
 Route::get("shop", 'ProductDisplayController@index');
+Route::get("front-shop", 'ProductDisplayController@index2');
 Route::get("shop/on-sale", 'ProductSaleController@index');
 
 //Order creating routes
