@@ -86,7 +86,7 @@
                                                         <a data-toggle="modal" data-target="#new-tax-modal" href="#" id="new_tax_rate" class="pull-right">
                                                             <span class="glyphicon glyphicon-plus"></span> Agregar Tasa
                                                         </a>
-                                                        {!! Form::select('tax_id', $tax, $product->tax, ['class' => 'form-control', 'placeholder' => 'Tasa de impuesto']) !!}
+                                                        {!! Form::select('tax_id', $tax, $product->tax->tax_id, ['class' => 'form-control', 'placeholder' => 'Tasa de impuesto']) !!}
                                                     </div>
                                                 </div>
                                             </div>
