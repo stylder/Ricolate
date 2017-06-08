@@ -36,6 +36,8 @@
     <link rel="stylesheet" href="{{asset('frontend/assets/plugins/scrollbar/css/jquery.mCustomScrollbar.css')}}">
     <link rel="stylesheet" href="{{asset('frontend/assets/plugins/owl-carousel/owl-carousel/owl.carousel.css')}}">
     <link rel="stylesheet" href="{{asset('frontend/assets/plugins/revolution-slider/rs-plugin/css/settings.css')}}">
+    <link rel="stylesheet" href="{{asset('frontend/assets/plugins/master-slider/masterslider/style/masterslider.css')}}">
+    <link rel='stylesheet' href="{{asset('frontend/assets/plugins/master-slider/masterslider/skins/default/style.css')}}">
 
     <!-- CSS Theme -->
     <link rel="stylesheet" href="{{asset('frontend/assets/css/theme-colors/default.css')}}" id="style_color">

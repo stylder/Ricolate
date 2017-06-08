@@ -24,27 +24,18 @@
                         <!-- Master Slider -->
                         <div class="master-slider ms-skin-default" id="masterslider">
                             <div class="ms-slide">
+                                <img class="ms-brd" src="{{ (count($product->images)) ? $product->images->first()->image_path : 'http://placehold.it/221x221' }}" />
+                                <img class="ms-thumb" src="{{ (count($product->images)) ? $product->images->first()->image_path : 'http://placehold.it/221x221' }}"  alt="thumb">
+                            </div>
+
                                 @forelse($product->images as $image)
-                                    <a class="col-sm-4 thumbnail">
-                                        <img class="ms-brd" src="{{ $image->image_path }}" data-src="{{ $image->image_path }}" alt="lorem ipsum dolor sit">
+                                    <div class="ms-slide">
+                                        <img class="ms-brd"  src="{{ $image->image_path }}" data-src="{{ $image->image_path }}" alt="lorem ipsum dolor sit">
                                         <img class="ms-thumb" src="{{ $image->image_path }}" alt="thumb">
-
-                                    </a>
+                                    </div>
                                 @empty
-                                    <a class="col-sm-4 thumbnail">
-                                        <img src="http://placehold.it/221x221" />
-                                    </a>
+                                    <img src="http://placehold.it/221x221" data-src="http://placehold.it/221x221" alt="lorem ipsum dolor sit">
                                 @endforelse
-
-                            </div>
-                            <div class="ms-slide">
-                                <img src="assets/img/blank.gif" data-src="assets/img/blog/29.jpg" alt="lorem ipsum dolor sit">
-                                <img class="ms-thumb" src="assets/img/blog/29-thumb.jpg" alt="thumb">
-                            </div>
-                            <div class="ms-slide">
-                                <img src="assets/img/blank.gif" data-src="assets/img/blog/30.jpg" alt="lorem ipsum dolor sit">
-                                <img class="ms-thumb" src="assets/img/blog/30-thumb.jpg" alt="thumb">
-                            </div>
                         </div>
                         <!-- End Master Slider -->
                     </div>
@@ -66,26 +57,7 @@
                     <br>
 
 
-
-
-
-                    <h3 class="shop-product-title">Color</h3>
-                    <ul class="list-inline product-color margin-bottom-30">
-                        <li>
-                            <input type="radio" id="color-1" name="color">
-                            <label class="color-one" for="color-1"></label>
-                        </li>
-                        <li>
-                            <input type="radio" id="color-2" name="color" checked>
-                            <label class="color-two" for="color-2"></label>
-                        </li>
-                        <li>
-                            <input type="radio" id="color-3" name="color">
-                            <label class="color-three" for="color-3"></label>
-                        </li>
-                    </ul><!--/end product color-->
-
-                    <h3 class="shop-product-title">Quantity</h3>
+                    <h3 class="shop-product-title">Cantiadad</h3>
                     <div class="margin-bottom-40">
                         <form name="f1" class="product-quantity sm-margin-bottom-20">
                             <button type='button' class="quantity-button" name='subtract' onclick='javascript: subtractQty();' value='-'>-</button>
@@ -98,17 +70,8 @@
 
                     </div><!--/end product quantity-->
 
-                    <ul class="list-inline add-to-wishlist add-to-wishlist-brd">
-                        <li class="wishlist-in">
-                            <i class="fa fa-heart"></i>
-                            <a href="#">Add to Wishlist</a>
-                        </li>
-                        <li class="compare-in">
-                            <i class="fa fa-exchange"></i>
-                            <a href="#">Add to Compare</a>
-                        </li>
-                    </ul>
-                    <p class="wishlist-category"><strong>Categoría:</strong> <a href="#">Clothing,</a> <a href="#">Shoes</a></p>
+
+                    <p class="wishlist-category"><strong>Categoría:</strong> <a href="#">{{ $product->manufacturer->manufacturer }}</a></p>
                 </div>
             </div><!--/end row-->
         </div>
@@ -222,19 +185,15 @@
     </div>--}}
 @stop
 @section('scripts')
+
+    <!-- Master Slider -->
+    <script src="{{asset('/frontend/assets/plugins/master-slider/masterslider/masterslider.min.js')}}"></script>
+    <script src="{{asset('/frontend/assets/js/plugins/master-slider.js')}}"></script>
+
     <script>
-        /**
-         * Swap out the main image when a thumbnail is clicked.
-         */
-
-        $(".detail-thumbnails a.thumbnail").each(function()
-        {
-            var thumbnailUrl = $(this).find('img').attr('src');
-
-            $(this).click(function()
-            {
-                $('#detail-primary-image').find('img').attr('src', thumbnailUrl);
-            });
+        jQuery(document).ready(function() {
+            App.init();
+            MasterSliderShowcase2.initMasterSliderShowcase2();
         });
     </script>
 @stop
