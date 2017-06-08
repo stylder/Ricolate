@@ -38,7 +38,7 @@
                         <div class="col-sm-7">
                             <p class="lead">{{ $product->long_desc }}</p>
                             {!! Form::open(['method' => 'POST', 'url' => ['/cart/add/' . $product->product_id]]) !!}
-                                {!! Form::button('Add to Cart', ['class' => 'btn btn-lg btn-success', 'type' => 'submit']) !!}
+                                {!! Form::button('Agregar al Carro', ['class' => 'btn btn-lg btn-success', 'type' => 'submit']) !!}
                             {!! Form::close() !!}
                         </div>
                     </div>

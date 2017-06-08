@@ -72,8 +72,7 @@
             </div><!--/end row-->
         </div>
     </div>
-    <!--=== End Shop Product ===-->s
-
+    <!--=== End Shop Product ===-->
 
    {{--
 

@@ -72,8 +72,7 @@
             <div class="col-md-9">
                 <div class="row margin-bottom-5">
                     <div class="col-sm-4 result-category">
-                        <h2>{{count($products)}}</h2>
-                        <small class="shop-bg-red badge-results"> Resultados</small>
+                        <h2>{{count($products)}} Productos</h2>
                     </div>
                     <div class="col-sm-8">
                         <ul class="list-inline clear-both">
@@ -421,7 +420,7 @@
         /**
          * Handle category filter changes.
          */
-        $('ul#categoryFilter').on('click', 'a', function () {
+        $('ul#categoryFilter').on('click', 'label', function () {
             var cat = $(this).text();
             $('span.filter-category-label').text(cat);
             productList.filters.catFilter = cat;
@@ -431,7 +430,7 @@
         /**
          * Handle manufacturer filter changes.
          */
-        $('ul#manufacturerFilter').on('click', 'a', function () {
+        $('ul#manufacturerFilter').on('click', 'label', function () {
             var man = $(this).text();
             $('span.filter-manufacturer-label').text(man);
             productList.filters.manFilter = man;
