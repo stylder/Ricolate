@@ -36,47 +36,7 @@
                         </div>
                         <div id="collapseOne" class="panel-collapse collapse in">
                             <div class="panel-body">
-                                <ul class="list-unstyled checkbox-list">
-                                    <li>
-                                        <label class="checkbox">
-                                            <input type="checkbox" name="checkbox" checked/>
-                                            <i></i>
-                                            Calvin Klein
-                                            <small><a href="#">(23)</a></small>
-                                        </label>
-                                    </li>
-                                    <li>
-                                        <label class="checkbox">
-                                            <input type="checkbox" name="checkbox" checked/>
-                                            <i></i>
-                                            Gucci
-                                            <small><a href="#">(4)</a></small>
-                                        </label>
-                                    </li>
-                                    <li>
-                                        <label class="checkbox">
-                                            <input type="checkbox" name="checkbox"/>
-                                            <i></i>
-                                            Adidas
-                                            <small><a href="#">(11)</a></small>
-                                        </label>
-                                    </li>
-                                    <li>
-                                        <label class="checkbox">
-                                            <input type="checkbox" name="checkbox"/>
-                                            <i></i>
-                                            Puma
-                                            <small><a href="#">(3)</a></small>
-                                        </label>
-                                    </li>
-                                    <li>
-                                        <label class="checkbox">
-                                            <input type="checkbox" name="checkbox"/>
-                                            <i></i>
-                                            Zara
-                                            <small><a href="#">(87)</a></small>
-                                        </label>
-                                    </li>
+                                <ul class="list-unstyled checkbox-list"  id="categoryFilter" role="menu" aria-labelledby="filter-category">
                                 </ul>
                             </div>
                         </div>
@@ -95,40 +55,15 @@
                         </div>
                         <div id="collapseTwo" class="panel-collapse collapse in">
                             <div class="panel-body">
-                                <ul class="list-unstyled checkbox-list">
-                                    <li>
-                                        <label class="checkbox">
-                                            <input type="checkbox" name="checkbox" checked/>
-                                            <i></i>
-                                            Clothes
-                                            <small><a href="#">(23)</a></small>
-                                        </label>
-                                    </li>
-                                    <li>
-                                        <label class="checkbox">
-                                            <input type="checkbox" name="checkbox" checked/>
-                                            <i></i>
-                                            Glasses
-                                            <small><a href="#">(4)</a></small>
-                                        </label>
-                                    </li>
-                                    <li>
-                                        <label class="checkbox">
-                                            <input type="checkbox" name="checkbox"/>
-                                            <i></i>
-                                            Shoes
-                                            <small><a href="#">(11)</a></small>
-                                        </label>
-                                    </li>
+
+                                <ul id="manufacturerFilter" class="list-unstyled checkbox-list" role="menu" aria-labelledby="filter-manufacturer">
+
                                 </ul>
                             </div>
                         </div>
                     </div>
                 </div><!--/end panel group-->
 
-
-                <button type="button" class="btn-u btn-brd btn-brd-hover btn-u-lg btn-u-sea-shop btn-block">Reset
-                </button>
             </div>
 
             <div class="col-md-9">
@@ -233,7 +168,6 @@
 @stop
 @section('scripts')
     @include('frontend.partials.product-template')
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/3.0.1/handlebars.min.js"></script>
     <script>
         var productList = window.productList || {};
 
@@ -389,7 +323,7 @@
         productList.container = $('#product-content');
         //Create product list object
         productList.Json = {!! $products !!};
-        console.log(">>>",productList.Json );
+
 
         /**
          * Handle the rendering of the page.
@@ -519,8 +453,18 @@
          * Populate the manufacturer filter dropdown.
          */
         productList.filters.genManufacturerFilter = function () {
+            var todosManufecters =
+                '<li role="presentation"><label class="checkbox"><input type="radio" name="checkbox" checked/><i></i>'+
+                '<a role="menuitem" tabindex="-1">Fabricantes (Todos)</a></label></li>';
+
+            $('ul#manufacturerFilter').append(todosManufecters);
+
             for (var m in productList.filters.manufacturers) {
-                var li = '<li role="presentation"><a role="menuitem" tabindex="-1">' + productList.filters.manufacturers[m] + '</a></li>';
+                var li =
+                    '<li role="presentation"><label class="checkbox"><input type="radio" name="checkbox"/><i></i>'+
+                    '<a role="menuitem" tabindex="-1">'
+                    +productList.filters.manufacturers[m]+
+                    '</a></label></li>';
                 $('ul#manufacturerFilter').append(li);
             }
         };
@@ -544,8 +488,18 @@
          * Populate the category list dropdown.
          */
         productList.filters.genCategoryFilter = function () {
+
+            var todosCategory =
+                '<li role="presentation"><label class="checkbox"><input type="radio" name="checkbox" checked/><i></i>'+
+                '<a role="menuitem" tabindex="-1">Categoría (Todas)</a></label></li>';
+
+            $('ul#categoryFilter').append(todosCategory);
             for (var c in productList.filters.categories) {
-                var li = '<li role="presentation"><a role="menuitem" tabindex="-1"">' + productList.filters.categories[c] + '</a></li>';
+                var li =
+                    '<li role="presentation"><label class="checkbox"><input type="radio" name="checkbox"/><i></i>'+
+                    '<a role="menuitem" tabindex="-1">'
+                    +productList.filters.categories[c]+
+                    '</a></label></li>';
                 $('ul#categoryFilter').append(li);
             }
         };

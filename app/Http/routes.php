@@ -53,6 +53,7 @@ Route::post('/messages', 'MessageController@store');
 
 //Product Controllers
 Route::get('/products/{product}', 'ProductDisplayController@show');
+Route::get('/frontproducts/{product}', 'ProductDisplayController@show2');
 Route::get("shop", 'ProductDisplayController@index');
 Route::get("front-shop", 'ProductDisplayController@index2');
 Route::get("shop/on-sale", 'ProductSaleController@index');

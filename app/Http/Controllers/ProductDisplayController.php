@@ -84,4 +84,20 @@ class ProductDisplayController extends Controller {
             ->withPrice($product->getFinalPrice())
             ->withRelated($related);
 	}
+
+    public function show2($product_id)
+    {
+        try {
+            $product = $this->_product->getProduct($product_id);
+            $related = $this->_product->getRelatedProducts($product->category_id, $this->_relatedProductCount);
+        } catch(Exception $e)
+        {
+            return redirect('/shop');
+        }
+
+        return view('frontend.product-detail')
+            ->withProduct($product)
+            ->withPrice($product->getFinalPrice())
+            ->withRelated($related);
+    }
 }

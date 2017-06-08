@@ -75,6 +75,7 @@
 <script src="{{asset('frontend/assets/js/plugins/owl-carousel.js')}}"></script>
 <script src="{{asset('frontend/assets/js/plugins/revolution-slider.js')}}"></script>
 <script src="{{asset('frontend/assets/js/plugins/style-switcher.js')}}"></script>
+<script src="{{asset('js/handlebars.js')}}"></script>
 <script>
     jQuery(document).ready(function () {
         App.init();

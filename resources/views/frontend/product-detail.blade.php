@@ -1,10 +1,123 @@
-@extends('public.layouts.main')
+@extends('frontend.layouts.main')
 
 @section('title')
-    @parent {{ $product->name }} by {{ $product->manufacturer->manufacturer }}
+    @parent {{ $product->name }} - {{ $product->manufacturer->manufacturer }}
 @stop
 
 @section('content')
+    <!--=== Shop Product ===-->
+    <div class="shop-product">
+        <!-- Breadcrumbs v5 -->
+        <div class="container">
+            <ul class="breadcrumb-v5">
+                <li><a href="index.html"><i class="fa fa-home"></i></a></li>
+                <li><a href="#">Products</a></li>
+                <li class="active">New</li>
+            </ul>
+        </div>
+        <!-- End Breadcrumbs v5 -->
+
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6 md-margin-bottom-50">
+                    <div class="ms-showcase2-template">
+                        <!-- Master Slider -->
+                        <div class="master-slider ms-skin-default" id="masterslider">
+                            <div class="ms-slide">
+                                @forelse($product->images as $image)
+                                    <a class="col-sm-4 thumbnail">
+                                        <img class="ms-brd" src="{{ $image->image_path }}" data-src="{{ $image->image_path }}" alt="lorem ipsum dolor sit">
+                                        <img class="ms-thumb" src="{{ $image->image_path }}" alt="thumb">
+
+                                    </a>
+                                @empty
+                                    <a class="col-sm-4 thumbnail">
+                                        <img src="http://placehold.it/221x221" />
+                                    </a>
+                                @endforelse
+
+                            </div>
+                            <div class="ms-slide">
+                                <img src="assets/img/blank.gif" data-src="assets/img/blog/29.jpg" alt="lorem ipsum dolor sit">
+                                <img class="ms-thumb" src="assets/img/blog/29-thumb.jpg" alt="thumb">
+                            </div>
+                            <div class="ms-slide">
+                                <img src="assets/img/blank.gif" data-src="assets/img/blog/30.jpg" alt="lorem ipsum dolor sit">
+                                <img class="ms-thumb" src="assets/img/blog/30-thumb.jpg" alt="thumb">
+                            </div>
+                        </div>
+                        <!-- End Master Slider -->
+                    </div>
+                </div>
+
+                <div class="col-md-6">
+                    <div class="shop-product-heading">
+                        <h2>{{ $product->name }}</h2>
+                        <ul class="list-inline shop-product-social">
+                            <li><a href="#"><i class="fa fa-facebook"></i></a></li>
+                            <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+                            <li><a href="#"><i class="fa fa-google-plus"></i></a></li>
+                            <li><a href="#"><i class="fa fa-pinterest"></i></a></li>
+                        </ul>
+                    </div><!--/end shop product social-->
+
+
+                    {{ $product->long_desc }}
+                    <br>
+
+
+
+
+
+                    <h3 class="shop-product-title">Color</h3>
+                    <ul class="list-inline product-color margin-bottom-30">
+                        <li>
+                            <input type="radio" id="color-1" name="color">
+                            <label class="color-one" for="color-1"></label>
+                        </li>
+                        <li>
+                            <input type="radio" id="color-2" name="color" checked>
+                            <label class="color-two" for="color-2"></label>
+                        </li>
+                        <li>
+                            <input type="radio" id="color-3" name="color">
+                            <label class="color-three" for="color-3"></label>
+                        </li>
+                    </ul><!--/end product color-->
+
+                    <h3 class="shop-product-title">Quantity</h3>
+                    <div class="margin-bottom-40">
+                        <form name="f1" class="product-quantity sm-margin-bottom-20">
+                            <button type='button' class="quantity-button" name='subtract' onclick='javascript: subtractQty();' value='-'>-</button>
+                            <input type='text' class="quantity-field" name='qty' value="1" id='qty'/>
+                            <button type='button' class="quantity-button" name='add' onclick='javascript: document.getElementById("qty").value++;' value='+'>+</button>
+                        </form>
+                        {!! Form::open(['method' => 'POST', 'url' => ['/cart/add/' . $product->product_id]]) !!}
+                        {!! Form::button('Agregar al Carro', ['class' => 'btn-u btn-u-sea-shop btn-u-lg', 'type' => 'submit']) !!}
+                        {!! Form::close() !!}
+
+                    </div><!--/end product quantity-->
+
+                    <ul class="list-inline add-to-wishlist add-to-wishlist-brd">
+                        <li class="wishlist-in">
+                            <i class="fa fa-heart"></i>
+                            <a href="#">Add to Wishlist</a>
+                        </li>
+                        <li class="compare-in">
+                            <i class="fa fa-exchange"></i>
+                            <a href="#">Add to Compare</a>
+                        </li>
+                    </ul>
+                    <p class="wishlist-category"><strong>Categoría:</strong> <a href="#">Clothing,</a> <a href="#">Shoes</a></p>
+                </div>
+            </div><!--/end row-->
+        </div>
+    </div>
+    <!--=== End Shop Product ===-->s
+
+
+   {{--
+
     <div class="container">
         <div class="row row-top-buffer">
             <div class="col-sm-8">
@@ -106,9 +219,9 @@
                 </div>
             </div>
         </div>
-    </div>
+    </div>--}}
 @stop
-@section('footer')
+@section('scripts')
     <script>
         /**
          * Swap out the main image when a thumbnail is clicked.
