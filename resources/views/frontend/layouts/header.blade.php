@@ -62,7 +62,7 @@
                     <span class="icon-bar"></span>
                 </button>
                 <a class="navbar-brand" href="index.html">
-                    <img id="logo-header" src="frontend/assets/img/logo.png" alt="Logo">
+                    <img id="logo-header" class="img-responsive" src="/images/logo/logo.png" alt="Logo">
                 </a>
             </div>
 

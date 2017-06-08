@@ -36,8 +36,10 @@
                         </div>
                         <div id="collapseOne" class="panel-collapse collapse in">
                             <div class="panel-body">
-                                <ul class="list-unstyled checkbox-list"  id="categoryFilter" role="menu" aria-labelledby="filter-category">
-                                </ul>
+                                <form action="">
+                                    <ul class="list-unstyled checkbox-list"  id="categoryFilter" role="menu" aria-labelledby="filter-category"></ul>
+                                </form>
+
                             </div>
                         </div>
                     </div>
@@ -56,9 +58,10 @@
                         <div id="collapseTwo" class="panel-collapse collapse in">
                             <div class="panel-body">
 
-                                <ul id="manufacturerFilter" class="list-unstyled checkbox-list" role="menu" aria-labelledby="filter-manufacturer">
+                                <form action="">
+                                    <ul id="manufacturerFilter" class="list-unstyled checkbox-list" role="menu" aria-labelledby="filter-manufacturer"></ul>
+                                </form>
 
-                                </ul>
                             </div>
                         </div>
                     </div>

@@ -3,7 +3,7 @@
 use fooCart\src\Product;
 
 Route::get('/', 'HomeController@index');
-Route::get('/front', 'HomeController@index2');
+Route::get('/home', 'HomeController@index2');
 
 Route::get('about', 'AboutController@index');
 
@@ -53,9 +53,9 @@ Route::post('/messages', 'MessageController@store');
 
 //Product Controllers
 Route::get('/products/{product}', 'ProductDisplayController@show');
-Route::get('/frontproducts/{product}', 'ProductDisplayController@show2');
+Route::get('/producto/{product}', 'ProductDisplayController@show2');
 Route::get("shop", 'ProductDisplayController@index');
-Route::get("front-shop", 'ProductDisplayController@index2');
+Route::get("productos", 'ProductDisplayController@index2');
 Route::get("shop/on-sale", 'ProductSaleController@index');
 
 //Order creating routes

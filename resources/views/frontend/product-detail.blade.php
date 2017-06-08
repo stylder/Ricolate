@@ -57,13 +57,9 @@
                     <br>
 
 
-                    <h3 class="shop-product-title">Cantiadad</h3>
+
                     <div class="margin-bottom-40">
-                        <form name="f1" class="product-quantity sm-margin-bottom-20">
-                            <button type='button' class="quantity-button" name='subtract' onclick='javascript: subtractQty();' value='-'>-</button>
-                            <input type='text' class="quantity-field" name='qty' value="1" id='qty'/>
-                            <button type='button' class="quantity-button" name='add' onclick='javascript: document.getElementById("qty").value++;' value='+'>+</button>
-                        </form>
+
                         {!! Form::open(['method' => 'POST', 'url' => ['/cart/add/' . $product->product_id]]) !!}
                         {!! Form::button('Agregar al Carro', ['class' => 'btn-u btn-u-sea-shop btn-u-lg', 'type' => 'submit']) !!}
                         {!! Form::close() !!}
