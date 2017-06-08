@@ -113,7 +113,7 @@ Ofertas actuales</h4>
         </div>
     </div>
 @stop
-@section('footer')
+@section('scripts')
     <script src="/js/responsiveslides.min.js"></script>
     <script>
         /**

@@ -45,7 +45,7 @@ class ProductDisplayController extends Controller {
     public function index2()
     {
         //Set the page title
-        $title = 'Todos los propuctos';
+        $title = 'Todos los productos';
         try {
             $products = Cache::rememberForever('all-products', function()
             {
@@ -59,6 +59,26 @@ class ProductDisplayController extends Controller {
         return view('frontend.product-list')
             ->withTitle($title)
             ->withProducts($products);
+    }
+    public function productosCategoria($categoria)
+    {
+        //Set the page title
+        $title = 'Todos los productos';
+        try {
+            $products = Cache::rememberForever('all-products', function()
+            {
+                return $this->_product->getProductList();
+            });
+
+        } catch(Exception $e)
+        {
+            $products = null;
+        }
+
+        return view('frontend.product-list')
+            ->withTitle($title)
+            ->withProducts($products)
+            ->withCategoria($categoria);
     }
 
     /**

@@ -19,6 +19,21 @@
     </div>
     <!--=== End Breadcrumbs v4 ===-->
 
+    <div class="container">
+        <div class="col-md-6 col-md-offset-3">
+            <br><br>
+            <form role="search" action="/search" method="GET">
+                <div class="input-group">
+                    <input type="hidden" name="_token" value="{{ csrf_token() }}">
+                    <input type="text" class="form-control" placeholder="Buscar productos ...">
+                    <span class="input-group-btn">
+							<button class="btn-u" type="button"><i class="fa fa-search"></i></button>
+						</span>
+                </div>
+            </form>
+        </div>
+    </div>
+
     <!--=== Content Part ===-->
     <div class="content container">
         <div class="row">
@@ -29,7 +44,8 @@
                         <div class="panel-heading">
                             <h2 class="panel-title">
                                 <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne">
-                                    Categoría
+                                    Categoría {{ ! empty($categoria) }}
+
                                     <i class="fa fa-angle-down"></i>
                                 </a>
                             </h2>
@@ -37,7 +53,8 @@
                         <div id="collapseOne" class="panel-collapse collapse in">
                             <div class="panel-body">
                                 <form action="">
-                                    <ul class="list-unstyled checkbox-list"  id="categoryFilter" role="menu" aria-labelledby="filter-category"></ul>
+                                    <ul class="list-unstyled checkbox-list" id="categoryFilter" role="menu"
+                                        aria-labelledby="filter-category"></ul>
                                 </form>
 
                             </div>
@@ -59,7 +76,8 @@
                             <div class="panel-body">
 
                                 <form action="">
-                                    <ul id="manufacturerFilter" class="list-unstyled checkbox-list" role="menu" aria-labelledby="filter-manufacturer"></ul>
+                                    <ul id="manufacturerFilter" class="list-unstyled checkbox-list" role="menu"
+                                        aria-labelledby="filter-manufacturer"></ul>
                                 </form>
 
                             </div>
@@ -83,11 +101,13 @@
 
                             <li class="sort-list-btn">
                                 <div class="dropdown  filter-right "><h3>Mostrar :</h3>
-                                    <button class="btn btn-default dropdown-toggle btn-prod-count" type="button" id="sort-by" data-toggle="dropdown" aria-expanded="true">
+                                    <button class="btn btn-default dropdown-toggle btn-prod-count" type="button"
+                                            id="sort-by" data-toggle="dropdown" aria-expanded="true">
                                         <span class="results-count-dropdown">10</span>
                                         <span class="caret"></span>
                                     </button>
-                                    <ul class="dropdown-menu filter-menu-right ul-prod-count" role="menu" aria-labelledby="sort-by">
+                                    <ul class="dropdown-menu filter-menu-right ul-prod-count" role="menu"
+                                        aria-labelledby="sort-by">
                                         <li role="presentation"><a role="menuitem" tabindex="-1" href="#">10</a></li>
                                         <li role="presentation"><a role="menuitem" tabindex="-1" href="#">25</a></li>
                                         <li role="presentation"><a role="menuitem" tabindex="-1" href="#">50</a></li>
@@ -456,16 +476,15 @@
          */
         productList.filters.genManufacturerFilter = function () {
             var todosManufecters =
-                '<li role="presentation"><label class="checkbox"><input type="radio" name="checkbox" checked/><i></i>'+
+                '<li role="presentation"><label class="checkbox"><input type="radio" name="checkbox" checked/><i></i>' +
                 '<a role="menuitem" tabindex="-1">Fabricantes (Todos)</a></label></li>';
 
             $('ul#manufacturerFilter').append(todosManufecters);
-
             for (var m in productList.filters.manufacturers) {
                 var li =
-                    '<li role="presentation"><label class="checkbox"><input type="radio" name="checkbox"/><i></i>'+
+                    '<li role="presentation"><label class="checkbox"><input type="radio" name="checkbox"/><i></i>' +
                     '<a role="menuitem" tabindex="-1">'
-                    +productList.filters.manufacturers[m]+
+                    + productList.filters.manufacturers[m] +
                     '</a></label></li>';
                 $('ul#manufacturerFilter').append(li);
             }
@@ -477,6 +496,7 @@
         productList.filters.getCategories = function () {
             var f = productList.filters.checkFilters();
             var d = f ? productList.filters.filteredList : productList.Json;
+
             for (var c in d) {
 
                 var c = d[c].category.category;
@@ -492,15 +512,15 @@
         productList.filters.genCategoryFilter = function () {
 
             var todosCategory =
-                '<li role="presentation"><label class="checkbox"><input type="radio" name="checkbox" checked/><i></i>'+
+                '<li role="presentation"><label class="checkbox"><input type="radio" name="checkbox" checked/><i></i>' +
                 '<a role="menuitem" tabindex="-1">Categoría (Todas)</a></label></li>';
 
             $('ul#categoryFilter').append(todosCategory);
             for (var c in productList.filters.categories) {
                 var li =
-                    '<li role="presentation"><label class="checkbox"><input type="radio" name="checkbox"/><i></i>'+
+                    '<li role="presentation"><label class="checkbox"><input type="radio" name="checkbox"/><i></i>' +
                     '<a role="menuitem" tabindex="-1">'
-                    +productList.filters.categories[c]+
+                    + productList.filters.categories[c] +
                     '</a></label></li>';
                 $('ul#categoryFilter').append(li);
             }

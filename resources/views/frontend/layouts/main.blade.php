@@ -11,8 +11,7 @@
     <!-- Meta -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="">
-    <meta name="author" content="Santiago García Cabral">
+    <meta name="description" content=""><meta name="author" content="Santiago García Cabral">
 
     <!-- Favicon -->
     <link rel="shortcut icon" href="favicon.ico">
@@ -33,6 +32,7 @@
     <link rel="stylesheet" href="{{asset('frontend/assets/plugins/animate.css')}}">
     <link rel="stylesheet" href="{{asset('frontend/assets/plugins/line-icons/line-icons.css')}}">
     <link rel="stylesheet" href="{{asset('frontend/assets/plugins/font-awesome/css/font-awesome.min.css')}}">
+    <link rel="stylesheet"  href="{{asset('frontend/assets/plugins/jquery-steps/css/custom-jquery.steps.css')}}" >
     <link rel="stylesheet" href="{{asset('frontend/assets/plugins/scrollbar/css/jquery.mCustomScrollbar.css')}}">
     <link rel="stylesheet" href="{{asset('frontend/assets/plugins/owl-carousel/owl-carousel/owl.carousel.css')}}">
     <link rel="stylesheet" href="{{asset('frontend/assets/plugins/revolution-slider/rs-plugin/css/settings.css')}}">
@@ -77,6 +77,11 @@
 <script src="{{asset('frontend/assets/js/plugins/owl-carousel.js')}}"></script>
 <script src="{{asset('frontend/assets/js/plugins/revolution-slider.js')}}"></script>
 <script src="{{asset('frontend/assets/js/plugins/style-switcher.js')}}"></script>
+
+<script src="{{asset('frontend/assets/plugins/jquery-steps/build/jquery.steps.js')}}"></script>
+<script src="{{asset('frontend/assets/plugins/sky-forms-pro/skyforms/js/jquery.validate.min.js')}}"></script>
+<script src="{{asset('frontend/assets/js/plugins/stepWizard.js')}}"></script>
+<script src="{{asset('frontend/assets/js/forms/product-quantity.js')}}"></script>
 <script src="{{asset('js/handlebars.js')}}"></script>
 <script>
     jQuery(document).ready(function () {
