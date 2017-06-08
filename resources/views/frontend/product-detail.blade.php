@@ -11,8 +11,8 @@
         <div class="container">
             <ul class="breadcrumb-v5">
                 <li><a href="index.html"><i class="fa fa-home"></i></a></li>
-                <li><a href="#">Products</a></li>
-                <li class="active">New</li>
+                <li><a href="#">Producto</a></li>
+                <li class="active">{{ $product->manufacturer->manufacturer }}</li>
             </ul>
         </div>
         <!-- End Breadcrumbs v5 -->

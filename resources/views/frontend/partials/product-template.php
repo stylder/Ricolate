@@ -14,7 +14,7 @@
 
                     </ul>
                     <p class="margin-bottom-20">{{short_desc}}</p>
-                    <?php echo Form::open(['method' => 'POST', 'url' => ['/cart/add/']] )?>
+                    <?php echo Form::open(['method' => 'POST', 'url' => ["/cart/add/{{product_id}}"]] )?>
                     <?php echo Form::button('Agregar al Carro', ['class' => 'btn-u btn-u-sea-shop btn-u-lg', 'type' => 'submit']) ?>
                     <?php echo Form::close()  ?>
                 </div>
