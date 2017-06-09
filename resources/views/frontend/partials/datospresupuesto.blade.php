@@ -25,13 +25,13 @@
                 		<input id="billingAddress" type="text" placeholder="Calle" name="address1" class="form-control required">		
                 	</div>
                 	<div class="col-sm-6">
-                		<input id="billingAddress" type="text" placeholder="Número" name="address1" class="form-control required">
+                		<input  type="text" placeholder="Número" name="address1" class="form-control required">
                 	</div>
                 </div>
                 
                 
-                <input id="billingAddress2" type="text" placeholder="Colonia" name="address2" class="form-control required">
-                <input id="billingAddress2" type="text" placeholder="Municipio" name="address2" class="form-control required">
+                <input  type="text" placeholder="Colonia" name="address2" class="form-control required">
+                <input type="text" placeholder="Municipio" name="address2" class="form-control required">
                 <div class="row">
                     <div class="col-sm-6">
                         <input id="city" type="text" placeholder="Estado" name="city" class="form-control required">

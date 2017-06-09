@@ -3,7 +3,7 @@
 use fooCart\src\Product;
 
 Route::get('/', 'HomeController@index');
-Route::get('/home', 'HomeController@index2');
+
 
 Route::get('about', 'AboutController@index');
 

@@ -66,10 +66,13 @@
                 </a>
             </div>
 
-            <!-- Shopping Cart -->
+
+
+        <!-- Shopping Cart -->
             <div class="shop-badge badge-icons pull-right">
                 <a href="#"><i class="fa fa-shopping-cart"></i></a>
-                <span class="badge badge-sea rounded-x">3</span>
+
+                <span class="badge badge-sea rounded-x">{{1}}</span>
                 <div class="badge-open">
                     <ul class="list-unstyled mCustomScrollbar" data-mcs-theme="minimal-dark">
                         <li>

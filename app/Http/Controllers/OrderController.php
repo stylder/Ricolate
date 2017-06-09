@@ -83,7 +83,7 @@ class OrderController extends Controller {
 
         try {
             //Start the transaction.
-            DB::beginTransaction();
+
 
             //Create the new customer.
             $customer->first_name = $request->input('first_name');
@@ -119,8 +119,6 @@ class OrderController extends Controller {
                 $product->save();
             }
 
-            //Commit the transaction.
-            DB::commit();
 
             //Charge the customer's credit card.
             $this->_checkout->charge([
@@ -144,7 +142,7 @@ class OrderController extends Controller {
 
         } catch (Exception $e) {
             //Rollback the transaction if any part fails.
-            DB::rollback();
+
             //Return the user to the checkout form with a generic error.
             return view('public.checkout-form')
                 ->withError('An error has occurred. Please try again later.');

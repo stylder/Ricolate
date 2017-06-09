@@ -77,7 +77,9 @@
                 </div>
 
                 <ul class="nav navbar-nav navbar-right">
-                    <li><a href="/cart"><span class="blue glyphicon glyphicon-shopping-cart" aria-hidden="true"></span> <span class="white"> ${{ number_format($total, 2) }}</span></a></li>
+                    <li><a href="/cart"><span class="blue glyphicon glyphicon-shopping-cart" aria-hidden="true"></span>
+
+                            <span class="white">{{ 1}}</span></a></li>
                 </ul>
 
             </div>

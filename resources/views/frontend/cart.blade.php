@@ -31,7 +31,7 @@
 
                     @include('frontend.partials.datospresupuesto')
 
-                    {{--@include('frontend.partials.datospago');--}}
+                    @include('frontend.partials.datospago')
 
                 </div>
             </form>

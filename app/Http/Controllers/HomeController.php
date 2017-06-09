@@ -51,7 +51,7 @@ class HomeController extends Controller {
             $saleList = null;
         }
 
-        return view('public.home')
+        return view('frontend.home')
             ->withSlides($slideshow)
             ->withSales($saleList);
 	}
@@ -82,6 +82,6 @@ class HomeController extends Controller {
         return view('frontend.home')
             ->withSlides($slideshow)
             ->withSales($saleList);
-        
+
     }
 }

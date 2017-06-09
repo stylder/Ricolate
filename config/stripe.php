@@ -5,6 +5,6 @@
  */
 
 return [
-    'secret_key' => env('SECRET_KEY', 'i2TvcuExkdSlXOqF3kdYZ9jbzd6cb1iK'),
-    'publishable_key' => env('PUBLISHABLE_KEY', 'i2TvcuExkdSlXOqF3kdYZ9jbzd6cb1iK'),
+    'secret_key' => env('SECRET_KEY', 'sk_test_qNr5ABJyxDF5nMIyNV3lD0vB'),
+    'publishable_key' => env('PUBLISHABLE_KEY', 'pk_test_oisHVM939G3VNAw62CbnKsZc'),
 ];
