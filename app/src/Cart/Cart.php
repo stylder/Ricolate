@@ -133,7 +133,7 @@ class Cart implements CartInterface {
         {
             foreach($this->_cartCookie as $productId => $quantity)
             {
-                $item = Product::with('manufacturer', 'tax')->where('product_id', '=', $productId)->firstOrFail();
+                $item = Product::with('manufacturer', 'tax','images')->where('product_id', '=', $productId)->firstOrFail();
                 $cartContent->add($item);
                 array_push($itemQuantities, $quantity);
                 $totalShipping += floatval($item->shipping_cost) * intval($quantity);

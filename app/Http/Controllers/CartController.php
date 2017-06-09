@@ -27,19 +27,6 @@ class CartController extends Controller {
 	{
         $contents = $this->_cart->getCartContents();
 
-        return view('public.cart')
-            ->withContents($contents['items'])
-            ->withQuantities($contents['quantities'])
-            ->withSubtotal(round($contents['subtotal'], 2))
-            ->withTax(round($contents['total_tax'], 2))
-            ->withShipping(round($contents['total_shipping'], 2))
-            ->withTotal($contents['total_price']);
-	}
-
-    public function index2()
-    {
-        $contents = $this->_cart->getCartContents();
-
         return view('frontend.cart')
             ->withContents($contents['items'])
             ->withQuantities($contents['quantities'])
@@ -47,8 +34,7 @@ class CartController extends Controller {
             ->withTax(round($contents['total_tax'], 2))
             ->withShipping(round($contents['total_shipping'], 2))
             ->withTotal($contents['total_price']);
-    }
-
+	}
 
     /**
      * Add a product to the shopping cart.
@@ -63,7 +49,6 @@ class CartController extends Controller {
         return redirect('cart')
             ->withCookie(cookie()->forever('cart', $updatedCart));
 	}
-
 
     /**
      * Update a product in the shopping cart.

@@ -27,103 +27,13 @@
                 <div>
                     <div class="header-tags">
                         <div class="overflow-h">
-                            <h2>Shopping Cart</h2>
-                            <p>Review &amp; edit your product</p>
+                            <h2>Carrito de compras</h2>
+                            <p>Revisar y edita sus productos</p>
                             <i class="rounded-x fa fa-check"></i>
                         </div>
                     </div>
-                    <section>
-                        <div class="table-responsive">
-                            <table class="table table-striped">
-                                <thead>
-                                <tr>
-                                    <th>Product</th>
-                                    <th>Price</th>
-                                    <th>Qty</th>
-                                    <th>Total</th>
-                                </tr>
-                                </thead>
-                                <tbody>
-                                <tr>
-                                    <td class="product-in-table">
-                                        <img class="img-responsive" src="/frontend/assets/img/thumb/08.jpg" alt="">
-                                        <div class="product-it-in">
-                                            <h3>Double-Breasted</h3>
-                                            <span>Sed aliquam tincidunt tempus</span>
-                                        </div>
-                                    </td>
-                                    <td>$ 160.00</td>
-                                    <td>
-                                        <button type='button' class="quantity-button" name='subtract' onclick='javascript: subtractQty1();' value='-'>-</button>
-                                        <input type='text' class="quantity-field" name='qty1' value="5" id='qty1'/>
-                                        <button type='button' class="quantity-button" name='add' onclick='javascript: document.getElementById("qty1").value++;' value='+'>+</button>
-                                    </td>
-                                    <td class="shop-red">$ 320.00</td>
-                                    <td>
-                                        <button type="button" class="close"><span>&times;</span><span class="sr-only">Close</span></button>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td class="product-in-table">
-                                        <img class="img-responsive" src="/frontend/assets/img/thumb/07.jpg" alt="">
-                                        <div class="product-it-in">
-                                            <h3>Vivamus ligula</h3>
-                                            <span>Sed aliquam tincidunt tempus</span>
-                                        </div>
-                                    </td>
-                                    <td>$ 160.00</td>
-                                    <td>
-                                        <button type='button' class="quantity-button" name='subtract' onclick='javascript: subtractQty2();' value='-'>-</button>
-                                        <input type='text' class="quantity-field" name='qty2' value="3" id='qty2'/>
-                                        <button type='button' class="quantity-button" name='add' onclick='javascript: document.getElementById("qty2").value++;' value='+'>+</button>
-                                    </td>
-                                    <td class="shop-red">$ 320.00</td>
-                                    <td>
-                                        <button type="button" class="close"><span>&times;</span><span class="sr-only">Close</span></button>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td class="product-in-table">
-                                        <img class="img-responsive" src="/frontend/assets/img/thumb/06.jpg" alt="">
-                                        <div class="product-it-in">
-                                            <h3>Vivamus ligula</h3>
-                                            <span>Sed aliquam tincidunt tempus</span>
-                                        </div>
-                                    </td>
-                                    <td>$ 160.00</td>
-                                    <td>
-                                        <button type='button' class="quantity-button" name='subtract' onclick='javascript: subtractQty3();' value='-'>-</button>
-                                        <input type='text' class="quantity-field" name='qty3' value="1" id='qty3'/>
-                                        <button type='button' class="quantity-button" name='add' onclick='javascript: document.getElementById("qty3").value++;' value='+'>+</button>
-                                    </td>
-                                    <td class="shop-red">$ 320.00</td>
-                                    <td>
-                                        <button type="button" class="close"><span>&times;</span><span class="sr-only">Close</span></button>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td class="product-in-table">
-                                        <img class="img-responsive" src="/frontend/assets/img/thumb/09.jpg" alt="">
-                                        <div class="product-it-in">
-                                            <h3>Vivamus ligula</h3>
-                                            <span>Sed aliquam tincidunt tempus</span>
-                                        </div>
-                                    </td>
-                                    <td>$ 160.00</td>
-                                    <td>
-                                        <button type='button' class="quantity-button" name='subtract' onclick='javascript: subtractQty4();' value='-'>-</button>
-                                        <input type='text' class="quantity-field" name='qty4' value="7" id='qty4'/>
-                                        <button type='button' class="quantity-button" name='add' onclick='javascript: document.getElementById("qty4").value++;' value='+'>+</button>
-                                    </td>
-                                    <td class="shop-red">$ 320.00</td>
-                                    <td>
-                                        <button type="button" class="close"><span>&times;</span><span class="sr-only">Close</span></button>
-                                    </td>
-                                </tr>
-                                </tbody>
-                            </table>
-                        </div>
-                    </section>
+
+                    @include('frontend.partials.productos')
 
                     <div class="header-tags">
                         <div class="overflow-h">

@@ -20,9 +20,6 @@ Route::resource('cart', 'CartController');
 Route::post('cart/add/{product_id}', 'CartController@store');
 Route::get('cart/delete/{product_id}', 'CartController@destroy');
 
-Route::resource('carrito', 'CartController@index2');
-Route::post('carrito/add/{product_id}', 'CartController@store');
-Route::get('carrito/delete/{product_id}', 'CartController@destroy');
 
 
 Route::group(['middleware' => 'auth'], function()
