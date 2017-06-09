@@ -1,3 +1,11 @@
+<div class="header-tags">
+    <div class="overflow-h">
+        <h2>Carrito de compras</h2>
+        <p>Revisar y edita sus productos</p>
+        <i class="rounded-x fa fa-check"></i>
+    </div>
+</div>
+
 <section>
     <div class="table-responsive">
         <table class="table table-striped">
@@ -5,7 +13,7 @@
             <tr>
                 <th>Producto</th>
                 <th>Marca</th>
-                <th>Qty</th>
+                <th>Cantidad</th>
 
             </tr>
             </thead>
@@ -13,6 +21,7 @@
 
             @if(!is_null($contents))
                 @foreach($contents as $key => $item)
+
                     <tr>
                         <td class="product-in-table">
                             <a  href="/products/{{ $item->product_id }}">
@@ -21,20 +30,21 @@
                             <div class="product-it-in">
                                 <a  href="/producto/{{ $item->product_id }}">
                                 <h3>{{ $item->name }}</h3>
-                                <span>Descripción</span>
+                                <span>{{$item->short_desc}}</span>
                                 </a>
                             </div>
                         </td>
                         <td> {{ $item->manufacturer->manufacturer }} </td>
                         <td>
-                            <button type='button' class="quantity-button" name='subtract' onclick='javascript: subtractQty1();' value='-'>-</button>
-                            <input type='text' class="quantity-field" name='qty1' value="{{ $quantities[$key] }}" id='qty1'/>
-                            <button type='button' class="quantity-button" name='add' onclick='javascript: document.getElementById("qty1").value++;' value='+'>+</button>
+                            {!! Form::open(['method' => 'PUT', 'route' => ['cart.update', $item->product_id]]) !!}
+                                <input name="newQuantity" type="number" min="0" class="quantity-field" value="{{ $quantities[$key] }}">
+                                {!! Form::button('<i class="fa fa-refresh"></i>', ['class' => 'quantity-button', 'type' => 'submit']) !!}
+                            {!! Form::close() !!}
                         </td>
 
                         </td>
                         <td>
-                            <button type="button" href="/cart/delete/{{ $item->product_id }}"  class="close"><span>&times;</span><span class="sr-only">Close</span></button>
+                            <a type="button" href="/cart/delete/{{ $item->product_id }}"  class="close"><span>&times;</span><span class="sr-only">Close</span></a>
                         </td>
                     </tr>
                 @endforeach
