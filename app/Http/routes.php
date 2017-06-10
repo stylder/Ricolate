@@ -7,6 +7,11 @@ Route::get('/', 'HomeController@index');
 
 Route::get('about', 'AboutController@index');
 
+Route::get('contacto', 'AboutController@contacto');
+Route::get('acercanosotros', 'AboutController@acercanosotros');
+Route::get('ubicacion', 'AboutController@ubicacion');
+
+
 Route::resource('admin/products/tax', 'TaxController');
 Route::resource('admin/products/manufacturers', 'ManufacturerController');
 Route::resource('admin/products/categories', 'CategoryController');

@@ -106,71 +106,31 @@
                 <ul class="nav navbar-nav">
                     <!-- Pages -->
                     <li class="dropdown active">
-                        <a href="javascript:void(0);" class="dropdown-toggle" data-hover="dropdown"
-                           data-toggle="dropdown">
+                        <a href="/productos" class="dropdown-toggle">
                             Productos
                         </a>
-                        <ul class="dropdown-menu">
-                            <li class="active"><a href="index.html">Shop UI</a></li>
-                            <li><a href="shop-ui-inner.html">Product Page</a></li>
-                            <li><a href="shop-ui-filter-grid.html">Filter Grid Page</a></li>
-                            <li><a href="shop-ui-filter-list.html">Filter List Page</a></li>
-                            <li><a href="shop-ui-add-to-cart.html">Checkout</a></li>
-                            <li><a href="shop-ui-login.html">Login</a></li>
-                            <li><a href="shop-ui-register.html">Register</a></li>
-                        </ul>
                     </li>
                     <!-- End Pages -->
 
                     <!-- Promotion -->
                     <li class="dropdown">
-                        <a href="javascript:void(0);" class="dropdown-toggle" data-hover="dropdown"
-                           data-toggle="dropdown">
+                        <a href="/contacto" class="dropdown-toggle">
                             Contacto
                         </a>
-                        <ul class="dropdown-menu">
-                            <li class="dropdown-submenu">
-                                <a href="javascript:void(0);">Jeans</a>
-                                <ul class="dropdown-menu">
-                                    <li><a href="#">Skinny Jeans</a></li>
-                                    <li><a href="#">Bootcut Jeans</a></li>
-                                    <li><a href="#">Straight Cut Jeans</a></li>
-                                </ul>
-                            </li>
-                            <li class="dropdown-submenu">
-                                <a href="javascript:void(0);">Shoes</a>
-                                <ul class="dropdown-menu">
-                                    <li><a href="#">Sandals</a></li>
-                                    <li><a href="#">Heels</a></li>
-                                </ul>
-                            </li>
-                        </ul>
                     </li>
                     <!-- End Promotion -->
 
+                    <li class="dropdown active">
+                        <a href="/acercanosotros" class="dropdown-toggle">
+                            Acerca Nosotros
+                        </a>
+                    </li>
                     <!-- Promotion -->
                     <li class="dropdown">
-                        <a href="javascript:void(0);" class="dropdown-toggle" data-hover="dropdown"
-                           data-toggle="dropdown">
+                        <a href="/ubicacion" class="dropdown-toggle">
                             Ubicación
                         </a>
-                        <ul class="dropdown-menu">
-                            <li class="dropdown-submenu">
-                                <a href="javascript:void(0);">Jeans</a>
-                                <ul class="dropdown-menu">
-                                    <li><a href="#">Skinny Jeans</a></li>
-                                    <li><a href="#">Bootcut Jeans</a></li>
-                                    <li><a href="#">Straight Cut Jeans</a></li>
-                                </ul>
-                            </li>
-                            <li class="dropdown-submenu">
-                                <a href="javascript:void(0);">Shoes</a>
-                                <ul class="dropdown-menu">
-                                    <li><a href="#">Sandals</a></li>
-                                    <li><a href="#">Heels</a></li>
-                                </ul>
-                            </li>
-                        </ul>
+
                     </li>
                     <!-- End Promotion -->
 

@@ -16,4 +16,18 @@ class AboutController extends Controller {
         return view('public.about')
             ->withContacted($contacted);
     }
+
+    public function contacto(Request $request)
+    {
+        return view('frontend.contacto');
+    }
+
+    public function acercanosotros(Request $request)
+    {
+        return view('frontend.acercanosotros');
+    }
+    public function ubicacion(Request $request)
+    {
+        return view('frontend.ubicacion');
+    }
 }
