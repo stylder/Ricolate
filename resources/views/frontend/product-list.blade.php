@@ -19,21 +19,6 @@
     </div>
     <!--=== End Breadcrumbs v4 ===-->
 
-    <div class="container">
-        <div class="col-md-6 col-md-offset-3">
-            <br><br>
-            <form role="search" action="/search" method="GET">
-                <div class="input-group">
-                    <input type="hidden" name="_token" value="{{ csrf_token() }}">
-                    <input type="text" class="form-control" placeholder="Buscar productos ...">
-                    <span class="input-group-btn">
-							<button class="btn-u" type="button"><i class="fa fa-search"></i></button>
-						</span>
-                </div>
-            </form>
-        </div>
-    </div>
-
     <!--=== Content Part ===-->
     <div class="content container">
         <div class="row">
