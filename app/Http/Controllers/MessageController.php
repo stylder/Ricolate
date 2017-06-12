@@ -64,7 +64,7 @@ class MessageController extends Controller {
             $details['phone'] = $this->_message->sender_phone;
             $details['content'] = $this->_message->message;
 
-            //Send confirmation to customer
+/*            //Send confirmation to customer
             Mail::send('emails.message-confirm', $details, function($message)
             {
                 $message->to($this->_message->sender_email);
@@ -74,7 +74,7 @@ class MessageController extends Controller {
             Mail::send('emails.new-message', $details, function($message)
             {
                 $message->to(Config::get('messages.site_admin'));
-            });
+            });*/
 
         } catch(Exception $e)
         {
@@ -88,13 +88,11 @@ class MessageController extends Controller {
         //Return a JSON response if the form was submitted via AJAX.
         if($request->ajax())
         {
-            return response()->json(['status' => 'success'])
-                ->withCookie(cookie()->forever('contacted', true));
+            return response()->json(['status' => 'success']);
         }
 
         //Return a redirect if the form was not submitted via AJAX.
-        return redirect('/about')
-            ->withCookie(cookie()->forever('contacted', true));
+        return redirect('/contacto');
 	}
 
     /**

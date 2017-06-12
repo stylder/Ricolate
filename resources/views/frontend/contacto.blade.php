@@ -54,7 +54,7 @@
                     <input type="hidden" name="_token" value="{{ csrf_token() }}">
 
                     <fieldset class="no-padding">
-                        <label>Nombre <span class="color-red">*</span></label>
+                        <label for="name">Nombre <span class="color-red">*</span></label>
                         <div class="row sky-space-20">
                             <div class="col-md-7 col-md-offset-0">
                                 <div>
@@ -63,16 +63,16 @@
                             </div>
                         </div>
 
-                        <label>Email <span class="color-red">*</span></label>
+                        <label  for="email">Email <span class="color-red">*</span></label>
                         <div class="row sky-space-20">
                             <div class="col-md-7 col-md-offset-0">
                                 <div>
-                                    <input type="email" name="email" id="email" class="form-control required">
+                                    <input type="email" name="sender_email"  id="email" class="form-control required">
                                 </div>
                             </div>
                         </div>
 
-                        <label>Teléfono <span class="color-red">*</span></label>
+                        <label for="phone">Teléfono <span class="color-red">*</span></label>
                         <div class="row sky-space-20">
                             <div class="col-md-7 col-md-offset-0">
                                 <div>
@@ -81,7 +81,7 @@
                             </div>
                         </div>
 
-                        <label>Mensaje <span class="color-red">*</span></label>
+                        <label for="message">Mensaje <span class="color-red">*</span></label>
                         <div class="row sky-space-20">
                             <div class="col-md-11 col-md-offset-0">
                                 <div>
