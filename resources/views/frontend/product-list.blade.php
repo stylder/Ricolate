@@ -6,18 +6,14 @@
 
 @section('content')
 
-    <!--=== Breadcrumbs v4 ===-->
-    <div class="breadcrumbs-v4">
-        <div class="container">
-            <span class="page-name">Productos</span>
-            <h1>Maecenas <span class="shop-green">enim</span> sapien</h1>
-            <ul class="breadcrumb-v4-in">
-                <li><a href="/">Home</a></li>
-                <li class="active">Productos</li>
-            </ul>
-        </div><!--/end container-->
-    </div>
-    <!--=== End Breadcrumbs v4 ===-->
+
+    @include('frontend.partials.breadcrumbs',
+    ['titulo' => 'Lista de productos',
+    'p1'=>'home',
+    'p1_url'=>'/',
+    'p2'=>'Productos',
+    'img'=>'/frontend/assets/img/breadcrumbs-img.jpg'])
+
 
     <!--=== Content Part ===-->
     <div class="content container">

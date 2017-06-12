@@ -2597,7 +2597,7 @@ li:first-child {
   position: relative;
   background-position: center;
   background-repeat: no-repeat;
-  background-image: url(../img/breadcrumbs-img.jpg);
+  /*background-image: url(../img/breadcrumbs-img.jpg);*/
   background-size:cover;
 }
 

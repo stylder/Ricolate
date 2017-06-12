@@ -5,19 +5,15 @@
 @stop
 
 @section('content')
-   <!--=== Breadcrumbs v4 ===-->
-    <div class="breadcrumbs-v4">
-        <div class="container">
-            <span class="page-name">Check Out</span>
-            <h1>Maecenas <span class="shop-green">enim</span> sapien</h1>
-            <ul class="breadcrumb-v4-in">
-                <li><a href="index.html">Home</a></li>
-                <li><a href="">Product</a></li>
-                <li class="active">Shopping Cart</li>
-            </ul>
-        </div><!--/end container-->
-    </div>
-    <!--=== End Breadcrumbs v4 ===-->
+
+    @include('frontend.partials.breadcrumbs',
+    ['titulo' => 'Carrito de compras',
+    'p1'=>'home',
+    'p1_url'=>'/',
+    'p2'=>'Carrito de compras',
+    'img'=>'/frontend/assets/img/breadcrumbs-img.jpg',
+    ])
+
 
 
    <div class="content-md ">
@@ -27,7 +23,7 @@
     <div class="container">
         <div class="row margin-bottom-30">
             <div class="col-md-9 mb-margin-bottom-30">
-                <div class="headline"><h2>Formulario de contacto</h2></div>
+                <div class="headline"><h2>Formulario de Contacto</h2></div>
                 <p>
                     A continuación le presentamos un formulario de contacto
                     con el cual podrá enviarnos sus datos y con mucho gusto
@@ -113,7 +109,7 @@
                 <div class="headline"><h2>Horas de trabajo</h2></div>
                 <ul class="list-unstyled margin-bottom-30">
                     <li><strong>Lunes-Viernes:</strong> 10:00am a 8:30pm</li>
-                    <li><strong>Sábados-Domingos:</strong> 10:00am a 16:30pm</li>
+                    <li><strong>Sábados-Domingos:</strong> 10:00am a 4:30pm</li>
 
                 </ul>
 
