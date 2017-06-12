@@ -120,11 +120,11 @@
                     </li>
                     <!-- End Promotion -->
 
-                    <li class="dropdown active">
+                   {{-- <li class="dropdown active">
                         <a href="/acercanosotros" class="dropdown-toggle">
                             Acerca Nosotros
                         </a>
-                    </li>
+                    </li>--}}
                     <!-- Promotion -->
                     <li class="dropdown">
                         <a href="/ubicacion" class="dropdown-toggle">

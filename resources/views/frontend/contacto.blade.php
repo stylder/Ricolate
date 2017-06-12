@@ -27,8 +27,13 @@
     <div class="container">
         <div class="row margin-bottom-30">
             <div class="col-md-9 mb-margin-bottom-30">
-                <div class="headline"><h2>Contact Form</h2></div>
-                <p>At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas feugiat. Et harum quidem rerum facilis est et expedita distinctio lorem ipsum dolor sit amet, consectetur adipiscing elit landitiis.</p><br />
+                <div class="headline"><h2>Formulario de contacto</h2></div>
+                <p>
+                    A continuación le presentamos un formulario de contacto
+                    con el cual podrá enviarnos sus datos y con mucho gusto
+                    nos contactaremos con usted a la brevedad.
+                </p>
+                <br/>
 
 
 
@@ -46,9 +51,6 @@
                         </div>
                     </div>
                 @endif
-
-
-
 
                 <form action="/messages" method="POST" id="sky-form3" class="sky-form contact-style">
                     <input type="hidden" name="_token" value="{{ csrf_token() }}">
@@ -90,7 +92,7 @@
                             </div>
                         </div>
 
-                        <p><button type="submit" class="btn-u">Enviar Mensaje</button></p>
+                        <p><button type="submit" class="btn-u btn-u-sea-shop btn-u-lg">Enviar Mensaje</button></p>
                     </fieldset>
                 </form>
             </div><!--/col-md-9-->

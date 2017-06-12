@@ -8,7 +8,7 @@ Route::get('/', 'HomeController@index');
 Route::get('about', 'AboutController@index');
 
 Route::get('contacto', 'AboutController@contacto');
-Route::get('acercanosotros', 'AboutController@acercanosotros');
+//Route::get('acercanosotros', 'AboutController@acercanosotros');
 Route::get('ubicacion', 'AboutController@ubicacion');
 
 
