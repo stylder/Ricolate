@@ -6,19 +6,12 @@
 
 @section('content')
 
-    <!--=== Breadcrumbs v4 ===-->
-    <div class="breadcrumbs-v4">
-        <div class="container">
-            <span class="page-name">Check Out</span>
-            <h1>Maecenas <span class="shop-green">enim</span> sapien</h1>
-            <ul class="breadcrumb-v4-in">
-                <li><a href="index.html">Home</a></li>
-                <li><a href="">Product</a></li>
-                <li class="active">Shopping Cart</li>
-            </ul>
-        </div><!--/end container-->
-    </div>
-    <!--=== End Breadcrumbs v4 ===-->
+    @include('frontend.partials.breadcrumbs',
+    ['titulo' => 'Carrito de Compras',
+    'p1'=>'home',
+    'p1_url'=>'/',
+    'p2'=>'Carrito',
+    'img'=>'/frontend/assets/img/breadcrumbs-img.jpg'])
 
     <!--=== Content Medium Part ===-->
     <div class="content-md margin-bottom-30">

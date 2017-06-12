@@ -59,44 +59,7 @@
                 <a href="/cart"><i class="fa fa-shopping-cart"></i></a>
 
                 <span class="badge badge-sea rounded-x">{{1}}</span>
-                <div class="badge-open">
-                    <ul class="list-unstyled mCustomScrollbar" data-mcs-theme="minimal-dark">
-                        <li>
-                            <img src="/frontend/assets/img/thumb/05.jpg" alt="">
-                            <button type="button" class="close">×</button>
-                            <div class="overflow-h">
-                                <span>Black Glasses</span>
-                                <small>1 x $400.00</small>
-                            </div>
-                        </li>
-                        <li>
-                            <img src="/frontend/assets/img/thumb/02.jpg" alt="">
-                            <button type="button" class="close">×</button>
-                            <div class="overflow-h">
-                                <span>Black Glasses</span>
-                                <small>1 x $400.00</small>
-                            </div>
-                        </li>
-                        <li>
-                            <img src="/frontend/assets/img/thumb/03.jpg" alt="">
-                            <button type="button" class="close">×</button>
-                            <div class="overflow-h">
-                                <span>Black Glasses</span>
-                                <small>1 x $400.00</small>
-                            </div>
-                        </li>
-                    </ul>
-                    <div class="subtotal">
-                        <div class="row">
-                            <div class="col-xs-6">
 
-                            </div>
-                            <div class="col-xs-6">
-                                <a href="cart/" class="btn-u btn-u-sea-shop btn-block">Ver Carro</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
             </div>
             <!-- End Shopping Cart -->
 

@@ -83,7 +83,7 @@
                         <div class="row sky-space-20">
                             <div class="col-md-11 col-md-offset-0">
                                 <div>
-                                    <textarea rows="8" name="message" id="message" class="form-control"></textarea>
+                                    <textarea rows="3" name="message" id="message" class="form-control"></textarea>
                                 </div>
                             </div>
                         </div>
