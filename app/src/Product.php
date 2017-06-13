@@ -122,7 +122,7 @@ class Product extends Model {
      */
     public function getSaleList()
     {
-        return $this->with('images','manufacturer', 'category')->sale()->get();
+        return $this->with('images','manufacturer', 'category')->where('products.start', '=',1)->get();
     }
 
     public function getHomePageSaleList()

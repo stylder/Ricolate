@@ -121,7 +121,12 @@
                                                 {!! Form::input('number', 'number_available', 0, ['class' => 'form-control', 'placeholder' => 'En Stock']) !!}
                                             </div>--}}
 
-                                            <div class="form-group col-sm-12">
+                                            <div class="form-group col-sm-6">
+                                                {!! Form::label('start', 'Estrella') !!}
+                                                {!! Form::select('start', ['0' => 'No', '1' => 'Si'], 1, ['class' => 'form-control']) !!}
+                                            </div>
+
+                                            <div class="form-group col-sm-6">
                                                 {!! Form::label('active', 'Activo') !!}
                                                 {!! Form::select('active', ['0' => 'No', '1' => 'Si'], 1, ['class' => 'form-control']) !!}
                                             </div>

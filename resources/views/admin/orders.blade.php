@@ -8,7 +8,7 @@
     <div class="container">
         <div class="row">
             <div class="col-sm-12">
-                <h1>Ordenes</h1>
+                <h1>Cotizaciones</h1>
             </div>
         </div>
         <div class="row row-top-buffer">
@@ -22,7 +22,6 @@
                                 <th class="col-sm-2">Usuario</th>
                                 <th id="order_status" class="col-sm-2">Status</th>
                                 <th class="col-sm-2">Orden #</th>
-                                <th class="col-sm-2">Total</th>
                                 <th class="col-sm-2">Acciones</th>
                             </tr>
                             </thead>
@@ -33,11 +32,15 @@
                                         {{ $order->getFormattedCreatedAt() }} <br />
                                     </td>
                                     <td>
-                                        {{ $order->customer->first_name }} {{ $order->customer->last_name }}
+                                        {{ $order->customer->nombre }} {{ $order->customer->apellidos }}
                                     </td>
+
                                     <td class="order-status-label">
                                         @if($order->status === 'Paid')
                                             <span class="label label-primary">Pagado</span>
+                                        @elseif($order->status === 'Quotation')
+                                            <span class="label label-success">Cotización</span>
+                                        @elseif($order->status === 'Cancelled')
                                         @elseif($order->status === 'Shipped')
                                             <span class="label label-success">Enviado</span>
                                         @elseif($order->status === 'Cancelled')
@@ -47,9 +50,7 @@
                                     <td>
                                         {{ $order->order_id }}
                                     </td>
-                                    <td>
-                                        ${{ number_format($order->order_total, 2) }}
-                                    </td>
+
                                     <td class="order-action-icons">
                                         <a class="btn btn-danger" data-toggle="modal" data-href="/admin/orders/{{ $order->order_id }}" data-target="#delete-confirm"><span class="glyphicon  glyphicon glyphicon-remove"></span> Borrar</a>
                                         <a href="/admin/orders/{{ $order->order_id }}" class="order-edit btn btn-info"><span class="glyphicon  glyphicon glyphicon-pencil"></span> Editar</a>

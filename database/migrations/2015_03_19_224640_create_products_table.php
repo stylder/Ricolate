@@ -31,6 +31,7 @@ class CreateProductsTable extends Migration {
             $table->integer('tax_id')->unsigned()->nullable()->index();
             $table->foreign('tax_id')->references('tax_id')->on('taxes')->onDelete('cascade');
             $table->boolean('active');
+            $table->boolean('start');
             $table->timestamps();
         });
 	}

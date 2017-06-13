@@ -52,7 +52,7 @@
                 @if(Auth::check())
                 <ul class="nav navbar-nav">
                     <li class="{{ ( Route::getCurrentRoute()->getPath() === 'admin/orders' || Route::getCurrentRoute()->getPath() === 'admin' ) ? 'active' : NULL }}">
-                        <a href="/admin/orders">Ordenes</a>
+                        <a href="/admin/orders">Cotizaciones</a>
                     </li>
                     <li class="dropdown {{ ( Route::getCurrentRoute()->getPath() === 'admin/products' || Route::getCurrentRoute()->getPath() === 'admin/products/create' ) ? 'active' : NULL }}">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Productos <span class="caret"></span></a>

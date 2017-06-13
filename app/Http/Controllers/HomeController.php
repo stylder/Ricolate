@@ -42,10 +42,8 @@ class HomeController extends Controller {
 
         //Get the list of sale products
         try {
-            $saleList = Cache::rememberForever('sale-products-home', function()
-            {
-                return $this->_product->getHomePageSaleList();
-            });
+            $saleList = $this->_product->getHomePageSaleList();
+
         }catch(Exception $e)
         {
             $saleList = null;

@@ -15,14 +15,23 @@ class CreateCustomersTable extends Migration {
 		Schema::create('order_customers', function(Blueprint $table)
 		{
             $table->increments('customer_id');
-            $table->string('first_name');
-            $table->string('last_name');
-            $table->string('addr_street_1');
-            $table->string('addr_street_2')->nullable();
-            $table->string('addr_city');
-            $table->string('addr_state');
-            $table->integer('addr_zip');
-            $table->bigInteger('home_phone');
+            $table->string('nombre');
+            $table->string('apellidos');
+            $table->string('correo');
+            $table->bigInteger('telefono');
+            $table->string('calle');
+            $table->string('numero')->nullable();
+            $table->string('colonia');
+            $table->string('municipio');
+            $table->string('estado');
+            $table->integer('postal');
+
+            $table->string('compania')->nullable();
+            $table->string('rfc')->nullable();
+
+
+            $table->string('notas')->nullable();
+
             $table->timestamps();
 		});
 	}

@@ -26,7 +26,8 @@ class CreateProductRequest extends Request {
             'manufacturer_id' => 'required|numeric',
             'category_id' => 'required|numeric',
             'name' => 'required',
-            'active' => 'required|numeric'
+            'active' => 'required|numeric',
+            'start' => 'required|numeric'
 		];
 	}
 

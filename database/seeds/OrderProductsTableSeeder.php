@@ -18,7 +18,7 @@ class OrderProductsTableSeeder extends Seeder {
             'quantity'      =>  1
         ));
         OrderProduct::create(array(
-            'order_id'         =>  2,
+            'order_id'         =>  1,
             'sku'           =>  'FC-HDTV00000003',
             'manufacturer'  =>  'Initech',
             'name'          =>  '52" HD Television',
@@ -28,7 +28,7 @@ class OrderProductsTableSeeder extends Seeder {
             'quantity'      =>  1
         ));
         OrderProduct::create(array(
-            'order_id'         =>  2,
+            'order_id'         =>  1,
             'sku'           =>  'FC-HDTV00000004',
             'manufacturer'  =>  'Initech',
             'name'          =>  '52" HD Television',
@@ -38,7 +38,7 @@ class OrderProductsTableSeeder extends Seeder {
             'quantity'      =>  1
         ));
         OrderProduct::create(array(
-            'order_id'         =>  3,
+            'order_id'         =>  1,
             'sku'           =>  'FC-HDTV00000004',
             'manufacturer'  =>  'Initech',
             'name'          =>  '52" HD Television',
@@ -47,15 +47,6 @@ class OrderProductsTableSeeder extends Seeder {
             'tax'           =>  0.028,
             'quantity'      =>  1
         ));
-        OrderProduct::create(array(
-            'order_id'         =>  3,
-            'sku'           =>  'FC-HDTV00000003',
-            'manufacturer'  =>  'Initech',
-            'name'          =>  '52" HD Television',
-            'price'         =>  288.99,
-            'shipping'      =>  25.43,
-            'tax'           =>  0.028,
-            'quantity'      =>  1
-        ));
+
     }
 }

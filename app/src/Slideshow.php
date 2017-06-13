@@ -28,6 +28,6 @@ class Slideshow extends Model {
      */
     public function getSlideshow($slideshow_id)
     {
-        return $this->find($slideshow_id)->slides()->orderBy('sequence')->get();
+        return $this->findOrFail($slideshow_id)->slides()->orderBy('sequence')->get();
     }
 }
