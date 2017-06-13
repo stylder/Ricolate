@@ -29,11 +29,11 @@ class CartController extends Controller {
 
         return view('frontend.cart')
             ->withContents($contents['items'])
-            ->withQuantities($contents['quantities'])
-            ->withSubtotal(round($contents['subtotal'], 2))
+            ->withQuantities($contents['quantities']);
+/*            ->withSubtotal(round($contents['subtotal'], 2))
             ->withTax(round($contents['total_tax'], 2))
-            ->withShipping(round($contents['total_shipping'], 2))
-            ->withTotal($contents['total_price']);
+            ->withShipping(round($contents['total_shipping'], 2))*/
+            /*->withTotal($contents['total_price']);*/
 	}
 
     /**

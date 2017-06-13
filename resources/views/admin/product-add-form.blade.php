@@ -60,7 +60,7 @@
                                                         {!! Form::select('manufacturer_id', $manufacturers, null, ['class' => 'form-control']) !!}
                                                     </div>
                                                 </div>
-                                                <div class="row">
+                                      {{--          <div class="row">
                                                     <div class="form-group col-sm-6">
                                                         {!! Form::label('price', 'Precio') !!}
                                                         {!! Form::text('price', null, ['class' => 'form-control', 'placeholder' => 'Precio']) !!}
@@ -82,7 +82,7 @@
                                                         </a>
                                                         {!! Form::select('tax_id', $tax, null, ['class' => 'form-control', 'placeholder' => 'Tasa de Impuesto']) !!}
                                                     </div>
-                                                </div>
+                                                </div>--}}
                                             </div>
                                         </div>
                                     </div>
@@ -112,15 +112,16 @@
                                 <div class="panel panel-default">
                                     <div class="panel-body">
                                         <div class="row">
-                                            <div class="form-group col-sm-4">
+                                            {{--<div class="form-group col-sm-4">
                                                 {!! Form::label('units_sold', 'Unidades Vendidas') !!}
                                                 {!! Form::input('number', 'units_sold', 0, ['class' => 'form-control', 'placeholder' => 'Unidades Vendidas']) !!}
                                             </div>
                                             <div class="form-group col-sm-4">
                                                 {!! Form::label('number_available', 'En Stock') !!}
                                                 {!! Form::input('number', 'number_available', 0, ['class' => 'form-control', 'placeholder' => 'En Stock']) !!}
-                                            </div>
-                                            <div class="form-group col-sm-4">
+                                            </div>--}}
+
+                                            <div class="form-group col-sm-12">
                                                 {!! Form::label('active', 'Activo') !!}
                                                 {!! Form::select('active', ['0' => 'No', '1' => 'Si'], 1, ['class' => 'form-control']) !!}
                                             </div>

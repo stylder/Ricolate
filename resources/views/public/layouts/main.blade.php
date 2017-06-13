@@ -79,6 +79,9 @@
                 <ul class="nav navbar-nav navbar-right">
                     <li><a href="/cart"><span class="blue glyphicon glyphicon-shopping-cart" aria-hidden="true"></span>
 
+                    <li><a href="/cart"><span class="blue glyphicon glyphicon-shopping-cart" aria-hidden="true"></span>
+                            <span class="white"> {{ $total }}
+                            </span></a></li>
                             <span class="white">{{ 1}}</span></a></li>
                 </ul>
 

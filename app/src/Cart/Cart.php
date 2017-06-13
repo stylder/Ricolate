@@ -121,7 +121,7 @@ class Cart implements CartInterface {
      *
      * @return array
      */
-    public function getCartContents()
+    /*public function getCartContents()
     {
         $itemQuantities = [];
         $cartContent = new Collection();
@@ -157,6 +157,34 @@ class Cart implements CartInterface {
 
         //Store the total price in session so that we can display the total amount on every page via view composer.
         Session::put('cartTotal', 0.00);
+        return null;
+    }*/
+    public function getCartContents()
+    {
+        $itemQuantities = [];
+        $cartContent = new Collection();
+
+
+        if($this->_cartCookie)
+        {
+            foreach($this->_cartCookie as $productId => $quantity)
+            {
+                $item = Product::with('manufacturer', 'images')->where('product_id', '=', $productId)->firstOrFail();
+                $cartContent->add($item);
+                array_push($itemQuantities, $quantity);
+            }
+            //Store the total price in session so that we can display the total amount on every page via view composer.
+            Session::put('cartTotal', count($cartContent));
+
+            $contents = [
+                'quantities'        => $itemQuantities,
+                'items'             => $cartContent
+            ];
+            return $contents;
+        }
+
+        //Store the total price in session so that we can display the total amount on every page via view composer.
+        Session::put('cartTotal', 0);
         return null;
     }
 }

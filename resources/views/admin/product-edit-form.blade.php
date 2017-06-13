@@ -66,7 +66,7 @@
                                                         {!! Form::select('manufacturer_id', $manufacturers, $product->manufacturer->manufacturer_id, ['class' => 'form-control']) !!}
                                                     </div>
                                                 </div>
-                                                <div class="row">
+                                                {{--<div class="row">
                                                     <div class="form-group col-sm-6">
                                                         {!! Form::label('price', 'Precio') !!}
                                                         {!! Form::text('price', $product->price, ['class' => 'form-control', 'placeholder' => 'Precio']) !!}
@@ -75,8 +75,8 @@
                                                         {!! Form::label('sale_price', 'Precio de Venta') !!}
                                                         {!! Form::text('sale_price', $product->sale_price, ['class' => 'form-control', 'placeholder' => 'Precio de Venta']) !!}
                                                     </div>
-                                                </div>
-                                                <div class="row">
+                                                </div>--}}
+                                                {{--<div class="row">
                                                     <div class="form-group col-sm-6">
                                                         {!! Form::label('shipping_cost', 'Costo de Envío') !!}
                                                         {!! Form::text('shipping_cost', $product->shipping_cost, ['class' => 'form-control', 'placeholder' => 'Costo de Envío']) !!}
@@ -88,7 +88,7 @@
                                                         </a>
                                                         {!! Form::select('tax_id', $tax, $product->tax->tax_id, ['class' => 'form-control', 'placeholder' => 'Tasa de impuesto']) !!}
                                                     </div>
-                                                </div>
+                                                </div>--}}
                                             </div>
                                         </div>
                                     </div>
@@ -149,15 +149,15 @@
                                 <div class="panel panel-default">
                                     <div class="panel-body">
                                         <div class="row">
-                                            <div class="form-group col-sm-4">
+                                           {{-- <div class="form-group col-sm-4">
                                                 {!! Form::label('units_sold', 'Unidades Vendidas') !!}
                                                 {!! Form::input('number', 'units_sold', $product->units_sold, ['class' => 'form-control', 'placeholder' => 'Unidades Vendidas']) !!}
                                             </div>
                                             <div class="form-group col-sm-4">
                                                 {!! Form::label('number_available', 'En Stock') !!}
                                                 {!! Form::input('number', 'number_available', $product->number_available, ['class' => 'form-control', 'placeholder' => 'En Stock']) !!}
-                                            </div>
-                                            <div class="form-group col-sm-4">
+                                            </div>--}}
+                                            <div class="form-group col-sm-12">
                                                 {!! Form::label('active', 'Activo') !!}
                                                 {!! Form::select('active', ['0' => 'No', '1' => 'Si'], $product->active, ['class' => 'form-control']) !!}
                                             </div>

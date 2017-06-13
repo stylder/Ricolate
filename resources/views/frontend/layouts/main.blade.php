@@ -50,6 +50,7 @@
 
 <div class="wrapper">
 
+
     @include('frontend.layouts.header')
 
     @yield('content')

@@ -34,10 +34,10 @@ class Product extends Model {
      *
      * @return \Illuminate\Database\Eloquent\Relations\HasOne
      */
-    public function tax()
+/*    public function tax()
     {
         return $this->hasOne('fooCart\src\Tax', 'tax_id', 'tax_id');
-    }
+    }*/
 
     /**
      * Establish an Eloquent relationship with the parent Manufacturer model.
@@ -82,6 +82,7 @@ class Product extends Model {
      */
     public function getFinalPrice()
     {
+        return 0;
         return ($this->sale_price > 0) ? $this->sale_price : $this->price;
     }
 
@@ -93,6 +94,8 @@ class Product extends Model {
      */
     public function getTotalPrice()
     {
+
+        return 0;
         $tax = $this->tax->tax;
         $price = $this->getFinalPrice();
         $shipping = $this->shipping_cost;
@@ -124,7 +127,7 @@ class Product extends Model {
 
     public function getHomePageSaleList()
     {
-        return $this->with('images','manufacturer', 'category')->sale()->take(6)->get();
+        return $this->with('images','manufacturer', 'category')->sale()->take(9)->get();
     }
 
     /**

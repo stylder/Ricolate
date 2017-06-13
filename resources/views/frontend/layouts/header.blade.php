@@ -58,7 +58,7 @@
             <div class="shop-badge badge-icons pull-right">
                 <a href="/cart"><i class="fa fa-shopping-cart"></i></a>
 
-                <span class="badge badge-sea rounded-x">{{1}}</span>
+                <span class="badge badge-sea rounded-x">{{  Session::get('cartTotal', '0')}}</span>
 
             </div>
             <!-- End Shopping Cart -->

@@ -25,10 +25,10 @@ class CreateProductsTable extends Migration {
             $table->text('short_desc');
             $table->text('long_desc');
             $table->decimal('sale_price', 19, 2)->nullable();
-            $table->decimal('shipping_cost', 19, 2);
+            $table->decimal('shipping_cost', 19, 2)->nullable();
             $table->integer('units_sold')->nullable();
-            $table->integer('number_available');
-            $table->integer('tax_id')->unsigned()->index();
+            $table->integer('number_available')->nullable();
+            $table->integer('tax_id')->unsigned()->nullable()->index();
             $table->foreign('tax_id')->references('tax_id')->on('taxes')->onDelete('cascade');
             $table->boolean('active');
             $table->timestamps();
