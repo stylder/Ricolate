@@ -23,14 +23,6 @@
                         </li>
                     </ul><!--/end left-topbar-->
                 </div>
-                <div class="col-sm-6">
-                    <ul class="list-inline right-topbar pull-right">
-                        <li><a href="#">Account</a></li>
-                        <li><a href="shop-ui-add-to-cart.html">Wishlist (0)</a></li>
-                        <li><a href="shop-ui-login.html">Login</a> | <a href="shop-ui-register.html">Register</a></li>
-                        <li><i class="search fa fa-search search-button"></i></li>
-                    </ul>
-                </div>
             </div>
         </div><!--/container-->
     </div>
@@ -104,7 +96,7 @@
                             <form role="search" action="/search" method="GET">
                                 <div class="input-group">
                                     <input type="hidden" name="_token" value="{{ csrf_token() }}">
-                                    <input type="text" class="form-control quantity-field" placeholder="Buscar productos ...">
+                                    <input name="query"  value="{{ $query or null }}" type="text" class="form-control quantity-field" placeholder="Buscar productos ...">
                                     <span class="input-group-btn">
 							    <button class=" btn btn-u-sea-shop"><i class="fa fa-search"></i></button>
 						        </span>

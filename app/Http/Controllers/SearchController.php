@@ -43,7 +43,7 @@ class SearchController extends Controller {
                 $results = $this->_product->searchByManufacturer($manufacturerId, $this->_paginateCount);
             }
         }
-        return view('public.search-results')
+        return view('frontend.search-results')
             ->withResults($results)
             ->withQuery($query);
 	}

@@ -7,10 +7,10 @@
 @section('content')
 
     @include('frontend.partials.breadcrumbs',
-    ['titulo' => 'Carrito de compras',
+    ['titulo' => 'Contáctanos',
     'p1'=>'home',
     'p1_url'=>'/',
-    'p2'=>'Carrito de compras',
+    'p2'=>'Contacto',
     'img'=>'/frontend/assets/img/breadcrumbs-img.jpg',
     ])
 

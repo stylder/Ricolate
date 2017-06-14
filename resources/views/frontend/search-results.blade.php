@@ -1,57 +1,60 @@
-@extends('public.layouts.main')
+@extends('frontend.layouts.main')
 
 @section('title')
-    @parent Search Results
+    @parent Resultados de busqueda
 @stop
 
 @section('content')
+    @include('frontend.partials.breadcrumbs',
+        ['titulo' => "Busqueda: $query ",
+        'p1'=>'home',
+        'p1_url'=>'/',
+        'p2'=>'Busqueda',
+        'img'=>'/frontend/assets/img/breadcrumbs-img.jpg'])
+
     <div class="container">
-        <div class="row row-top-buffer">
+
+        <div class="row">
             <div class="col-sm-12">
                 @if(!$results->isEmpty())
-                    <h1>Search results for "{{ $query }}"</h1>
+                    <h1></h1>
                 @else
-                    <h1>No search results for "{{ $query }}"</h1>
+                    <h1>No se tienen resultados para: {{ $query }}</h1>
                 @endif
             </div>
         </div>
-        <div class="row row-top-buffer">
-            <div class="col-sm-12">
+        <div class="filter-results">
+
+
+            <div class="row illustration-v2">
                 @foreach($results as $result)
-                    <div class="panel panel-default">
-                        <div class="panel-heading">
-                            <a href="/products/{{ $result->product_id }}">
-                                <h3 class="panel-title">{{ $result->name }}</h3>
-                            </a>
+                    <div class="col-md-4">
+                        <div class="product-img product-img-brd">
+                            <a href="/producto/{{ $result->product_id }}"><img class="full-width img-responsive" src="{{ (count($result->images)) ? $result->images->first()->image_path : 'http://placehold.it/221x221' }}" alt=""></a>
+                            <a class="product-review" href="/producto/{{ $result->product_id }}">Ver</a>
+                            {!! Form::open(['method' => 'POST', 'url' => ['/cart/add/' .  $result->product_id]]) !!}
+                            {!! Form::button('<i class="fa fa-shopping-cart"></i>Agregar al Carrito', ['class' => 'add-to-cart', 'type' => 'submit']) !!}
+                            {!! Form::close() !!}
+
                         </div>
-                        <div class="panel-body">
-                            <div class="col-sm-2">
-                                <div class="thumbnail">
-                                    <a href="/products/{{ $result->product_id }}">
-                                        <img class="inline" src="{{ (count($result->images)) ? $result->images->first()->image_path : 'http://placehold.it/221x221' }}" />
-                                    </a>
+                        <div class="product-description product-description-brd margin-bottom-30">
+                            <div class="overflow-h margin-bottom-5">
+                                <div class="pull-left">
+                                    <h4 class="title-price"><a href="shop-ui-inner.html">{{ $result->name }}</a></h4>
+                                    <span class="gender text-uppercase">{{ $result->manufacturer->manufacturer }}</span>
+
                                 </div>
+
                             </div>
-                            <div class="col-sm-10">
-                                <a href="/products/{{ $result->product_id }}">
-                                    <h2>{{ $result->name }}</h2>
-                                    <h3>{{ $result->manufacturer->manufacturer }}</h3>
-                                    <p>
-                                        {{ $result->short_desc }}
-                                    </p>
-                                </a>
-                            </div>
+
                         </div>
                     </div>
+
                 @endforeach
+
+
+
             </div>
-        </div>
-        <div class="row row-top-buffer">
-            <div class="col-sm-12">
-                @if(!$results->isEmpty())
-                    {!! $results->appends(['query' => $query])->render() !!}
-                @endif
-            </div>
-        </div>
+        </div><!--/end filter resilts-->
     </div>
 @stop

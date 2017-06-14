@@ -14,7 +14,7 @@
     <meta name="description" content=""><meta name="author" content="Santiago García Cabral">
 
     <!-- Favicon -->
-    <link rel="shortcut icon" href="favicon.ico">
+    <link rel="shortcut icon" href="/images/logo/logo.png">
 
     <!-- Web Fonts -->
     <link rel='stylesheet' type='text/css'
