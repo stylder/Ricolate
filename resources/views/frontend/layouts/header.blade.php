@@ -68,7 +68,7 @@
                 <!-- Nav Menu -->
                 <ul class="nav navbar-nav">
                     <!-- Pages -->
-                    <li class="dropdown active">
+                    <li class="dropdown {{ ( Route::getCurrentRoute()->getPath() === 'productos' ) ? 'active' : NULL }}">
                         <a href="/productos" class="dropdown-toggle">
                             Productos
                         </a>
@@ -76,7 +76,7 @@
                     <!-- End Pages -->
 
                     <!-- Promotion -->
-                    <li class="dropdown">
+                    <li class="dropdown {{ ( Route::getCurrentRoute()->getPath() === 'contacto' ) ? 'active' : NULL }}">
                         <a href="/contacto" class="dropdown-toggle">
                             Contacto
                         </a>
@@ -89,7 +89,7 @@
                         </a>
                     </li>--}}
                     <!-- Promotion -->
-                    <li class="dropdown">
+                    <li class="dropdown {{ ( Route::getCurrentRoute()->getPath() === 'ubicacion' ) ? 'active' : NULL }}"">
                         <a href="/ubicacion" class="dropdown-toggle">
                             Ubicación
                         </a>

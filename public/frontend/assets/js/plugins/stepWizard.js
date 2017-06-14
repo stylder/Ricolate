@@ -7,8 +7,8 @@ var StepWizard = function () {
                 form.validate({
                     errorPlacement: function errorPlacement(error, element) { element.before(error); },
                     rules: {
-                        confirm: {
-                            equalTo: "#password"
+                        nombre: {
+                            required: true
                         }
                     }
                 });
@@ -30,7 +30,7 @@ var StepWizard = function () {
                         return form.valid();
                     },
                     onFinished: function (event, currentIndex) {
-                        form.submit();
+                        form.
                         alert("Enviado!");
                     }
                 });
