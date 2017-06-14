@@ -10,13 +10,25 @@
         <div class="col-md-6 md-margin-bottom-40">
             <h2 class="title-type">Datos Solicitante</h2>
             <div class="billing-info-inputs checkbox-list">
+
+
                 <div class="row">
                     <div class="col-sm-6">
-                        <input type="text" placeholder="Nombre" name="nombre" class="form-control required">
-                        <input type="text" placeholder="Correo" name="correo" class="form-control required">
+                        <input type="text" placeholder="Nombre" name="nombre"  id="name" for="nombre" class="form-control required" required>
                     </div>
+
                     <div class="col-sm-6">
                         <input type="text" placeholder="Apellidos" name="apellidos" class="form-control required">
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-sm-6">
+
+                        <input type="email" placeholder="Correo" name="correo" for="correo" class="form-control required" required>
+                    </div>
+                    <div class="col-sm-6">
+
                         <input placeholder="Teléfono" name="telefono" class="form-control required">
                     </div>
                 </div>
@@ -28,8 +40,8 @@
                 		<input  type="text" placeholder="Número" name="numero" class="form-control required">
                 	</div>
                 </div>
-                
-                
+
+
                 <input  type="text" placeholder="Colonia" name="colonia" class="form-control required">
                 <input type="text" placeholder="Municipio" name="municipio" class="form-control required">
                 <div class="row">

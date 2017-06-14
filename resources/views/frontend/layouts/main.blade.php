@@ -79,9 +79,6 @@
 <script src="{{asset('frontend/assets/js/plugins/revolution-slider.js')}}"></script>
 <script src="{{asset('frontend/assets/js/plugins/style-switcher.js')}}"></script>
 
-<script src="{{asset('frontend/assets/plugins/jquery-steps/build/jquery.steps.js')}}"></script>
-<script src="{{asset('frontend/assets/plugins/sky-forms-pro/skyforms/js/jquery.validate.min.js')}}"></script>
-<script src="{{asset('frontend/assets/js/plugins/stepWizard.js')}}"></script>
 <script src="{{asset('frontend/assets/js/forms/product-quantity.js')}}"></script>
 <script src="{{asset('js/handlebars.js')}}"></script>
 <script>

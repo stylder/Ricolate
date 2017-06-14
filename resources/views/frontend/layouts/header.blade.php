@@ -75,13 +75,8 @@
                     </li>
                     <!-- End Promotion -->
 
-                   {{-- <li class="dropdown active">
-                        <a href="/acercanosotros" class="dropdown-toggle">
-                            Acerca Nosotros
-                        </a>
-                    </li>--}}
                     <!-- Promotion -->
-                    <li class="dropdown {{ ( Route::getCurrentRoute()->getPath() === 'ubicacion' ) ? 'active' : NULL }}"">
+                    <li class="dropdown {{ ( Route::getCurrentRoute()->getPath() === 'ubicacion' ) ? 'active' : NULL }}">
                         <a href="/ubicacion" class="dropdown-toggle">
                             Ubicación
                         </a>

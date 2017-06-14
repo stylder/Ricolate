@@ -21,7 +21,6 @@
 
             @if(!is_null($contents))
                 @foreach($contents as $key => $item)
-
                     <tr>
                         <td class="product-in-table">
                             <a  href="/products/{{ $item->product_id }}">
@@ -30,7 +29,10 @@
                             <div class="product-it-in">
                                 <a  href="/producto/{{ $item->product_id }}">
                                 <h3>{{ $item->name }}</h3>
-                                <span>{{$item->short_desc}}</span>
+                                    <div class="hidden-sm hidden-xs">
+                                        <span>{{$item->short_desc}}</span>
+                                    </div>
+
                                 </a>
                             </div>
                         </td>
@@ -44,7 +46,9 @@
 
                         </td>
                         <td>
-                            <a type="button" href="/cart/delete/{{ $item->product_id }}"  class="close"><span>&times;</span><span class="sr-only">Close</span></a>
+                            <a type="button" href="/cart/delete/{{ $item->product_id }}"  class="close">
+                                <span>&times;</span><span class="sr-only">Cerrar</span>
+                            </a>
                         </td>
                     </tr>
                 @endforeach

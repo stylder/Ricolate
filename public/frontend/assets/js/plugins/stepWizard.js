@@ -1,17 +1,55 @@
+
 var StepWizard = function () {
 
     return {
 
         initStepWizard: function () {
             var form = $(".shopping-cart");
+            console.log($(".shopping-cart"));
                 form.validate({
-                    errorPlacement: function errorPlacement(error, element) { element.before(error); },
                     rules: {
                         nombre: {
+                            required: true,
+                            minlength: 3,
+                            letters: true
+                        },
+                        correo: {
+                            required: true,
+                            email: true
+                        },
+                        apellidos: {
                             required: true
-                        }
-                    }
+                        },
+                        telefono: {
+                            required: true
+                        },
+                        calle: {
+                            required: true
+                        },
+                        numero: {
+                            required: true
+                        },
+                        colonia: {
+                            required: true
+                        },
+                        municipio: {
+                            required: true
+                        },
+                        estado: {
+                            required: true
+                        },
+                        postal: {
+                            required: true
+                        },
+                    },
+                    messages: {
+                        nombre: "Please specify your name (only letters and spaces are allowed)",
+                        correo: "Please specify a valid email address"
+                    },
+                    errorPlacement: function errorPlacement(error, element) { element.before(error); }
                 });
+
+
                 form.children("div").steps({
                     headerTag: ".header-tags",
                     bodyTag: "section",
@@ -30,11 +68,11 @@ var StepWizard = function () {
                         return form.valid();
                     },
                     onFinished: function (event, currentIndex) {
-                        form.
+                        form.submit();
                         alert("Enviado!");
                     }
                 });
-        }, 
+        }
 
     };
-}();        
+}();

@@ -16,17 +16,11 @@
     <!--=== Content Medium Part ===-->
     <div class="content-md margin-bottom-30">
         <div class="container">
-            <form class="shopping-cart" action="cotizacion" method="POST">
+            <form class="shopping-cart" role="shopping-cart"action="cotizacion" method="POST">
                 <input type="hidden" name="_token" value="{{ csrf_token() }}">
                 <div>
-
-
                     @include('frontend.partials.productos')
-
                     @include('frontend.partials.datospresupuesto')
-
-                    {{--@include('frontend.partials.datospago')--}}
-
                 </div>
             </form>
         </div><!--/end container-->
@@ -37,6 +31,9 @@
 @stop
 
 @section('scripts')
+    <script src="{{asset('/frontend/assets/plugins/jquery-steps/build/jquery.steps.js')}}"></script>
+    <script src="{{asset('/frontend/assets/js/plugins/stepWizard.js')}}"></script>
+    <script src="{{asset('/frontend/assets/plugins/sky-forms-pro/skyforms/js/jquery.validate.min.js')}}"></script>
     <script>
         jQuery(document).ready(function() {
             StepWizard.initStepWizard();
