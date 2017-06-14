@@ -199,8 +199,6 @@ class OrderController extends Controller {
 	public function destroy($order_id, OrderProduct $product, Customer $customer)
 	{
         try {
-            DB::beginTransaction();
-
             //Get the customer ID from the order.
             //Then, delete the order.
             $order = $this->_order->find($order_id);
@@ -214,11 +212,8 @@ class OrderController extends Controller {
             //We shouldn't hang on to anyone's personal info for longer than we have to.
             $customer->deleteCustomer($customerId);
 
-            DB::commit();
-
             return redirect('admin/orders');
         } catch (Exception $e) {
-            DB::rollback();
             return redirect('admin/orders');
         }
 	}

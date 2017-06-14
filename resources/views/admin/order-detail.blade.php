@@ -94,21 +94,23 @@
                                     <div class="col-sm-4">
                                         <div class="panel panel-default">
                                             <div class="panel-body">
-                                                <h4>Fecha de Orden</h4>
+                                                <h4>Fecha de Cotización</h4>
                                                 <p>
                                                     {{ $order->getFormattedCreatedAt() }}
                                                 </p>
                                             </div>
 
                                             <div class="panel-body">
-                                                <h4 id="order_status">Estado de Orden</h4>
+                                                <h4 id="order_status">Estado de Cotización</h4>
                                                 {!! Form::open(['method' => 'PUT', 'route' => ['admin.orders.update', $order->order_id],  'id' => 'status-form']) !!}
-                                                {!! Form::select('status', ['Shipped' => 'Enviado', 'Paid' => 'Pagado', 'Cancelled' => 'Cancelado'], $order->status, ['class' => 'form-control']) !!}
+                                                {!! Form::select('status',
+                                                                    ['Shipped' => 'Enviado', 'Paid' => 'Pagado', 'Cancelled' => 'Cancelado'],
+                                                                    $order->status, ['class' => 'form-control']) !!}
                                                 <br/>
                                                 <button type="submit" class="btn btn-primary pull-right"
                                                         aria-label="Save Changes">
                                                     <span class="glyphicon glyphicon-floppy-disk"
-                                                          aria-hidden="true"></span> Save
+                                                          aria-hidden="true"></span> Guardar
                                                 </button>
                                                 {!! Form::close() !!}
                                             </div>

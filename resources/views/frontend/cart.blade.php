@@ -16,7 +16,8 @@
     <!--=== Content Medium Part ===-->
     <div class="content-md margin-bottom-30">
         <div class="container">
-            <form class="shopping-cart" action="#">
+            <form class="shopping-cart" action="cotizacion" method="POST">
+                <input type="hidden" name="_token" value="{{ csrf_token() }}">
                 <div>
 
 

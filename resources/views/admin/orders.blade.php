@@ -59,7 +59,7 @@
                             @empty
                                 <tr>
                                     <td colspan="6">
-                                       <h3 class="text-center">No Orders</h3>
+                                       <h3 class="text-center">No tienes cotizaciones</h3>
                                     </td>
                                 </tr>
                             @endforelse
@@ -70,14 +70,14 @@
                                 <div class="modal-content">
                                     <div class="modal-header">
                                         <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                                        <h4 class="confirmHead">Confirm Delete?</h4>
+                                        <h4 class="confirmHead">¿Desea Eliminar?</h4>
                                     </div>
                                     <div class="modal-body">
-                                        <p>Are you sure that you want to delete this order?</p>
+                                        <p>¿Estás seguro de que quieres eliminar esta cotización??</p>
                                     </div>
                                     <div class="modal-footer">
                                         {!! Form::open(['method' => 'DELETE']) !!}
-                                            <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+                                            <button type="button" class="btn btn-default" data-dismiss="modal">Cancelar</button>
                                             {!! Form::submit('Delete', ['class' => 'btn btn-danger btn-ok']) !!}
                                         {!! Form::close() !!}
                                     </div>

@@ -30,7 +30,8 @@ var StepWizard = function () {
                         return form.valid();
                     },
                     onFinished: function (event, currentIndex) {
-                        alert("Submitted!");
+                        form.submit();
+                        alert("Enviado!");
                     }
                 });
         }, 
