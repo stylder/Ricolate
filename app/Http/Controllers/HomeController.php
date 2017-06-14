@@ -31,10 +31,8 @@ class HomeController extends Controller {
 	{
         //Get the slideshow
         try {
-            $slideshow = Cache::rememberForever('slides', function()
-            {
-                return $this->_slideshow->getSlideshow(1);
-            });
+            Cache::forget('slides');
+            $slideshow =$this->_slideshow->getSlideshow(1);
         } catch(Exception $e)
         {
             $slideshow = null;
@@ -42,6 +40,7 @@ class HomeController extends Controller {
 
         //Get the list of sale products
         try {
+            Cache::forget('sale-products-home');
             $saleList = $this->_product->getHomePageSaleList();
 
         }catch(Exception $e)

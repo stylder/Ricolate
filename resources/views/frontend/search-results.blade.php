@@ -13,7 +13,6 @@
         'img'=>'/frontend/assets/img/breadcrumbs-img.jpg'])
 
     <div class="container">
-
         <div class="row">
             <div class="col-sm-12">
                 @if(!$results->isEmpty())
@@ -24,8 +23,6 @@
             </div>
         </div>
         <div class="filter-results">
-
-
             <div class="row illustration-v2">
                 @foreach($results as $result)
                     <div class="col-md-4">
@@ -42,18 +39,11 @@
                                 <div class="pull-left">
                                     <h4 class="title-price"><a href="shop-ui-inner.html">{{ $result->name }}</a></h4>
                                     <span class="gender text-uppercase">{{ $result->manufacturer->manufacturer }}</span>
-
                                 </div>
-
                             </div>
-
                         </div>
                     </div>
-
                 @endforeach
-
-
-
             </div>
         </div><!--/end filter resilts-->
     </div>

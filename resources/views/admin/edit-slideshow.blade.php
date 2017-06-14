@@ -145,7 +145,7 @@
         </div>
         {!! Form::close() !!}
     @empty
-        <h1>There are no slides.</h1>
+        <h1>No tienes sliders</h1>
     @endforelse
     </div>
 
