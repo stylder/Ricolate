@@ -3,9 +3,11 @@ var StepWizard = function () {
 
     return {
 
+
         initStepWizard: function () {
+
             var form = $(".shopping-cart");
-            console.log($(".shopping-cart"));
+            console.log($('.shopping-cart'));
                 form.validate({
                     rules: {
                         nombre: {

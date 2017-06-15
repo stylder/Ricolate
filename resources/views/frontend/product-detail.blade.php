@@ -51,10 +51,7 @@
                         <div class="shop-product-heading">
                             <h2>{{ $product->name }}</h2>
                             <ul class="list-inline shop-product-social">
-                                <li><a href="#"><i class="fa fa-facebook"></i></a></li>
-                                <li><a href="#"><i class="fa fa-twitter"></i></a></li>
-                                <li><a href="#"><i class="fa fa-google-plus"></i></a></li>
-                                <li><a href="#"><i class="fa fa-pinterest"></i></a></li>
+                                <li><a href="https://www.facebook.com/Ricolate.Insumos/"><i class="fa fa-facebook"></i></a></li>
                             </ul>
                         </div><!--/end shop product social-->
                             <p class="text-justify">

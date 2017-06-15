@@ -32,8 +32,9 @@
 
 @section('scripts')
     <script src="{{asset('/frontend/assets/plugins/jquery-steps/build/jquery.steps.js')}}"></script>
-    <script src="{{asset('/frontend/assets/js/plugins/stepWizard.js')}}"></script>
     <script src="{{asset('/frontend/assets/plugins/sky-forms-pro/skyforms/js/jquery.validate.min.js')}}"></script>
+
+    <script src="{{asset('/frontend/assets/js/plugins/stepWizard.js')}}"></script>
     <script>
         jQuery(document).ready(function() {
             StepWizard.initStepWizard();
