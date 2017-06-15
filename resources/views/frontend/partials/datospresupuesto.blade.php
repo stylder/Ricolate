@@ -16,7 +16,6 @@
                     <div class="col-sm-6">
                         <input type="text" placeholder="Nombre" name="nombre"  id="nombre" class="form-control required">
                     </div>
-
                     <div class="col-sm-6">
                         <input type="text" placeholder="Apellidos" name="apellidos" id="apellidos" class="form-control required">
                     </div>
@@ -27,10 +26,10 @@
                         <input type="email" placeholder="Correo" name="correo" id="correo" class="form-control required">
                     </div>
                     <div class="col-sm-6">
-
                         <input placeholder="Teléfono" name="telefono" id="telefono" class="form-control required">
                     </div>
                 </div>
+
                 <div class="row">
                 	<div class="col-sm-6">
                 		<input type="text" placeholder="Calle" name="calle" id="calle" class="form-control required">
@@ -48,7 +47,6 @@
                 <div class="row">
                     <input type="text" placeholder="Municipio" name="municipio" id="municipio" class="form-control required">
                 </div>
-
 
                 <div class="row">
                     <div class="col-sm-6">
