@@ -36,6 +36,17 @@ class CartController extends Controller {
             /*->withTotal($contents['total_price']);*/
 	}
 
+
+    public function getCheckOut()
+    {
+        $contents = $this->_cart->getCartContents();
+
+        return view('frontend.checkout')
+            ->withContents($contents['items'])
+            ->withQuantities($contents['quantities']);
+
+    }
+
     /**
      * Add a product to the shopping cart.
      *

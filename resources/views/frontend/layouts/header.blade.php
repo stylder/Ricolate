@@ -11,7 +11,7 @@
 
         <div class="container">
             <div class="row">
-                <div class="col-sm-6">
+                <div class="col-sm-12">
                     <!-- Topbar Navigation -->
                     <ul class="left-topbar">
                         <li>

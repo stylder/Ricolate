@@ -41,11 +41,15 @@
 
 
                 <div class="row">
-                    <input  type="text" placeholder="Colonia" name="colonia" id="colonia" class="form-control required">
+                    <div class="col-sm-12">
+                        <input  type="text" placeholder="Colonia" name="colonia" id="colonia" class="form-control required">
+                    </div>
                 </div>
 
                 <div class="row">
-                    <input type="text" placeholder="Municipio" name="municipio" id="municipio" class="form-control required">
+                    <div class="col-sm-12">
+                        <input type="text" placeholder="Municipio" name="municipio" id="municipio" class="form-control required">
+                    </div>
                 </div>
 
                 <div class="row">

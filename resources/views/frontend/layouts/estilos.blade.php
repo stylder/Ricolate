@@ -14,7 +14,7 @@
 <link rel="stylesheet" href="{{asset('frontend/assets/plugins/animate.css')}}">
 <link rel="stylesheet" href="{{asset('frontend/assets/plugins/line-icons/line-icons.css')}}">
 <link rel="stylesheet" href="{{asset('frontend/assets/plugins/font-awesome/css/font-awesome.min.css')}}">
-<link rel="stylesheet"  href="{{asset('frontend/assets/plugins/jquery-steps/css/custom-jquery.steps.css')}}" >
+<link rel="stylesheet" href="{{asset('frontend/assets/plugins/jquery-steps/css/custom-jquery.steps.css')}}" >
 <link rel="stylesheet" href="{{asset('frontend/assets/plugins/scrollbar/css/jquery.mCustomScrollbar.css')}}">
 <link rel="stylesheet" href="{{asset('frontend/assets/plugins/owl-carousel/owl-carousel/owl.carousel.css')}}">
 <link rel="stylesheet" href="{{asset('frontend/assets/plugins/revolution-slider/rs-plugin/css/settings.css')}}">

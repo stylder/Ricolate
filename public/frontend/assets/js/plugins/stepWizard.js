@@ -7,13 +7,10 @@ var StepWizard = function () {
         initStepWizard: function () {
 
             var form = $(".shopping-cart");
-            console.log($('.shopping-cart'));
                 form.validate({
                     rules: {
                         nombre: {
                             required: true,
-                            minlength: 3,
-                            letters: true
                         },
                         correo: {
                             required: true,
@@ -42,11 +39,19 @@ var StepWizard = function () {
                         },
                         postal: {
                             required: true
-                        },
+                        }
                     },
                     messages: {
-                        nombre: "Please specify your name (only letters and spaces are allowed)",
-                        correo: "Please specify a valid email address"
+                        nombre: "Campo necesario",
+                        apellidos: "Campo necesario",
+                        correo: "Campo necesario",
+                        telefono: "Introduce un correo valido",
+                        calle: "Campo necesario",
+                        numero: "Campo necesario",
+                        colonia: "Campo necesario",
+                        municipio: "Campo necesario",
+                        estado: "Campo necesario",
+                        postal: "Campo necesario",
                     },
                     errorPlacement: function errorPlacement(error, element) { element.before(error); }
                 });
