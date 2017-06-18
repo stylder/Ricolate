@@ -16,9 +16,10 @@
 <script src="{{asset('frontend/assets/js/shop.app.js')}}"></script>
 <script src="{{asset('frontend/assets/js/plugins/owl-carousel.js')}}"></script>
 <script src="{{asset('frontend/assets/js/plugins/revolution-slider.js')}}"></script>
-<script src="{{asset('frontend/assets/js/plugins/style-switcher.js')}}"></script>
-<script src="{{asset('frontend/assets/js/forms/product-quantity.js')}}"></script>
+
 <script src="{{asset('js/handlebars.js')}}"></script>
+
+
 
 
 <script>
@@ -28,7 +29,6 @@
         App.initParallaxBg();
         OwlCarousel.initOwlCarousel();
         RevolutionSlider.initRSfullWidth();
-        StyleSwitcher.initStyleSwitcher();
     });
 </script>
 <!--[if lt IE 9]>

@@ -10,7 +10,7 @@ var StepWizard = function () {
                 form.validate({
                     rules: {
                         nombre: {
-                            required: true,
+                            required: true
                         },
                         correo: {
                             required: true,
@@ -78,7 +78,10 @@ var StepWizard = function () {
                         form.submit();
                         alert("Enviado!");
                     }
-                });
+                }
+
+
+                );
         }
 
     };
