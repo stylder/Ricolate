@@ -1,4 +1,6 @@
 <!-- JS Global Compulsory -->
+
+
 <script src="{{asset('frontend/assets/plugins/jquery/jquery.min.js')}}"></script>
 <script src="{{asset('frontend/assets/plugins/jquery/jquery-migrate.min.js')}}"></script>
 <script src="{{asset('frontend/assets/plugins/bootstrap/js/bootstrap.min.js')}}"></script>

@@ -10,11 +10,6 @@
 
                 form.validate({
                     rules: {
-                        confirm: {
-                            equalTo: "#password"
-                        }
-                    },
-/*                    rules: {
                         nombre: {
                             required: true
                         },
@@ -47,7 +42,6 @@
                             required: true
                         }
                     },
- */
                     messages: {
                         nombre: "Campo necesario",
                         apellidos: "Campo necesario",

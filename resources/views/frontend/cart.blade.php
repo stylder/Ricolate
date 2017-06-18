@@ -35,8 +35,7 @@
     <script type="text/javascript" src="{{asset('/frontend/assets/plugins/jquery-steps/build/jquery.steps.js')}}"></script>
     <script type="text/javascript" src="{{asset('/frontend/assets/plugins/sky-forms-pro/skyforms/js/jquery.validate.min.js')}}"></script>
     <script type="text/javascript" src="{{asset('/frontend/assets/js/plugins/stepWizard.js')}}"></script>
-    <script type="text/javascript" src="{{asset('/frontend/assets/js/forms/page_login.js')}}"></script>
-
+    
     <script>
         // A $( document ).ready() block.
         $( document ).ready(function() {
