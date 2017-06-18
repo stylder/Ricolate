@@ -1,14 +1,20 @@
 
-var StepWizard = function () {
+    var StepWizard = function () {
 
-    return {
+        return {
 
 
-        initStepWizard: function () {
+            initStepWizard: function () {
 
-            var form = $(".shopping-cart");
+                var form = $(".shopping-cart");
+
                 form.validate({
                     rules: {
+                        confirm: {
+                            equalTo: "#password"
+                        }
+                    },
+/*                    rules: {
                         nombre: {
                             required: true
                         },
@@ -41,11 +47,15 @@ var StepWizard = function () {
                             required: true
                         }
                     },
+ */
                     messages: {
                         nombre: "Campo necesario",
                         apellidos: "Campo necesario",
-                        correo: "Campo necesario",
-                        telefono: "Introduce un correo valido",
+                        correo: {
+                            required: "Campo necesario",
+                            email: "Inserta un correo valido"
+                        },
+                        telefono: "Campo necesario",
                         calle: "Campo necesario",
                         numero: "Campo necesario",
                         colonia: "Campo necesario",
@@ -78,11 +88,8 @@ var StepWizard = function () {
                         form.submit();
                         alert("Enviado!");
                     }
-                }
+                });
+            }
 
-
-                );
-        }
-
-    };
-}();
+        };
+    }();

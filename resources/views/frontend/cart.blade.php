@@ -16,13 +16,13 @@
     <!--=== Content Medium Part ===-->
     <div class="content-md margin-bottom-30">
         <div class="container">
-            <form class="shopping-cart" role="shopping-cart"action="cotizacion" method="POST">
+            {!! Form::open(['method' => 'POST', 'url' => '/cotizacion', 'class'=>'shopping-cart']) !!}
                 <input type="hidden" name="_token" value="{{ csrf_token() }}">
                 <div>
                     @include('frontend.partials.productos')
                     @include('frontend.partials.datospresupuesto')
                 </div>
-            </form>
+            {!! Form::close() !!}
         </div><!--/end container-->
     </div>
 
@@ -32,26 +32,19 @@
 
 @section('scripts')
 
-
-
-
-
-    <script type="text/javascript" src="{{asset('/frontend/assets/plugins/jquery-steps/build/jquery.steps.js?v=r0sLDicvP58AIXN_mc3QdyVvVj5euZNzdsa2N1PKvb81')}}"></script>
-    <script type="text/javascript" src="{{asset('/frontend/assets/plugins/sky-forms-pro/skyforms/js/jquery.validate.min.js?v=r0sLDicvP58AIXN_mc3QdyVvVj5euZNzdsa2N1PKvb81')}}"></script>
-    {{--<script type="text/javascript" src="{{asset('/frontend/assets/js/plugins/stepWizard.js?v=1')}}"></script>--}}
+    <script type="text/javascript" src="{{asset('/frontend/assets/plugins/jquery-steps/build/jquery.steps.js')}}"></script>
+    <script type="text/javascript" src="{{asset('/frontend/assets/plugins/sky-forms-pro/skyforms/js/jquery.validate.min.js')}}"></script>
+    <script type="text/javascript" src="{{asset('/frontend/assets/js/plugins/stepWizard.js')}}"></script>
+    <script type="text/javascript" src="{{asset('/frontend/assets/js/forms/page_login.js')}}"></script>
 
     <script>
-
-        $.getScript("/frontend/assets/js/plugins/stepWizard.js?v="+Math.random()*10, function( data, textStatus, jqxhr ) {
-                console.log( data ); // 200
-            console.log( "Load was performed." );
-            setTimeout(InicializarFormulario,0);
-            function InicializarFormulario() {
-                StepWizard.initStepWizard();
-            }
+        // A $( document ).ready() block.
+        $( document ).ready(function() {
+            console.log( "ready 1!" );
+            StepWizard.initStepWizard();
+            console.log(StepWizard)
 
         });
 
     </script>
-
 @stop

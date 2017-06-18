@@ -29,6 +29,7 @@
         App.initParallaxBg();
         OwlCarousel.initOwlCarousel();
         RevolutionSlider.initRSfullWidth();
+        console.log("ready librerías")
     });
 </script>
 <!--[if lt IE 9]>

@@ -25,7 +25,7 @@
                 <div class="row">
                     <div class="col-sm-6">
                         <input type="email" placeholder="Correo" name="correo" id="correo"
-                               class="form-control required">
+                               class="form-control required email">
                     </div>
                     <div class="col-sm-6">
                         <input placeholder="Teléfono" name="telefono" id="telefono" class="form-control required">
