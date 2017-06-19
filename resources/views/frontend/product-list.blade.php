@@ -124,10 +124,6 @@
 
     <script>
         $(document).ready(function () {
-
-
-
-
             $(document).on("submit",".producto-form",function(e){
                 e.preventDefault(e);
 
