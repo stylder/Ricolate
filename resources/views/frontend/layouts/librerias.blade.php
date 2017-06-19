@@ -20,6 +20,7 @@
 <script src="{{asset('frontend/assets/js/plugins/revolution-slider.js')}}"></script>
 
 <script src="{{asset('js/handlebars.js')}}"></script>
+<script src="{{asset('/frontend/assets/plugins/notify/noty.js')}}"></script>
 
 
 

@@ -75,4 +75,53 @@
 
 @section('scripts')
 
+    <script>
+        $(document).ready(function(){
+            $('#formulario_cotizacion').on('submit',function(e){
+                e.preventDefault(e);
+                $.ajax({
+                    type:"POST",
+                    url:'/cotizacion',
+                    data:$(this).serialize(),
+                    dataType: 'json',
+                    success: function(data){
+                        new Noty({
+                            type: 'success',
+                            layout: 'bottomRight',
+                            text: 'Se envió la cotización correctamente',
+                            progressBar: true,
+                            timeout: 3000,
+                            theme:'sunset',
+                            closeWith: ['click', 'button'],
+                            animation: {
+                                open: 'noty_effects_open',
+                                close: 'noty_effects_close'
+                            }
+                        }).show();
+
+                        $('#formulario_cotizacion').trigger("reset");
+
+
+                    },
+                    error: function(data){
+                        new Noty({
+                            type: 'error',
+                            layout: 'bottomRight',
+                            text: 'Se produjó un error al enviar la cotización',
+                            progressBar: true,
+                            timeout: 3000,
+                            theme:'sunset',
+                            closeWith: ['click', 'button'],
+                            animation: {
+                                open: 'noty_effects_open',
+                                close: 'noty_effects_close'
+                            }
+                        }).show();
+                    }
+                })
+            });
+        });
+    </script>
+
+
 @stop

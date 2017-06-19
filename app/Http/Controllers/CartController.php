@@ -54,9 +54,16 @@ class CartController extends Controller {
      * @return Response
      * @internal param Request $request
      */
-	public function store($productId)
+	public function store(Request $request,$productId)
 	{
         $updatedCart = $this->_cart->addProduct($productId);
+
+            if($request->ajax())
+            {
+                return response()->json(['status' => 'success'])->withCookie(cookie()->forever('cart', $updatedCart));
+            }
+
+            //Return a redirect if the form was not submitted via AJAX.
         return redirect('cart')
             ->withCookie(cookie()->forever('cart', $updatedCart));
 	}
@@ -72,6 +79,8 @@ class CartController extends Controller {
 	public function update($productId)
 	{
         $updatedCart = $this->_cart->updateProduct($productId);
+
+
         return redirect('cart')
             ->withCookie(cookie()->forever('cart', $updatedCart));
 	}

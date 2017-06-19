@@ -15,7 +15,7 @@
                 @foreach($contents as $key => $item)
                     <tr>
                         <td class="product-in-table">
-                            <a  href="/products/{{ $item->product_id }}">
+                            <a  href="/producto/{{ $item->product_id }}">
                                 <img class="img-responsive" src="{{ (count($item->images)) ? $item->images->first()->image_path : 'http://placehold.it/221x221' }}" />
                             </a>
                             <div class="product-it-in">

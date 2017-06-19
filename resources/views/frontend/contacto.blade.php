@@ -111,9 +111,7 @@
                 <ul class="list-unstyled margin-bottom-30">
                     <li><strong>Lunes-Viernes:</strong> 10:00am a 8:30pm</li>
                     <li><strong>Sábados-Domingos:</strong> 10:00am a 4:30pm</li>
-
                 </ul>
-                
             </div><!--/col-md-3-->
         </div><!--/row-->
 
@@ -126,7 +124,6 @@
 
 @stop
 @section('scripts')
-    <script src="{{asset('/frontend/assets/plugins/notify/noty.js')}}"></script>
 
     <script>
         $(document).ready(function(){
@@ -157,6 +154,19 @@
 
                     },
                     error: function(data){
+                        new Noty({
+                            type: 'error',
+                            layout: 'bottomRight',
+                            text: 'Se produjó un error al enviar el mensaje',
+                            progressBar: true,
+                            timeout: 3000,
+                            theme:'sunset',
+                            closeWith: ['click', 'button'],
+                            animation: {
+                                open: 'noty_effects_open',
+                                close: 'noty_effects_close'
+                            }
+                        }).show();
                     }
                 })
             });

@@ -1,7 +1,7 @@
 <script id="product-list-template" type="text/x-handlebars-template">
     {{#products}}
 
-    <div class="list-product-description product-description-brd margin-bottom-30">
+    <div class="list-product-description product-description-brd margin-bottom-30 producto">
         <div class="row">
             <div class="col-sm-4">
                 <a href="/producto/{{product_id}}"><img class="img-responsive sm-margin-bottom-20"  src="{{cover_photo}}" alt=""></a>
@@ -14,7 +14,8 @@
 
                     </ul>
                     <p class="margin-bottom-20">{{short_desc}}</p>
-                    <?php echo Form::open(['method' => 'POST', 'url' => ["/cart/add/{{product_id}}"]] )?>
+                    <?php echo Form::open(['method' => 'POST', 'url' => ["/cart/add/{{product_id}}", 'class'=>'producto' ]] )?>
+                    <?php echo Form::hidden('id', '{{product_id}}') ?>
                     <?php echo Form::button('Agregar al Carro', ['class' => 'btn-u btn-u-sea-shop btn-u-lg', 'type' => 'submit']) ?>
                     <?php echo Form::close()  ?>
                 </div>
@@ -22,4 +23,8 @@
         </div>
     </div>
     {{/products}}
+
+
 </script>
+
+

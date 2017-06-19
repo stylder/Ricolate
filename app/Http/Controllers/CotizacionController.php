@@ -100,6 +100,13 @@ class CotizacionController extends Controller {
 
             //Finally, return the order confirmation view with the order list.
             $order = $this->_order->getOrder($order->order_id);
+            //Return a JSON response if the form was submitted via AJAX.
+            if($request->ajax())
+            {
+                return response()->json(['status' => 'success']);
+            }
+
+            //Return a redirect if the form was not submitted via AJAX.
 
             return redirect('/')->withCookie($cookie);
 

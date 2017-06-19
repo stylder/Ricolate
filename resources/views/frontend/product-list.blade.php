@@ -121,6 +121,68 @@
 @stop
 @section('scripts')
     @include('frontend.partials.product-template')
+
+    <script>
+        $(document).ready(function () {
+
+            $('.producto').on('submit',function(e){
+                e.preventDefault(e);
+
+                var id = $(this).find('input[type="hidden"][name="id"]').val();
+                var _token = $(this).find('input[type="hidden"][name="_token"]').val();
+
+                var data = {'id':id,'_token':_token};
+
+                console.log(data);
+                $.ajax({
+
+                    type:"POST",
+                    url:'/cart/add/'+id,
+                    data:data,
+                    dataType: 'json',
+                    success: function(data){
+                        new Noty({
+                            type: 'success',
+                            layout: 'bottomRight',
+                            text: 'Se agregó el producto correctamente al carrito',
+                            progressBar: true,
+                            timeout: 3000,
+                            theme:'sunset',
+                            closeWith: ['click', 'button'],
+                            animation: {
+                                open: 'noty_effects_open',
+                                close: 'noty_effects_close'
+                            }
+                        }).show();
+
+
+                        var  cart =$('#cartTotal');
+                        var cartValue = cart.text();
+
+                        $('#cartTotal').text(parseInt(cartValue)+   1).trigger('change');
+
+
+                    },
+                    error: function(data){
+                        new Noty({
+                            type: 'error',
+                            layout: 'bottomRight',
+                            text: 'Se produjó un error actualizar el carrito',
+                            progressBar: true,
+                            timeout: 3000,
+                            theme:'sunset',
+                            closeWith: ['click', 'button'],
+                            animation: {
+                                open: 'noty_effects_open',
+                                close: 'noty_effects_close'
+                            }
+                        }).show();
+                    }
+                })
+            });
+        })
+
+    </script>
     <script>
         var productList = window.productList || {};
 
