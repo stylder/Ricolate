@@ -48,15 +48,14 @@
                     </div>
                 @endif
 
-                <form action="/messages" method="POST" id="sky-form3" class="sky-form contact-style">
-                    <input type="hidden" name="_token" value="{{ csrf_token() }}">
+                {!! Form::open(['method' => 'POST', 'url' => '/messages', 'class'=>'sky-form contact-style', 'id'=>'sky-form3']) !!}
 
                     <fieldset class="no-padding">
                         <label for="name">Nombre <span class="color-red">*</span></label>
                         <div class="row sky-space-20">
                             <div class="col-md-7 col-md-offset-0">
                                 <div>
-                                    <input type="text" name="sender_name" id="name" class="form-control">
+                                    <input type="text" name="sender_name" id="name" class="form-control" required>
                                 </div>
                             </div>
                         </div>
@@ -65,7 +64,7 @@
                         <div class="row sky-space-20">
                             <div class="col-md-7 col-md-offset-0">
                                 <div>
-                                    <input type="email" name="sender_email"  id="email" class="form-control required">
+                                    <input type="email" name="sender_email"  id="email" class="form-control required" required>
                                 </div>
                             </div>
                         </div>
@@ -74,7 +73,7 @@
                         <div class="row sky-space-20">
                             <div class="col-md-7 col-md-offset-0">
                                 <div>
-                                    <input name="sender_phone" type="phone"  id="phone" class="form-control" maxlength="12">
+                                    <input name="sender_phone" type="phone"  id="phone" class="form-control" maxlength="12" required>
                                 </div>
                             </div>
                         </div>
@@ -83,14 +82,16 @@
                         <div class="row sky-space-20">
                             <div class="col-md-11 col-md-offset-0">
                                 <div>
-                                    <textarea rows="3" name="message" id="message" class="form-control"></textarea>
+                                    <textarea rows="3" name="message" id="message" class="form-control" required></textarea>
                                 </div>
                             </div>
                         </div>
 
-                        <p><button type="submit" class="btn-u btn-u-sea-shop btn-u-lg">Enviar Mensaje</button></p>
+                        <p>
+                            {!! Form::button('Enviar Mensaje', ['class' => 'btn-u btn-u-sea-shop btn-u-lg', 'type' => 'submit']) !!}
+                        </p>
                     </fieldset>
-                </form>
+                {!! Form::close() !!}
             </div><!--/col-md-9-->
 
             <div class="col-md-3">
@@ -112,7 +113,7 @@
                     <li><strong>Sábados-Domingos:</strong> 10:00am a 4:30pm</li>
 
                 </ul>
-
+                
             </div><!--/col-md-3-->
         </div><!--/row-->
 
@@ -125,69 +126,41 @@
 
 @stop
 @section('scripts')
+    <script src="{{asset('/frontend/assets/plugins/notify/noty.js')}}"></script>
+
     <script>
-        var contactForm = window.contactForm || {};
+        $(document).ready(function(){
+            $('#sky-form3').on('submit',function(e){
+                e.preventDefault(e);
+                $.ajax({
+                    type:"POST",
+                    url:'/messages',
+                    data:$(this).serialize(),
+                    dataType: 'json',
+                    success: function(data){
+                        new Noty({
+                            type: 'success',
+                            layout: 'bottomRight',
+                            text: 'Se envió el mensaje correctamente',
+                            progressBar: true,
+                            timeout: 3000,
+                            theme:'sunset',
+                            closeWith: ['click', 'button'],
+                            animation: {
+                                open: 'noty_effects_open',
+                                close: 'noty_effects_close'
+                            }
+                        }).show();
 
-        /**
-         * Auto hyphenate the Phone Number field using a regex.
-         */
-        contactForm.autoHyphenate = function()
-        {
-            $("input[name='sender_phone']").keyup(function(){
-                //Remove hyphens that the user enters.
-                var phoneNum = $(this).val().split("-").join("");
-                if($(this).val().length > 3){
-                    phoneNum = phoneNum.match(new RegExp('.{1,4}$|.{1,3}', 'g')).join("-");
-                    $(this).val(phoneNum);
-                }
+                        $('#sky-form3').trigger("reset");
+
+
+                    },
+                    error: function(data){
+                    }
+                })
             });
-        };
-
-        /**
-         * Check that each required field has a value.
-         *
-         * @returns {boolean}
-         */
-        contactForm.checkRequiredFields = function()
-        {
-            var passedValidation = true;
-            $('input.required').each(function()
-            {
-                var empty = (!!$(this).val() === 'undefined' || $(this).val() === '');
-                if(empty)
-                {
-                    $('li.validation-error').remove();
-                    $('.contact-errors').show().find('ul.messages').append('<li class="validation-error">Por favor llene todos los campos requeridos.</li>');
-                    $(this).addClass('contact-form-error');
-                    passedValidation = false;
-                }else {
-                    $('li.validation-error').remove();
-                    $(this).removeClass('contact-form-error');
-                }
-            });
-            return passedValidation;
-        };
-
-        /**
-         * Handle form submission.
-         */
-        $('form#contact-form').submit(function(e)
-        {
-            var submitBtn = $(this).find('button[type="submit"]');
-            if(contactForm.checkRequiredFields())
-            {
-                submitBtn.text('Enviando...');
-                var url = $(this).attr('action');
-                var data = $(this).serialize();
-                $.post(url, data, function(d)
-                {
-                    $('form#contact-form').slideUp().after('<h1>¡Gracias por su interés!</h1>');
-                });
-            }
-            e.preventDefault();
         });
-
-        contactForm.autoHyphenate();
     </script>
 
 @stop

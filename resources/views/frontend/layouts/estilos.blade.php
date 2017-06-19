@@ -26,3 +26,6 @@
 
 <!-- CSS Customization -->
 <link rel="stylesheet" href="{{asset('frontend/assets/css/custom.css')}}">
+
+<!-- CSS Notification -->
+<link rel="stylesheet" href="{{asset('frontend/assets/plugins/notify/noty.css')}}">

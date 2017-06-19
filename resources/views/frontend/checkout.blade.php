@@ -60,7 +60,6 @@
                             </li>
                             <li aria-hidden="false" aria-disabled="false">
                                 {!! Form::button('Cotizar', ['class' => 'btn-u btn-u-sea-shop btn-u-lg', 'type' => 'submit']) !!}
-
                             </li>
 
                         </ul>
