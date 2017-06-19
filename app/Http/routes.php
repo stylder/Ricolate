@@ -73,7 +73,7 @@ Route::get("shop/on-sale", 'ProductSaleController@index');
 Route::get('order', 'OrderController@create');
 Route::post('order', 'OrderController@store');
 
-Route::put('cotizacion', 'CotizacionController@store');
+Route::post('cotizacion', 'CotizacionController@store');
 
 //Search routes
 Route::match(['GET', 'POST'], '/search', 'SearchController@index');

@@ -16,13 +16,47 @@
     <!--=== Content Medium Part ===-->
     <div class="content-md margin-bottom-30">
         <div class="container">
-            {!! Form::open(['method' => 'POST', 'url' => '/cotizacion', 'class'=>'shopping-cart']) !!}
-                <input type="hidden" name="_token" value="{{ csrf_token() }}">
-                <div>
-                    @include('frontend.partials.productos')
-                    @include('frontend.partials.datospresupuesto')
+            <form class="shopping-cart" action="#" novalidate="novalidate">
+                <div role="application" class="wizard clearfix">
+                    <div class="steps clearfix">
+                        <ul role="tablist">
+                            <li role="tab" class="first current" aria-disabled="false" aria-selected="true">
+                                <a href="/cart" aria-controls="steps-uid-0-p-0">
+                                    <span class="current-info audible">current step: </span><span
+                                            class="number">1.</span>
+                                    <div class="overflow-h">
+                                        <h2>Carrito de compras</h2>
+                                        <p>Revisar y edita sus productos</p>
+                                        <i class="rounded-x fa fa-check"></i>
+                                    </div>
+                                </a></li>
+                            <li role="tab" class="disabled" aria-disabled="true">
+                                <a href="#steps-uid-0-h-1" aria-controls="steps-uid-0-p-1">
+                                    <span class="number">2.</span>
+                                    <div class="overflow-h">
+                                        <h2>Solicitud Presupuesto</h2>
+                                        <p>Revisar datos de presupuesto</p>
+                                        <i class="rounded-x fa fa-home"></i>
+                                    </div>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="content clearfix">
+
+                        @include('frontend.partials.productos')
+
+                    </div>
+                    <div class="actions clearfix">
+                        <ul role="menu" aria-label="Pagination">
+                            <li aria-hidden="false" aria-disabled="false">
+                                <a href="/checkout" role="menuitem">Siguiente</a>
+                            </li>
+
+                        </ul>
+                    </div>
                 </div>
-            {!! Form::close() !!}
+            </form>
         </div><!--/end container-->
     </div>
 
@@ -32,18 +66,5 @@
 
 @section('scripts')
 
-    <script type="text/javascript" src="{{asset('/frontend/assets/plugins/jquery-steps/build/jquery.steps.js')}}"></script>
-    <script type="text/javascript" src="{{asset('/frontend/assets/plugins/sky-forms-pro/skyforms/js/jquery.validate.min.js')}}"></script>
-    <script type="text/javascript" src="{{asset('/frontend/assets/js/plugins/stepWizard.js')}}"></script>
-    
-    <script>
-        // A $( document ).ready() block.
-        $( document ).ready(function() {
-            console.log( "ready 1!" );
-            StepWizard.initStepWizard();
-            console.log(StepWizard)
 
-        });
-
-    </script>
 @stop

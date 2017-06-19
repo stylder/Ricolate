@@ -1,23 +1,15 @@
-<div class="header-tags">
-    <div class="overflow-h">
-        <h2>Solicitud Presupuesto</h2>
-        <p>Revisar datos de presupuesto</p>
-        <i class="rounded-x fa fa-home"></i>
-    </div>
-</div>
+
 <section class="billing-info">
     <div class="row">
         <div class="col-md-6 md-margin-bottom-40">
             <h2 class="title-type">Datos Solicitante</h2>
             <div class="billing-info-inputs checkbox-list">
-
-
                 <div class="row">
                     <div class="col-sm-6">
-                        <input type="text" placeholder="Nombre" name="nombre" id="nombre" class="form-control required">
+                        <input type="text" placeholder="Nombre" name="nombre" id="nombre" class="form-control required" required>
                     </div>
                     <div class="col-sm-6">
-                        <input type="text" placeholder="Apellidos" name="apellidos" id="apellidos"
+                        <input type="text" placeholder="Apellidos" name="apellidos" id="apellidos" required
                                class="form-control required">
                     </div>
                 </div>
@@ -25,43 +17,43 @@
                 <div class="row">
                     <div class="col-sm-6">
                         <input type="email" placeholder="Correo" name="correo" id="correo"
-                               class="form-control required email">
+                               class="form-control required email" required>
                     </div>
                     <div class="col-sm-6">
-                        <input placeholder="Teléfono" name="telefono" id="telefono" class="form-control required">
+                        <input placeholder="Teléfono" name="telefono" id="telefono" class="form-control required" required>
                     </div>
                 </div>
 
                 <div class="row">
                     <div class="col-sm-6">
-                        <input type="text" placeholder="Calle" name="calle" id="calle" class="form-control required">
+                        <input type="text" placeholder="Calle" name="calle" id="calle" class="form-control required" required>
                     </div>
                     <div class="col-sm-6">
-                        <input type="text" placeholder="Número" name="numero" id="numero" class="form-control required">
+                        <input type="text" placeholder="Número" name="numero" id="numero" class="form-control required" required>
                     </div>
                 </div>
 
 
                 <div class="row">
                     <div class="col-sm-12">
-                        <input type="text" placeholder="Colonia" name="colonia" id="colonia"
+                        <input type="text" placeholder="Colonia" name="colonia" id="colonia" required
+                               class="form-control required" >
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-sm-12">
+                        <input type="text" placeholder="Municipio" name="municipio" id="municipio" required
                                class="form-control required">
                     </div>
                 </div>
 
                 <div class="row">
-                    <div class="col-sm-12">
-                        <input type="text" placeholder="Municipio" name="municipio" id="municipio"
-                               class="form-control required">
-                    </div>
-                </div>
-
-                <div class="row">
                     <div class="col-sm-6">
-                        <input type="text" placeholder="Estado" name="estado" id="estado" class="form-control required">
+                        <input type="text" placeholder="Estado" name="estado" id="estado" class="form-control required" required>
                     </div>
                     <div class="col-sm-6">
-                        <input type="text" placeholder="Código Postal" name="postal" id="postal"
+                        <input type="text" placeholder="Código Postal" name="postal" id="postal" required
                                class="form-control required">
                     </div>
                 </div>

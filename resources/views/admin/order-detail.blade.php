@@ -7,8 +7,20 @@
 @section('content')
     <div class="container">
         <div class="row">
-            <div class="col-sm-12">
+            <div class="col-sm-10">
                 <h1>Detalle de Cotización</h1>
+            </div>
+            <div class="col-sm-2 panel-body">
+
+
+                <a href="/admin/orders" class="btn btn-primary pull-right"aria-label="Save Changes">
+                    <span class="glyphicon fa fa-long-arrow-left" aria-hidden="true">
+
+                    </span> Regresar
+                    <i class="fa fa-long-arrow-left" aria-hidden="true"></i>
+
+                </a>
+
             </div>
         </div>
         <div class="row">
@@ -63,23 +75,7 @@
                                         </div>
                                     </div>
                                     <div class="col-sm-4">
-                                        <div class="panel panel-default">
-                                            <div class="panel-body">
-                                                <h4>Datos Empresa</h4>
-                                                <table>
-                                                    <tbody>
-                                                    <tr>
-                                                        <td>Nombre Empresa&nbsp;</td>
-                                                        <td>{{ $order->customer->compania }}</td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td>RFC</td>
-                                                        <td>{{ $order->customer->rfc }}</td>
-                                                    </tr>
-                                                    </tbody>
-                                                </table>
-                                            </div>
-                                        </div>
+
 
                                         <div class="panel panel-default">
                                             <div class="panel-body">
@@ -99,20 +95,22 @@
                                                     {{ $order->getFormattedCreatedAt() }}
                                                 </p>
                                             </div>
-
+                                        </div>
+                                        <div class="panel panel-default">
                                             <div class="panel-body">
-                                                <h4 id="order_status">Estado de Cotización</h4>
-                                                {!! Form::open(['method' => 'PUT', 'route' => ['admin.orders.update', $order->order_id],  'id' => 'status-form']) !!}
-                                                {!! Form::select('status',
-                                                                    ['Shipped' => 'Enviado', 'Paid' => 'Pagado', 'Cancelled' => 'Cancelado'],
-                                                                    $order->status, ['class' => 'form-control']) !!}
-                                                <br/>
-                                                <button type="submit" class="btn btn-primary pull-right"
-                                                        aria-label="Save Changes">
-                                                    <span class="glyphicon glyphicon-floppy-disk"
-                                                          aria-hidden="true"></span> Guardar
-                                                </button>
-                                                {!! Form::close() !!}
+                                                <h4>Datos Empresa</h4>
+                                                <table>
+                                                    <tbody>
+                                                    <tr>
+                                                        <td>Nombre Empresa&nbsp;</td>
+                                                        <td>{{ $order->customer->compania }}</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>RFC</td>
+                                                        <td>{{ $order->customer->rfc }}</td>
+                                                    </tr>
+                                                    </tbody>
+                                                </table>
                                             </div>
                                         </div>
                                     </div>

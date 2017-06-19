@@ -1,11 +1,3 @@
-<div class="header-tags">
-    <div class="overflow-h">
-        <h2>Carrito de compras</h2>
-        <p>Revisar y edita sus productos</p>
-        <i class="rounded-x fa fa-check"></i>
-    </div>
-</div>
-
 <section>
     <div class="table-responsive">
         <table class="table table-striped">
