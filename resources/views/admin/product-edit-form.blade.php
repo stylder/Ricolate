@@ -7,8 +7,14 @@
 @section('content')
     <div class="container">
         <div class="row row-top-buffer">
-            <div class="col-sm-12">
+            <div class="col-sm-10">
                 <h1>Editar Producto</h1>
+            </div>
+            <div class="col-sm-2 panel-body">
+                <a href="/admin/products" class="btn btn-primary pull-right"aria-label="Save Changes">
+                    <span class="glyphicon fa fa-long-arrow-left" aria-hidden="true"></span> Regresar
+                    <i class="fa fa-long-arrow-left" aria-hidden="true"></i>
+                </a>
             </div>
         </div>
         <div class="row row-top-buffer">

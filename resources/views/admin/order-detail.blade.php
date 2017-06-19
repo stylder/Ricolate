@@ -11,16 +11,10 @@
                 <h1>Detalle de Cotización</h1>
             </div>
             <div class="col-sm-2 panel-body">
-
-
                 <a href="/admin/orders" class="btn btn-primary pull-right"aria-label="Save Changes">
-                    <span class="glyphicon fa fa-long-arrow-left" aria-hidden="true">
-
-                    </span> Regresar
+                    <span class="glyphicon fa fa-long-arrow-left" aria-hidden="true"></span> Regresar
                     <i class="fa fa-long-arrow-left" aria-hidden="true"></i>
-
                 </a>
-
             </div>
         </div>
         <div class="row">

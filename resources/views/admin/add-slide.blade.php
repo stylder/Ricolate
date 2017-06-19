@@ -7,8 +7,14 @@
 @section('content')
 <div class="container" id="slide-edit-main">
     <div class="row">
-        <div class="col-sm-12">
+        <div class="col-sm-10">
             <h1 class="inline">Agregar Slide</h1>
+        </div>
+        <div class="col-sm-2 panel-body">
+            <a href="/admin/slideshow" class="btn btn-primary pull-right"aria-label="Save Changes">
+                <span class="glyphicon fa fa-long-arrow-left" aria-hidden="true"></span> Regresar
+                <i class="fa fa-long-arrow-left" aria-hidden="true"></i>
+            </a>
         </div>
     </div>
     <div class="row row-top-buffer" id="new-slide">
