@@ -29,7 +29,8 @@
                         <div class="product-img product-img-brd">
                             <a href="/producto/{{ $result->product_id }}"><img class="full-width img-responsive" src="{{ (count($result->images)) ? $result->images->first()->image_path : 'http://placehold.it/221x221' }}" alt=""></a>
                             <a class="product-review" href="/producto/{{ $result->product_id }}">Ver</a>
-                            {!! Form::open(['method' => 'POST', 'url' => ['/cart/add/' .  $result->product_id]]) !!}
+                            {!! Form::open(['method' => 'POST', 'url' => ['/cart/add/' .  $result->product_id],'class'=>'producto-form']) !!}
+                            {!! Form::hidden('id',$result->product_id) !!}
                             {!! Form::button('<i class="fa fa-shopping-cart"></i>Agregar al Carrito', ['class' => 'add-to-cart', 'type' => 'submit']) !!}
                             {!! Form::close() !!}
 
@@ -47,4 +48,66 @@
             </div>
         </div><!--/end filter resilts-->
     </div>
+@stop
+
+
+@section('scripts')
+    <script>
+        $(document).ready(function () {
+            $(document).on("submit",".producto-form",function(e){
+                e.preventDefault(e);
+
+                var id = $(this).find('input[type="hidden"][name="id"]').val();
+                var _token = $(this).find('input[type="hidden"][name="_token"]').val();
+
+                var data = {'id':id,'_token':_token};
+
+                console.log(data);
+                $.ajax({
+
+                    type:"POST",
+                    url:'/cart/add/'+id,
+                    data:data,
+                    dataType: 'json',
+                    success: function(data){
+                        new Noty({
+                            type: 'success',
+                            layout: 'bottomRight',
+                            text: 'Se agregó el producto correctamente al carrito',
+                            progressBar: true,
+                            timeout: 3000,
+                            theme:'sunset',
+                            closeWith: ['click', 'button'],
+                            animation: {
+                                open: 'noty_effects_open',
+                                close: 'noty_effects_close'
+                            }
+                        }).show();
+
+                        var cart =$('#cartTotal'),
+                            cartValue = cart.text();
+
+                        $('#cartTotal').text(parseInt(cartValue)+1).trigger('change');
+                    },
+                    error: function(data){
+                        new Noty({
+                            type: 'error',
+                            layout: 'bottomRight',
+                            text: 'Se produjó un error actualizar el carrito',
+                            progressBar: true,
+                            timeout: 3000,
+                            theme:'sunset',
+                            closeWith: ['click', 'button'],
+                            animation: {
+                                open: 'noty_effects_open',
+                                close: 'noty_effects_close'
+                            }
+                        }).show();
+                    }
+                })
+            });
+        })
+
+    </script>
+
 @stop

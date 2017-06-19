@@ -64,17 +64,6 @@ class MessageController extends Controller {
             $details['phone'] = $this->_message->sender_phone;
             $details['content'] = $this->_message->message;
 
-/*            //Send confirmation to customer
-            Mail::send('emails.message-confirm', $details, function($message)
-            {
-                $message->to($this->_message->sender_email);
-            });
-
-            //Send customer info to administrator
-            Mail::send('emails.new-message', $details, function($message)
-            {
-                $message->to(Config::get('messages.site_admin'));
-            });*/
 
         } catch(Exception $e)
         {
@@ -85,6 +74,7 @@ class MessageController extends Controller {
             return redirect('/');
         }
 
+        $this->contactanos($details);
         //Return a JSON response if the form was submitted via AJAX.
         if($request->ajax())
         {
@@ -138,4 +128,21 @@ class MessageController extends Controller {
             return redirect('/admin/messages');
         }
 	}
+
+    public function contactanos($info){
+
+        $correos=['stylder@gmail.com','contacto.mjvc@gmail.com'];
+
+        $data = array('nombre' => 'Ricolate', 'origen' => 'contacto.mjvc@gmail.com', 'subject' => 'Contacto Ricolate' );
+
+
+        foreach ($correos as $correo){
+            Mail::send( 'emails.contactanos', $info, function( $message ) use ($data, $correo)
+            {
+                $message->to( $correo )->from( $data['origen'], $data['nombre'] )->subject( $data['subject'] );
+            });
+        }
+    }
+
+
 }

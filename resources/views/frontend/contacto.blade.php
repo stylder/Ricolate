@@ -88,7 +88,7 @@
                         </div>
 
                         <p>
-                            {!! Form::button('Enviar Mensaje', ['class' => 'btn-u btn-u-sea-shop btn-u-lg', 'type' => 'submit']) !!}
+                            {!! Form::button('Enviar Mensaje', ['class' => 'btn-u btn-u-sea-shop btn-u-lg', 'type' => 'submit', 'id'=>'contactobtn']) !!}
                         </p>
                     </fieldset>
                 {!! Form::close() !!}
@@ -128,6 +128,7 @@
     <script>
         $(document).ready(function(){
             $('#sky-form3').on('submit',function(e){
+                $('#contactobtn').text('Enviando..');
                 e.preventDefault(e);
                 $.ajax({
                     type:"POST",
@@ -150,7 +151,7 @@
                         }).show();
 
                         $('#sky-form3').trigger("reset");
-
+                        $('#contactobtn').text('Enviar Mensaje');
 
                     },
                     error: function(data){
