@@ -76,10 +76,15 @@ class CartController extends Controller {
      * @internal param Request $request
      * @internal param int $id
      */
-	public function update($productId)
+	public function update(Request $request,$productId)
 	{
         $updatedCart = $this->_cart->updateProduct($productId);
 
+
+        if($request->ajax())
+        {
+            return response()->json(['status' => 'success'])->withCookie(cookie()->forever('cart', $updatedCart));
+        }
 
         return redirect('cart')
             ->withCookie(cookie()->forever('cart', $updatedCart));

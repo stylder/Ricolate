@@ -14,10 +14,13 @@
 
                     </ul>
                     <p class="margin-bottom-20">{{short_desc}}</p>
-                    <?php echo Form::open(['method' => 'POST', 'url' => ["/cart/add/{{product_id}}", 'class'=>'producto' ]] )?>
-                    <?php echo Form::hidden('id', '{{product_id}}') ?>
-                    <?php echo Form::button('Agregar al Carro', ['class' => 'btn-u btn-u-sea-shop btn-u-lg', 'type' => 'submit']) ?>
-                    <?php echo Form::close()  ?>
+                    <input type="hidden" name="id" value="{{product_id}}">
+                    <form action="/cart/add/{{product_id}}" METHOD="post" class="producto-form">
+                        <input type="hidden" name="id" value="{{product_id}}">
+                        <input type="hidden" name="_token"  id="_token" value="<?php echo csrf_token();?>">
+                        <button type="submit" class="btn-u btn-u-sea-shop btn-u-lg">Agregar al Carro</button>
+                    </form>
+
                 </div>
             </div>
         </div>

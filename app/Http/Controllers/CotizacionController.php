@@ -103,7 +103,7 @@ class CotizacionController extends Controller {
             //Return a JSON response if the form was submitted via AJAX.
             if($request->ajax())
             {
-                return response()->json(['status' => 'success']);
+                return response()->json(['status' => 'success'])->withCookie($cookie);
             }
 
             //Return a redirect if the form was not submitted via AJAX.

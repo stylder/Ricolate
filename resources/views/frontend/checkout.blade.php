@@ -100,6 +100,7 @@
                         }).show();
 
                         $('#formulario_cotizacion').trigger("reset");
+                        $('#cartTotal').text(0).trigger('change');
 
 
                     },

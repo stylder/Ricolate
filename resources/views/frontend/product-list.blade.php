@@ -125,7 +125,10 @@
     <script>
         $(document).ready(function () {
 
-            $('.producto').on('submit',function(e){
+
+
+
+            $(document).on("submit",".producto-form",function(e){
                 e.preventDefault(e);
 
                 var id = $(this).find('input[type="hidden"][name="id"]').val();
@@ -155,13 +158,10 @@
                             }
                         }).show();
 
+                        var cart =$('#cartTotal'),
+                            cartValue = cart.text();
 
-                        var  cart =$('#cartTotal');
-                        var cartValue = cart.text();
-
-                        $('#cartTotal').text(parseInt(cartValue)+   1).trigger('change');
-
-
+                        $('#cartTotal').text(parseInt(cartValue)+1).trigger('change');
                     },
                     error: function(data){
                         new Noty({
@@ -358,7 +358,7 @@
             }
             //Render the product list
             var view = $("#product-list-template").html();
-            var template = Handlebars.compile(view);
+                var template = Handlebars.compile(view);
             var json = {
                 products: productList.pagination.pages[page]
             };

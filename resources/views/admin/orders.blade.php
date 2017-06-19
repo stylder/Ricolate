@@ -20,7 +20,7 @@
                             <tr>
                                 <th class="col-sm-2">Fecha</th>
                                 <th class="col-sm-2">Usuario</th>
-                                <th id="order_status" class="col-sm-2">Status</th>
+
                                 <th class="col-sm-2">Orden #</th>
                                 <th class="col-sm-2">Acciones</th>
                             </tr>
@@ -35,25 +35,13 @@
                                         {{ $order->customer->nombre }} {{ $order->customer->apellidos }}
                                     </td>
 
-                                    <td class="order-status-label">
-                                        @if($order->status === 'Paid')
-                                            <span class="label label-primary">Pagado</span>
-                                        @elseif($order->status === 'Quotation')
-                                            <span class="label label-success">Cotización</span>
-                                        @elseif($order->status === 'Cancelled')
-                                        @elseif($order->status === 'Shipped')
-                                            <span class="label label-success">Enviado</span>
-                                        @elseif($order->status === 'Cancelled')
-                                            <span class="label label-danger">Cancelado</span>
-                                        @endif
-                                    </td>
                                     <td>
                                         {{ $order->order_id }}
                                     </td>
 
                                     <td class="order-action-icons">
                                         <a class="btn btn-danger" data-toggle="modal" data-href="/admin/orders/{{ $order->order_id }}" data-target="#delete-confirm"><span class="glyphicon  glyphicon glyphicon-remove"></span> Borrar</a>
-                                        <a href="/admin/orders/{{ $order->order_id }}" class="order-edit btn btn-info"><span class="glyphicon  glyphicon glyphicon-pencil"></span> Editar</a>
+                                        <a href="/admin/orders/{{ $order->order_id }}" class="order-edit btn btn-info"><span class="glyphicon  glyphicon glyphicon-pencil"></span> Ver</a>
                                     </td>
                                 </tr>
                             @empty
