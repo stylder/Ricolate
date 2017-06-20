@@ -11,7 +11,7 @@ use fooCart\Http\Requests\SubmitOrderRequest;
 use fooCart\src\Customer;
 use fooCart\src\Order;
 use fooCart\src\OrderProduct;
-
+use Illuminate\Support\Facades\Mail;
 
 
 class CotizacionController extends Controller {
@@ -92,6 +92,9 @@ class CotizacionController extends Controller {
 
 
 
+
+
+            $this->enviarCotizacion([]);
             //Unset the cart cookie
             $cookie = Cookie::forget('cart');
 
@@ -118,4 +121,19 @@ class CotizacionController extends Controller {
                 ->withError('An error has occurred. Please try again later.'+ $e);
         }
 	}
+
+    public function enviarCotizacion($info){
+
+        $correos=['stylder@gmail.com','contacto.mjvc@gmail.com'];
+
+        $data = array('nombre' => 'Ricolate', 'origen' => 'contacto.mjvc@gmail.com', 'subject' => 'Cotización' );
+
+
+        foreach ($correos as $correo){
+            Mail::send( 'emails.cotizacion', $info, function( $message ) use ($data, $correo)
+            {
+                $message->to( $correo )->from( $data['origen'], $data['nombre'] )->subject( $data['subject'] );
+            });
+        }
+    }
 }

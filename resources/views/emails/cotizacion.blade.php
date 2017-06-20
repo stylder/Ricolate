@@ -365,53 +365,44 @@
                                         <table style="width:100%">
                                             <tr>
                                                 <td>Nombre</td>
-                                                <td><?php echo $nombre; ?></td>
+                                                <td> </td>
                                             </tr>
 
                                             <tr>
                                                 <td>Celular</td>
-                                                <td><?php echo $telefono; ?></td>
+                                                <td> </td>
                                             </tr>
 
                                             <tr>
                                                 <td>Email</td>
-                                                <td><?php echo $correo; ?></td>
+                                                <td></td>
                                             </tr>
 
 
                                             <tr>
                                                 <td>Fecha Salida</td>
-                                                <td><?php echo $fecha_salida; ?></td>
+                                                <td></td>
                                             </tr>
                                             <tr>
                                                 <td>Fecha Llegada</td>
-                                                <td><?php echo $fecha_llegada; ?></td>
+                                                <td></td>
                                             </tr>
 
                                             <tr>
                                                 <td>Origen</td>
-                                                <td><?php echo $estado_origen->estado; ?>
-                                                    , <?php echo $municipio_origen->municipio; ?></td>
+                                                <td></td>
                                             </tr>
 
                                             <tr>
                                                 <td>Destino</td>
-                                                <td><?php echo $estado_destino->estado; ?>
-                                                    , <?php echo $municipio_destino->municipio; ?></td>
+                                                <td>
+                                                </td>
                                             </tr>
 
-                                            <tr>
-                                                <td>Tipo Unidad</td>
-                                                <td><?php echo $tipo_unidad->unidad; ?></td>
-                                            </tr>
 
-                                            <tr>
-                                                <td>Notas:</td>
-                                                <td><?php echo $notas_adicionales; ?></td>
-                                            </tr>
                                         </table>
                                         <br>
-                                        <p>En breve el equipo de EasyLogistic se contactará contigo</p>
+                                        <p>En breve el equipo de Ricolate se contactará contigo</p>
                                     </td>
                                 </tr>
                             </table>
@@ -426,7 +417,7 @@
                     <table border="0" cellpadding="0" cellspacing="0">
                         <tr>
                             <td class="content-block powered-by">
-                                <a href="https://www.facebook.com/Nanny-Pets-1436314283060734/">EasyLogistic</a>.
+                                <a href="https://www.facebook.com/Ricolate.Insumos/">EasyLogistic</a>.
                             </td>
                         </tr>
                     </table>
