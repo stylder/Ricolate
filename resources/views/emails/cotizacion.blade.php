@@ -365,40 +365,63 @@
                                         <table style="width:100%">
                                             <tr>
                                                 <td>Nombre</td>
-                                                <td> </td>
+                                                <td><?php echo $nombre; ?> </td>
                                             </tr>
 
                                             <tr>
-                                                <td>Celular</td>
-                                                <td> </td>
+                                                <td>Apellidos</td>
+                                                <td><?php echo $apellidos; ?> </td>
                                             </tr>
 
                                             <tr>
-                                                <td>Email</td>
-                                                <td></td>
+                                                <td>Correo</td>
+                                                <td><?php echo $correo; ?> </td>
                                             </tr>
 
 
                                             <tr>
-                                                <td>Fecha Salida</td>
-                                                <td></td>
+                                                <td>Teléfono</td>
+                                                <td><?php echo $telefono; ?> </td>
                                             </tr>
                                             <tr>
-                                                <td>Fecha Llegada</td>
-                                                <td></td>
+                                                <td>Dirección</td>
+                                                <td>Calle <?php echo $calle; ?> #<?php echo $numero; ?> </td>
                                             </tr>
 
                                             <tr>
-                                                <td>Origen</td>
-                                                <td></td>
+                                                <td>Colonia</td>
+                                                <td><?php echo $colonia; ?> </td>
                                             </tr>
 
                                             <tr>
-                                                <td>Destino</td>
-                                                <td>
-                                                </td>
+                                                <td>Municipio</td>
+                                                <td><?php echo $municipio; ?> </td>
                                             </tr>
 
+                                            <tr>
+                                                <td>Estado</td>
+                                                <td><?php echo $estado; ?> </td>
+                                            </tr>
+
+                                            <tr>
+                                                <td>Código Postal</td>
+                                                <td><?php echo $postal; ?> </td>
+                                            </tr>
+
+                                            <tr>
+                                                <td>Compañía</td>
+                                                <td><?php echo $compania; ?> </td>
+                                            </tr>
+
+                                            <tr>
+                                                <td>RFC</td>
+                                                <td><?php echo $rfc; ?> </td>
+                                            </tr>
+
+                                            <tr>
+                                                <td>Notas</td>
+                                                <td><?php echo $notas; ?> </td>
+                                            </tr>
 
                                         </table>
                                         <br>
@@ -417,7 +440,7 @@
                     <table border="0" cellpadding="0" cellspacing="0">
                         <tr>
                             <td class="content-block powered-by">
-                                <a href="https://www.facebook.com/Ricolate.Insumos/">EasyLogistic</a>.
+                                <a href="https://www.facebook.com/Ricolate.Insumos/">Ricolate</a>.
                             </td>
                         </tr>
                     </table>

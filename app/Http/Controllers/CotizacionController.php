@@ -89,12 +89,27 @@ class CotizacionController extends Controller {
                 $product->save();
             }
 
+            $objeto = [];
+            $objeto['nombre']  = $request->input('nombre');
+            $objeto['apellidos']  = $request->input('apellidos');
+            $objeto['correo']  = $request->input('correo');
+            $objeto['telefono']  = str_replace('-', '', $request->input('telefono'));
+            $objeto['calle']  = $request->input('calle');
+
+            $objeto['numero']  = $request->input('numero');
+            $objeto['colonia']  = $request->input('colonia');
+
+            $objeto['municipio']  = $request->input('municipio');
+            $objeto['estado']  = $request->input('estado');
+            $objeto['postal']  = $request->input('postal');
+            $objeto['compania']  = $request->input('compania');
+
+            $objeto['rfc']  = $request->input('rfc');
+            $objeto['notas']  = $request->input('notas');
 
 
 
-
-
-            $this->enviarCotizacion([]);
+            $this->enviarCotizacion($objeto);
             //Unset the cart cookie
             $cookie = Cookie::forget('cart');
 
