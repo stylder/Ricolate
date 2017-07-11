@@ -36,7 +36,7 @@
     });
 </script>
 <!--[if lt IE 9]>
-<script src="assets/plugins/respond.js"></script>
-<script src="assets/plugins/html5shiv.js"></script>
-<script src="assets/js/plugins/placeholder-IE-fixes.js"></script>
+<script src="{{asset('assets/plugins/respond.js')}}"></script>
+<script src="{{asset('assets/plugins/html5shiv.js')}}"></script>
+<script src="{{asset('assets/js/plugins/placeholder-IE-fixes.js')}}"></script>
 <![endif]-->

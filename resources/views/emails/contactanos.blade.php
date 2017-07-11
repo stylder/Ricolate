@@ -91,7 +91,7 @@
         .footer p,
         .footer span,
         .footer a {
-            color: #f47711;
+            color: #aad2d2;
             font-size: 12px;
             text-align: center;
         }
@@ -103,7 +103,7 @@
         h2,
         h3,
         h4 {
-            color: #f47711;
+            color: #aad2d2;
             font-family: sans-serif;
             font-weight: 400;
             line-height: 1.4;
@@ -136,7 +136,7 @@
         }
 
         a {
-            color: #f47711;
+            color: #aad2d2;
             text-decoration: underline;
         }
 
@@ -163,11 +163,11 @@
         }
 
         .btn a {
-            background-color: #f47711;
-            border: solid 1px #f47711;
+            background-color: #aad2d2;
+            border: solid 1px #aad2d2;
             border-radius: 5px;
             box-sizing: border-box;
-            color: #f47711;
+            color: #aad2d2;
             cursor: pointer;
             display: inline-block;
             font-size: 14px;
@@ -179,12 +179,12 @@
         }
 
         .btn-primary table td {
-            background-color: #f47711;
+            background-color: #aad2d2;
         }
 
         .btn-primary a {
-            background-color: #f47711;
-            border-color: #f47711;
+            background-color: #aad2d2;
+            border-color: #aad2d2;
             color: #ffffff;
         }
 
@@ -326,12 +326,12 @@
             }
 
             .btn-primary table td:hover {
-                background-color: #f47711 !important;
+                background-color: #aad2d2 !important;
             }
 
             .btn-primary a:hover {
-                background-color: #f47711 !important;
-                border-color: #f47711 !important;
+                background-color: #aad2d2 !important;
+                border-color: #aad2d2 !important;
             }
         }
 

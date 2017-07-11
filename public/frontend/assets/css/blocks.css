@@ -5645,11 +5645,11 @@
   border-top: none;
   border-left: none;
   border-right: none;
-  border-bottom: 1px solid #18ba9b;
+  border-bottom: 1px solid #aad2d2;
 }
 
 .tab-v6 .nav-tabs > li > a:hover {
-  border-bottom: 1px solid #18ba9b;
+  border-bottom: 1px solid #aad2d2;
 }
 
 .tab-v6 .nav-tabs > li > a:focus {

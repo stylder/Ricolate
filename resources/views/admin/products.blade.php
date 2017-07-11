@@ -52,9 +52,12 @@
                                         {{ $product->number_available }}
                                     </td>
                                     <td class="order-action-icons">
-                                        <a class="btn btn-danger" data-toggle="modal" data-href="/admin/products/{{ $product->product_id }}" data-target="#delete-confirm"><span class="glyphicon  glyphicon glyphicon-remove"></span> Eliminar</a>
-                                        <a href="/admin/products/{{ $product->product_id }}/edit" class="order-edit btn btn-info">
-                                            <span class="glyphicon  glyphicon glyphicon-pencil"></span> Editar
+                                        <a class="btn btn-danger" data-toggle="modal" data-href="/admin/products/{{ $product->product_id }}" data-target="#delete-confirm">
+                                            <span class="glyphicon  glyphicon glyphicon-remove"></span>Borrar
+                                        </a>
+
+                                        <a href="/admin/products/{{ $product->product_id }}/edit" class="btn btn-info">
+                                            <span class="glyphicon  glyphicon glyphicon-pencil"></span>Editar
                                         </a>
                                     </td>
                                 </tr>

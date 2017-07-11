@@ -91,7 +91,7 @@
         .footer p,
         .footer span,
         .footer a {
-            color: #f47711;
+            color: #aad2d2;
             font-size: 12px;
             text-align: center;
         }
@@ -103,7 +103,7 @@
         h2,
         h3,
         h4 {
-            color: #f47711;
+            color: #aad2d2;
             font-family: sans-serif;
             font-weight: 400;
             line-height: 1.4;
@@ -136,7 +136,7 @@
         }
 
         a {
-            color: #f47711;
+            color: #aad2d2;
             text-decoration: underline;
         }
 
@@ -163,11 +163,11 @@
         }
 
         .btn a {
-            background-color: #f47711;
-            border: solid 1px #f47711;
+            background-color: #aad2d2;
+            border: solid 1px #aad2d2;
             border-radius: 5px;
             box-sizing: border-box;
-            color: #f47711;
+            color: #aad2d2;
             cursor: pointer;
             display: inline-block;
             font-size: 14px;
@@ -179,12 +179,12 @@
         }
 
         .btn-primary table td {
-            background-color: #f47711;
+            background-color: #aad2d2;
         }
 
         .btn-primary a {
-            background-color: #f47711;
-            border-color: #f47711;
+            background-color: #aad2d2;
+            border-color: #aad2d2;
             color: #ffffff;
         }
 
@@ -326,12 +326,12 @@
             }
 
             .btn-primary table td:hover {
-                background-color: #f47711 !important;
+                background-color: #aad2d2 !important;
             }
 
             .btn-primary a:hover {
-                background-color: #f47711 !important;
-                border-color: #f47711 !important;
+                background-color: #aad2d2 !important;
+                border-color: #aad2d2 !important;
             }
         }
 
@@ -354,14 +354,6 @@
                             <table border="0" cellpadding="0" cellspacing="0">
                                 <tr>
                                     <td>
-                                        <p>
-                                            Estimado (a): <?php echo $nombre; ?>
-                                        </p>
-                                        <p>
-                                            Nos alegra muchísimo que confíes en nosotros para transportar tu valiosa carga, los datos que proporcionaste se utilizarán para buscar la mejor opción de transporte:
-                                        </p>
-
-                                        <br>
                                         <table style="width:100%">
                                             <tr>
                                                 <td>Nombre</td>
@@ -425,7 +417,18 @@
 
                                         </table>
                                         <br>
-                                        <p>En breve el equipo de Ricolate se contactará contigo</p>
+
+                                        <table>
+                                            <?php
+                                            $array = array(1, 2, 3, 4);
+                                            foreach ($array as &$valor) {
+                                                $valor = $valor * 2;
+                                            }
+                                            // $array ahora es array(2, 4, 6, 8)
+                                            unset($valor); // rompe la referencia con el último elemento
+                                            ?>
+
+                                        </table>
                                     </td>
                                 </tr>
                             </table>

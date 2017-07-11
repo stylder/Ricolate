@@ -107,7 +107,7 @@
 
 
                 <!-- Business Hours -->
-                <div class="headline"><h2>Horas de trabajo</h2></div>
+                <div class="headline"><h2>Horario de atención</h2></div>
                 <ul class="list-unstyled margin-bottom-30">
                     <li><strong>Lunes-Viernes:</strong> 10:00am a 8:30pm</li>
                     <li><strong>Sábados-Domingos:</strong> 10:00am a 4:30pm</li>

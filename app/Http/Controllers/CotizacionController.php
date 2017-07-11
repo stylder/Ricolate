@@ -133,15 +133,15 @@ class CotizacionController extends Controller {
 
             //Return the user to the checkout form with a generic error.
             return redirect('/')
-                ->withError('An error has occurred. Please try again later.'+ $e);
+                ->withError('Un error fue ocurrido. Por favor intenta otra vez.');
         }
 	}
 
     public function enviarCotizacion($info){
 
-        $correos=['stylder@gmail.com','contacto.mjvc@gmail.com'];
+        $correos=['stylder@gmail.com','ricolate.contacto@gmail.com'];
 
-        $data = array('nombre' => 'Ricolate', 'origen' => 'contacto.mjvc@gmail.com', 'subject' => 'Cotización' );
+        $data = array('nombre' => 'Ricolate', 'origen' => 'ricolate.contacto@gmail.com', 'subject' => 'Cotización' );
 
 
         foreach ($correos as $correo){

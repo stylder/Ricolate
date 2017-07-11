@@ -40,8 +40,13 @@
                                     </td>
 
                                     <td class="order-action-icons">
-                                        <a class="btn btn-danger" data-toggle="modal" data-href="/admin/orders/{{ $order->order_id }}" data-target="#delete-confirm"><span class="glyphicon  glyphicon glyphicon-remove"></span> Borrar</a>
-                                        <a href="/admin/orders/{{ $order->order_id }}" class="order-edit btn btn-info"><span class="glyphicon  glyphicon glyphicon-pencil"></span> Ver</a>
+                                        <a class="btn btn-danger" data-toggle="modal" data-href="/admin/orders/{{ $order->order_id }}" data-target="#delete-confirm">
+                                            <span class="glyphicon  glyphicon glyphicon-remove"></span>
+                                            Borrar
+                                        </a>
+                                        <a href="/admin/orders/{{ $order->order_id }}" class="order-edit btn btn-info">
+                                            <span class="glyphicon  glyphicon glyphicon-pencil"></span> Mostrar
+                                        </a>
                                     </td>
                                 </tr>
                             @empty

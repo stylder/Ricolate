@@ -118,17 +118,12 @@
 
         <div class="heading heading-v1 margin-bottom-20">
             <h2>Productos Destacados</h2>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed odio elit, ultrices vel cursus sed,
-                placerat ut leo. Phasellus in magna erat. Etiam gravida convallis augue non tincidunt. Nunc
-                lobortis dapibus neque quis lacinia. Nam dapibus tellus sit amet odio venenatis</p>
+            <p></p>
         </div>
 
         <!--=== Illustration v2 ===-->
         <div class="illustration-v2 margin-bottom-60">
-            <div class="customNavigation margin-bottom-25">
-                <a class="owl-btn prev rounded-x"><i class="fa fa-angle-left"></i></a>
-                <a class="owl-btn next rounded-x"><i class="fa fa-angle-right"></i></a>
-            </div>
+
 
             <ul class="list-inline owl-slider">
                 @if(isset($sales))
@@ -157,11 +152,17 @@
                     @endforeach
                 @else
                     <li class="list-group-item">
-                        <h4 class="text-center">No current sales</h4>
-                        <h5 class="text-center">Check back soon!</h5>
+                        <h4 class="text-center">
+                            No hay ventas actuales</h4>
+                        <h5 class="text-center">
+                            ¡Vuelve a consultar pronto!</h5>
                     </li>
                 @endif
             </ul>
+            <div class="customNavigation margin-bottom-25">
+                <a class="owl-btn prev rounded-x"><i class="fa fa-angle-left"></i></a>
+                <a class="owl-btn next rounded-x"><i class="fa fa-angle-right"></i></a>
+            </div>
         </div>
         <!--=== End Illustration v2 ===-->
 
